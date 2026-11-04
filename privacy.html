@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Privacy — Portal Accessibility Checker for JSM — Tgg Labs</title>
+<meta name="description" content="Privacy notice for Portal Accessibility Checker for JSM, a read-only Atlassian Forge app. The app stores nothing, uses no third-party service, and sends no data outside the Atlassian tenant where it is installed.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%231f6feb'/%3E%3Ctext x='16' y='22' font-family='system-ui,sans-serif' font-size='16' font-weight='700' fill='white' text-anchor='middle'%3ET%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+<header class="site">
+  <a class="brand" href="index.html">Tgg Labs</a>
+  <nav class="nav">
+    <a href="index.html#jetbrains">JetBrains plugins</a>
+    <a href="index.html#gumroad">Digital products</a>
+  </nav>
+</header>
+<main>
+    <article class="produit">
+      <p class="fil"><a href="index.html">Tgg Labs</a></p>
+      <h1>Privacy — Portal Accessibility Checker for JSM</h1>
+      <p class="lead">A read-only Atlassian Forge app for Jira Service Management customer portals. This notice says exactly what it reads, what it keeps, and where the data goes.</p>
+
+      <h2>What the app is</h2>
+      <ul class="puces">
+        <li>An Atlassian Forge app for Jira and Jira Service Management (JSM), app id <code>33f1227e-0df1-4008-b181-ea9c50b116f5</code>.</li>
+        <li>Read-only: it checks the metadata of a customer portal against WCAG 2.2 AA criteria and reports what it found. It does not change, create or delete anything on your site.</li>
+        <li>Open source under the MIT licence: the source of every line is public, so the behaviour described below can be read directly, not taken on trust:
+          <code>https://github.com/tgg49099-dotcom/codegeist-jsm-accessibility-checker</code></li>
+      </ul>
+
+      <h2>What it reads</h2>
+      <p class="note">Every call is a relative <code>/rest/...</code> path on the site where the app is installed, made with the app's own Atlassian identity. The manifest declares only the read scopes <code>read:jira-work</code> and <code>read:servicedesk-request</code>: no write scope, no admin scope.</p>
+      <ul class="puces">
+        <li>Field definitions (<code>GET /rest/api/3/field</code>) — the labels and descriptions of the fields shown to customers.</li>
+        <li>The list of projects and service projects (<code>GET /rest/api/3/project</code>) — the portals available on the site.</li>
+        <li>The fields of each customer request type (<code>GET /rest/api/3/issue/createmeta/…</code> and <code>GET /rest/servicedeskapi/servicedesk/…/requesttype/…/field</code>).</li>
+        <li>Issue search (<code>POST /rest/api/3/search/jql</code>, 20 results, fields <code>summary</code> and <code>description</code>) — the title and the description of the request types that were scanned.</li>
+      </ul>
+      <p>If the Jira Service Management API of your site reports that the product is not licensed for use, the app falls back to reading the equivalent Jira tickets that carry the same portal strings. It does not read anything else.</p>
+
+      <h2>What it stores</h2>
+      <p><strong>Nothing.</strong> The manifest declares no Forge storage and the code makes no storage call. A scan is computed on the fly and the findings are returned in the response of the scan itself (JSON, or CSV when the CSV format is requested). The <code>generatedAt</code> timestamp of a scan is part of that response; it is not kept anywhere.</p>
+
+      <h2>Personal data</h2>
+      <p>The app does not create an account, does not ask for a name or an e-mail address, and has no user profile. Two honest remarks about the content it reads:</p>
+      <ul class="puces">
+        <li>The title and the description of an issue can contain personal data typed by the people who wrote it — for example a name or an e-mail address in a ticket title. When the app reads the 20 most recent issues of the scanned projects, it therefore reads that content, and an excerpt of it can appear in the scan result.</li>
+        <li>The scan trigger is declared with <code>authentication: none</code>: the scan URL is public, so anyone who has it can trigger a scan and read its result. Do not install the app on a site whose issue titles contain personal data you would not want a stranger to be able to read.</li>
+      </ul>
+      <p>What the app never does: it never sends that content to the app developer, to a third party or to any service outside your own Atlassian tenant.</p>
+
+      <h2>Where the data goes</h2>
+      <p>Nowhere else. Everything runs on Atlassian infrastructure — the Forge runtime and the site's own REST API — inside your tenant. The app has <strong>no external service, no third-party SDK, no analytics, no telemetry and no cookies</strong>. These points were checked against the published source code, not merely intended: the code contains no outbound call to any host, no storage call, and no analytics or telemetry code.</p>
+
+      <h2>How long data is kept</h2>
+      <p>Not at all. Nothing is written, so nothing has to be deleted. Removing the app from your site (<code>Administration &rarr; Manage apps</code>) removes its installation entirely.</p>
+
+      <h2>Your choices</h2>
+      <ul class="puces">
+        <li>You decide which portal and which request types are scanned. Nothing is scanned unless you ask for it.</li>
+        <li>There is no data to export and no data to delete: the app keeps none.</li>
+        <li>You can remove the app at any time from <code>Administration &rarr; Manage apps</code>.</li>
+      </ul>
+
+      <h2>Contact</h2>
+      <p>Questions, corrections or a request to stop processing can be raised as an issue in the public repository:
+        <code>https://github.com/tgg49099-dotcom/codegeist-jsm-accessibility-checker/issues</code></p>
+      <p class="src">Published 4 November 2026 by Tgg Labs &mdash; personal projects by Tgg, in Switzerland.</p>
+    </article>
+</main>
+<footer class="site-foot">
+  <p>Tgg Labs &mdash; Personal projects by Tgg, in Switzerland.</p>
+  <p>Every product on this page links to the listing where it is actually published.
+     Facts and prices on this page were checked on 4 November 2026.</p>
+</footer>
+</body>
+</html>
