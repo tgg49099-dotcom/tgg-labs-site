@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Privacy — Find in Commit History (JetBrains plugin) — Tgg Labs</title>
+<meta name="description" content="Privacy notice for Find in Commit History, a JetBrains plugin that searches your local Git history for a string. The plugin reads your local repository and nothing else: no network request, no telemetry, no stored data.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%231f6feb'/%3E%3Ctext x='16' y='22' font-family='system-ui,sans-serif' font-size='16' font-weight='700' fill='white' text-anchor='middle'%3E%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+<header class="site">
+  <a class="brand" href="index.html">Tgg Labs</a>
+  <nav class="nav">
+    <a href="index.html#jetbrains">JetBrains plugins</a>
+    <a href="index.html#gumroad">Digital products</a>
+  </nav>
+</header>
+<main>
+    <article class="produit">
+      <p class="fil"><a href="index.html">Tgg Labs</a></p>
+      <h1>Privacy — Find in Commit History</h1>
+      <p class="lead">A JetBrains plugin that searches your local Git history for a string (the
+        <code>git log -S</code> and <code>git log -G</code> search, also called "pickaxe"). This notice
+        says exactly what it reads, what it keeps, and what leaves your machine. The short answer:
+        <b>nothing leaves your machine.</b></p>
+
+      <h2>What the plugin is</h2>
+      <ul class="puces">
+        <li>A free JetBrains plugin, <b>Find in Commit History</b>, plugin id
+          <code>com.tgglabs.pickaxe</code>, MIT licence.</li>
+        <li>It searches the Git history of the project you have open, and shows the commits where a
+          string was added or removed.</li>
+        <li>Open source: the source of every line is public, so the behaviour described below can be
+          read directly, not on trust:
+          <a href="https://github.com/tgg49099-dotcom/find-in-commit-history">github.com/tgg49099-dotcom/find-in-commit-history</a>.</li>
+      </ul>
+
+      <h2>What it reads</h2>
+      <ul class="puces">
+        <li>Only the Git repository of the project you have open: the objects, trees and commits of
+          the local <code>.git</code> directory, read through the <a href="https://www.eclipse.org/jgit/">Eclipse JGit</a>
+          library, exactly as the <code>git</code> command line does.</li>
+        <li>Only the files and commits that the search itself touches — for example, the blobs of the
+          files changed by each commit, compared one after the other.</li>
+        <li>It never reads the files of your project as they are on disk, only their historical versions
+          stored in Git.</li>
+      </ul>
+
+      <h2>What it stores</h2>
+      <ul class="puces">
+        <li><b>Nothing.</b> The plugin writes no file, no history of your searches, no index, no cache,
+          no identifier, no account.</li>
+        <li>Your IDE may of course keep its own cache of the plugin inside its own configuration
+          directory. That is the IDE's behaviour, not the plugin's, and it contains nothing about your
+          searches.</li>
+      </ul>
+
+      <h2>What leaves your machine</h2>
+      <ul class="puces">
+        <li><b>Nothing.</b> The plugin contains no network code: it has no HTTP client, no telemetry,
+          no update check, no licence server, no crash-reporting service.</li>
+        <li>No data is sent to us, to JetBrains, or to any third party. The search is performed entirely
+          on your machine, with your repository.</li>
+        <li>Your IDE itself may have its own telemetry settings; those belong to JetBrains and are
+          configured in the IDE, not by this plugin.</li>
+      </ul>
+
+      <h2>Third parties</h2>
+      <ul class="puces">
+        <li>None. No analytics, no advertising, no attribution service, no external host.</li>
+        <li>One open-source library is bundled inside the plugin and runs entirely locally:
+          Eclipse JGit (Eclipse Distribution License v1.0 / BSD-3-Clause) and JavaEWAH (same family of
+          licences). They are not contacted over the network.</li>
+      </ul>
+
+      <h2>Questions</h2>
+      <ul class="puces">
+        <li>Vendor contact: <a href="mailto:tgg.apps.support@gmail.com">tgg.apps.support@gmail.com</a>.</li>
+        <li>Public issues: <a href="https://github.com/tgg49099-dotcom/find-in-commit-history/issues">the issue tracker</a>.</li>
+      </ul>
+
+      <p class="pied">Last updated: 5 November 2026. This notice applies to version 0.0.1 and later.</p>
+    </article>
+</main>
+</body>
+</html>
