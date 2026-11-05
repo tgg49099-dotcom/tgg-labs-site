@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Publishing Find in Commit History on the JetBrains Marketplace — what to fill in — Tgg Labs</title>
+<meta name="description" content="Step-by-step checklist and exact field values to create the listing of the JetBrains plugin Find in Commit History (com.tgglabs.pickaxe) on the JetBrains Marketplace, version 0.0.1.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%231f6feb'/%3E%3Ctext x='16' y='22' font-family='system-ui,sans-serif' font-size='16' font-weight='700' fill='white' text-anchor='middle'%3E%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+<header class="site">
+  <a class="brand" href="index.html">Tgg Labs</a>
+  <nav class="nav">
+    <a href="index.html#jetbrains">JetBrains plugins</a>
+    <a href="index.html#gumroad">Digital products</a>
+  </nav>
+</header>
+<main>
+    <article class="produit">
+      <p class="fil"><a href="index.html">Tgg Labs</a></p>
+      <h1>Publishing “Find in Commit History” on the JetBrains Marketplace</h1>
+      <p class="lead">Everything to fill in, field by field, for the <b>first</b> publication of the plugin
+        (version 0.0.1). One gesture, about five minutes, no cost.</p>
+
+      <h2>Read this first</h2>
+      <ul class="puces">
+        <li>JetBrains' own documentation: “<b>The first plugin publication must always be uploaded
+          manually</b>”. After this version, the later ones go through the API.</li>
+        <li><b>Do not use the “Upload plugin” button of the vendor page</b>
+          (<code>plugins.jetbrains.com/vendor/tgg-labs</code>): on that page the button adds a version to
+          an <b>existing</b> plugin, and our existing plugin is <i>ML Experiment Cockpit</i> (id 35416) —
+          it would overwrite it. Use the account-menu path below.</li>
+      </ul>
+
+      <h2>The path</h2>
+      <ol>
+        <li>Open <a href="https://plugins.jetbrains.com">plugins.jetbrains.com</a> and log in.</li>
+        <li>Top-right <b>account menu (avatar)</b> → <b>“Upload plugin”</b>.</li>
+        <li>Select the vendor <b>Tgg Labs</b> (<code>tgg-labs</code>).</li>
+        <li>On the form, choose <b>“Create new plugin”</b> if that option appears.</li>
+        <li>Fill in the fields below, then upload the attached ZIP as version <b>0.0.1</b>.</li>
+        <li>Save, then send me the plugin URL (it contains the numeric plugin id).</li>
+      </ol>
+
+      <h2>The fields, exactly</h2>
+      <table>
+        <tr><td><b>Plugin name</b></td><td>Find in Commit History</td></tr>
+        <tr><td><b>Plugin ID</b> <i>(immutable after the first publication)</i></td><td><code>com.tgglabs.pickaxe</code></td></tr>
+        <tr><td><b>Category</b></td><td>Version Control — or the closest VCS entry in the list</td></tr>
+        <tr><td><b>Tags</b></td><td>VCS, VCS Integration, Search and Replace, Code Tools, Productivity, Tools Integration</td></tr>
+        <tr><td><b>Price</b></td><td>Free (0 $) — no paid tier, no trial period</td></tr>
+        <tr><td><b>Licence</b></td><td>MIT — the EULA is here:
+          <a href="https://labs.chiffreo.ch/find-in-commit-history-eula.html">labs.chiffreo.ch/find-in-commit-history-eula.html</a></td></tr>
+        <tr><td><b>Source code</b> <i>(required with an open-source licence)</i></td><td>
+          <a href="https://github.com/tgg49099-dotcom/find-in-commit-history">github.com/tgg49099-dotcom/find-in-commit-history</a></td></tr>
+        <tr><td><b>Privacy policy</b></td><td>
+          <a href="https://labs.chiffreo.ch/find-in-commit-history-privacy.html">labs.chiffreo.ch/find-in-commit-history-privacy.html</a></td></tr>
+        <tr><td><b>Support / bug tracker</b></td><td>
+          <a href="https://github.com/tgg49099-dotcom/find-in-commit-history/issues">github.com/tgg49099-dotcom/find-in-commit-history/issues</a></td></tr>
+        <tr><td><b>Documentation</b></td><td>
+          <a href="https://github.com/tgg49099-dotcom/find-in-commit-history#readme">the README of the repository</a></td></tr>
+        <tr><td><b>Vendor email</b></td><td>tgg.apps.support@gmail.com</td></tr>
+        <tr><td><b>Compatible with</b></td><td>IntelliJ Platform 2026.2 (build 262) and later — <b>no upper bound</b></td></tr>
+        <tr><td><b>Dependency</b></td><td><code>com.intellij.modules.platform</code> only</td></tr>
+        <tr><td><b>Version</b></td><td>0.0.1 — the attached ZIP is the only file to upload</td></tr>
+        <tr><td><b>ZIP checksum</b></td><td>the md5 is written in <code>SHA256.txt</code> at the root of the public repository. A JetBrains ZIP is not
+          byte-for-byte reproducible, so compare the md5 of the file you received with the one I send you
+          (same day, same file).</td></tr>
+      </table>
+
+      <h2>Description to paste (HTML)</h2>
+      <pre>&lt;p&gt;Search your &lt;b&gt;Git history&lt;/b&gt; for the commits that add or remove a string — the
+&lt;code&gt;git log -S&lt;/code&gt; and &lt;code&gt;git log -G&lt;/code&gt; ("pickaxe") search, inside your IDE.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;b&gt;Find where a string came from&lt;/b&gt; — type a string, get the list of commits that added or removed it, most recent first.&lt;/li&gt;
+&lt;li&gt;&lt;b&gt;No false positives&lt;/b&gt; — a line rewritten identically is not reported: only a real change in the number of occurrences is.&lt;/li&gt;
+&lt;li&gt;&lt;b&gt;Regular expressions&lt;/b&gt; — match the diff itself with &lt;code&gt;git log -G&lt;/code&gt; semantics.&lt;/li&gt;
+&lt;li&gt;&lt;b&gt;Filter by path&lt;/b&gt; — restrict the search to the files you care about. Binary files are ignored.&lt;/li&gt;
+&lt;li&gt;&lt;b&gt;Works with your own repository&lt;/b&gt; — the history is read locally, nothing is sent anywhere.&lt;/li&gt;
+&lt;/ul&gt;</pre>
+
+      <h2>If the field refuses HTML, paste this plain text</h2>
+      <pre>Search your Git history for the commits that add or remove a string — the git log -S and git log -G
+("pickaxe") search, inside your IDE.
+- Find where a string came from — type a string, get the list of commits that added or removed it, most recent first.
+- No false positives — a line rewritten identically is not reported: only a real change in the number of occurrences is.
+- Regular expressions — match the diff itself with git log -G semantics.
+- Filter by path — restrict the search to the files you care about. Binary files are ignored.
+- Works with your own repository — the history is read locally, nothing is sent anywhere.</pre>
+
+      <h2>What to send me back</h2>
+      <ul class="puces">
+        <li>the plugin URL (it contains the numeric id) — I need it to write the final description and the
+          remaining fields through the API;</li>
+        <li>the md5 of the ZIP as uploaded.</li>
+      </ul>
+      <p>That is all. The rest — final description, change notes, later versions through the API — is my
+        job, and needs nothing from you.</p>
+    </article>
+</main>
+</body>
+</html>
