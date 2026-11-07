@@ -42,13 +42,14 @@
       <p>If the Jira Service Management API of your site reports that the product is not licensed for use, the app falls back to reading the equivalent Jira tickets that carry the same portal strings. It does not read anything else.</p>
 
       <h2>What it stores</h2>
-      <p><strong>Nothing.</strong> The manifest declares no Forge storage and the code makes no storage call. A scan is computed on the fly and the findings are returned in the response of the scan itself (JSON, or CSV when the CSV format is requested). The <code>generatedAt</code> timestamp of a scan is part of that response; it is not kept anywhere.</p>
+      <p><strong>Nothing.</strong> The manifest declares no Forge storage and the code makes no storage call. A scan is computed on the fly and the findings are returned in the response of the scan itself — shown in the administration page to the administrator who started the scan, and downloadable as CSV. The <code>generatedAt</code> timestamp of a scan is part of that response; it is not kept anywhere.</p>
 
       <h2>Personal data</h2>
       <p>The app does not create an account, does not ask for a name or an e-mail address, and has no user profile. Two honest remarks about the content it reads:</p>
       <ul class="puces">
         <li>The title and the description of an issue can contain personal data typed by the people who wrote it — for example a name or an e-mail address in a ticket title. When the app reads the 20 most recent issues of the scanned projects, it therefore reads that content, and an excerpt of it can appear in the scan result.</li>
-        <li>The scan trigger is declared with <code>authentication: none</code>: the scan URL is public, so anyone who has it can trigger a scan and read its result. Do not install the app on a site whose issue titles contain personal data you would not want a stranger to be able to read.</li>
+        <li>There is no public URL. The scan is started from a button in the Jira administration page (<code>Administration &rarr; Apps &rarr; Portal Accessibility Checker for JSM</code>), which Jira renders only for a signed-in administrator, and the app refuses any scan request that carries no signed-in account. Until version 2.4.0 the app answered a public web trigger declared with <code>authentication: none</code>; that module has been removed.</li>
+        <li>The page offers two <em>optional</em> fields — a name and an e-mail address — so that a reader can see the privacy behaviour: a value typed there comes back <strong>masked</strong> (<code>C***</code>, <code>c***@***</code>), never in clear text, and it is masked everywhere in the answer where it can be.</li>
       </ul>
       <p>What the app never does: it never sends that content to the app developer, to a third party or to any service outside your own Atlassian tenant.</p>
 
@@ -68,13 +69,13 @@
       <h2>Contact</h2>
       <p>Questions, corrections or a request to stop processing can be raised as an issue in the public repository:
         <code>https://github.com/tgg49099-dotcom/codegeist-jsm-accessibility-checker/issues</code></p>
-      <p class="src">Published 4 November 2026 by Tgg Labs &mdash; personal projects by Tgg, in Switzerland.</p>
+      <p class="src">Published 4 November 2026, last updated 7 November 2026, by Tgg Labs &mdash; personal projects by Tgg, in Switzerland.</p>
     </article>
 </main>
 <footer class="site-foot">
   <p>Tgg Labs &mdash; Personal projects by Tgg, in Switzerland.</p>
   <p>Every product on this page links to the listing where it is actually published.
-     Facts and prices on this page were checked on 4 November 2026.</p>
+     Facts and prices on this page were checked on 7 November 2026.</p>
 </footer>
 </body>
 </html>
