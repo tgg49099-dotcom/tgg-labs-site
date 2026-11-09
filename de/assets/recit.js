@@ -20,8 +20,52 @@
     if (s.classList.contains('vu')) return;
     s.classList.add('vu');
     if (s.hasAttribute('data-carte3d')) avecCarte(function (c) { c.demarrer(); });
-    s.querySelectorAll('[data-cible]').forEach(compter);
+    if (calme) s.querySelectorAll('[data-cible]').forEach(compter); // sinon : rejoués à chaque arrivée (jouer)
     if (s === sParc) parcAllumer();
+  }
+
+  // compteur rejouable : de zéro à la valeur, après un délai, sur une durée donnée
+  function compte(el, delai, duree) {
+    var cible = parseFloat(el.getAttribute('data-compte')), loc = document.documentElement.lang || 'en';
+    var f = function (v) { return Math.round(v).toLocaleString(loc).replace(/ /g, ' '); };
+    if (calme) { el.textContent = f(cible); return; }
+    var jeton = (el._jeton || 0) + 1; el._jeton = jeton; el.textContent = f(0);
+    var t0 = performance.now() + delai;
+    (function pas(t) {
+      if (el._jeton !== jeton) return;
+      var k = Math.max(0, Math.min(1, (t - t0) / duree)), e = 1 - Math.pow(1 - k, 2);
+      el.textContent = f(cible * e); if (k < 1) requestAnimationFrame(pas);
+    })(performance.now());
+  }
+  // titres : chaque mot entre à son tour quand la page arrive
+  function decouper(h) {
+    if (h.getAttribute('data-mots')) return; h.setAttribute('data-mots', '1');
+    var k = 0;
+    Array.prototype.slice.call(h.childNodes).forEach(function (nd) {
+      if (nd.nodeType === 3) {
+        var frag = document.createDocumentFragment();
+        nd.textContent.split(/(\s+)/).forEach(function (m) {
+          if (!m) return;
+          if (/^\s+$/.test(m)) { frag.appendChild(document.createTextNode(m)); return; }
+          var sp = document.createElement('span'); sp.className = 'mot'; sp.style.setProperty('--w', k++); sp.textContent = m; frag.appendChild(sp);
+        });
+        h.replaceChild(frag, nd);
+      } else if (nd.nodeType === 1) {
+        var sp2 = document.createElement('span'); sp2.className = 'mot'; sp2.style.setProperty('--w', k++); h.replaceChild(sp2, nd); sp2.appendChild(nd);
+      }
+    });
+  }
+  // arrivée sur une page : titres, compteurs, parc du site, mur des documents se rejouent
+  function jouer(el) {
+    if (!el || calme) return;
+    el.classList.remove('joue'); void el.offsetWidth; el.classList.add('joue');
+    el.querySelectorAll('[data-cible]').forEach(compter);
+    var fl = el.querySelector('.flotte');
+    if (fl) { fl.classList.remove('allume'); void fl.offsetWidth; fl.classList.add('allume'); }
+    el.querySelectorAll('[data-compte]').forEach(function (c) {
+      if (c.closest('.fuite-stat')) compte(c, 1100, 70 * (+c.getAttribute('data-compte') || 1));
+      else compte(c, 150, 1500);
+    });
   }
 
   // compteurs : de zéro à la valeur, une seule fois
@@ -73,7 +117,7 @@
     var C = Math.max(18, Math.round(Math.sqrt(N * 3.2))), R = Math.ceil(N / C);
     var a = Math.min(fw * 0.96 / (C + R), fh * 0.9 / ((C + R) / 2 + 3)), b = a / 2, h = b * 1.25, s = 0.78, hx = a * s, hy = b * s;
     var ox = fx + fw / 2 - (C - R) * a / 2, oy = fy + (fh - ((C + R) * b + h)) / 2 + h;
-    var allumes = PK.t0 < 0 ? (calme ? N : 0) : Math.floor(Math.min(1, (t - PK.t0) / 1800) * N);
+    var tombe = function (id) { if (calme) return 1; if (PK.t0 < 0) return 0; return Math.max(0, Math.min(1, (t - PK.t0 - PK.rang[id] / N * 1500) / 420)); };
     var m = PK.m, B = PK.barres || [], cols = 1;
     PK.M.forEach(function (x) { cols = Math.max(cols, Math.ceil(x[1] / 2)); });
     // lueur sous le champ
@@ -83,7 +127,14 @@
     for (var y = 0; y < R; y++) {
       for (var x = 0; x < C; x++) {
         var id = y * C + x; if (id >= N) break;
-        var cx = ox + (x - y) * a, cy = oy + (x + y) * b, lit = PK.rang[id] < allumes, d = PK.dest[id];
+        var cx = ox + (x - y) * a, cy = oy + (x + y) * b, kf = m > 0.001 ? 1 : tombe(id), lit = kf > 0, d = PK.dest[id];
+        if (kf < 1) {
+          // emplacement vide (socle sombre), le bloc tombe dedans
+          c.globalAlpha = 1; c.beginPath(); c.moveTo(cx, cy - b * s); c.lineTo(cx + a * s, cy); c.lineTo(cx, cy + b * s); c.lineTo(cx - a * s, cy); c.closePath();
+          c.fillStyle = '#0E2740'; c.fill();
+          if (!lit) continue;
+          cy -= (1 - (1 - Math.pow(1 - kf, 3))) * 170;
+        }
         var e = lisse((m - PK.retard[id]) / 0.62), alpha = 1, tx = cx, ty = cy, q = 0;
         var tb = d >= 0 ? B[d] : null;
         if (tb && tb[2] > 0) {
@@ -98,7 +149,7 @@
         var c2 = [px + hx * (1 - e) + (q / 2) * e, py - hh + (-q / 2) * e];
         var c3 = [px + (q / 2) * e, py - hh + hy * (1 - e) + (q / 2) * e];
         var c4 = [px - hx * (1 - e) + (-q / 2) * e, py - hh + (q / 2) * e];
-        c.globalAlpha = alpha;
+        c.globalAlpha = alpha * (kf < 1 ? Math.min(1, kf * 1.8) : 1);
         if (hh > 0.3) {
           c.beginPath(); c.moveTo(c4[0], c4[1]); c.lineTo(c3[0], c3[1]); c.lineTo(c3[0], c3[1] + hh); c.lineTo(c4[0], c4[1] + hh); c.closePath();
           c.fillStyle = lit ? '#B97A08' : '#0C2238'; c.fill();
@@ -110,7 +161,7 @@
       }
     }
     c.globalAlpha = 1;
-    if (PK.t0 >= 0 && t - PK.t0 < 1850) parcDemander();
+    if (PK.t0 >= 0 && t - PK.t0 < 2050) parcDemander();
   }
   function parcAllumer() { if (PK && PK.t0 < 0) { PK.t0 = performance.now(); parcDemander(); } }
 
@@ -175,10 +226,30 @@
     var c = Math.round(prog);
     if (c !== courant) {
       courant = c;
+      arrivee(c);
       points.forEach(function (b, i) { b.setAttribute('aria-current', i === c ? 'true' : 'false'); });
       r.setAttribute('data-scene-courante', c);
     }
   }
+
+  // page c : scène k et, pour la carte, étape j ; l'élément qui « joue » est la scène ou le bloc de l'étape
+  var suites = []; try { suites = JSON.parse(r.getAttribute('data-suites') || '[]'); } catch (x) { suites = []; }
+  var suite = r.querySelector('.recit-suite'), suiteT = suite && suite.querySelector('.rs-t');
+  function pageVers(c) {
+    for (var k = scenes.length - 1; k >= 0; k--) if (c >= debuts[k]) return [k, c - debuts[k]];
+    return [0, 0];
+  }
+  function arrivee(c) {
+    var kj = pageVers(c), sc = scenes[kj[0]];
+    jouer(etapes[kj[0]] > 1 ? sc.querySelector('[data-etape="' + kj[1] + '"]') : sc);
+    if (suite) {
+      var t = suites[c];
+      if (t) { suiteT.textContent = t; suite.hidden = false; suite.classList.remove('neuf'); void suite.offsetWidth; suite.classList.add('neuf'); }
+      else suite.hidden = true;
+    }
+  }
+  if (suite) suite.addEventListener('click', function () { aller(courant + 1); });
+  r.querySelectorAll('.scene h1, .scene h2, .scene .v7-geant').forEach(decouper);
 
   // ---------------------------------------------------------------- une scène par geste (molette, doigt, clavier)
   var anim = null, doigt = false, finDefil = null;

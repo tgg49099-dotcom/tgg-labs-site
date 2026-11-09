@@ -1856,3 +1856,106 @@ body.accueil .tete, body.accueil .tete.sur-carte { position: fixed; top: 0; left
 @media (max-width: 999px) and (max-height: 700px) {
   .recit.anime .s-carte .ouv-legende { padding-top: 72px; }
 }
+
+/* ------------------------------------------------------------------ v9 : un fil d'une page à l'autre */
+/* titres : les mots entrent un à un à chaque arrivée sur la page */
+@media (prefers-reduced-motion: no-preference) {
+  .recit.anime .mot { display: inline-block; }
+  .recit.anime .joue .mot { animation: v9-mot 0.8s cubic-bezier(0.2, 0.75, 0.2, 1) both; animation-delay: calc(var(--w) * 55ms + 80ms); }
+  @keyframes v9-mot { from { opacity: 0; transform: translateY(0.55em); filter: blur(8px); } to { opacity: 1; transform: none; filter: none; } }
+}
+/* annonce de la page suivante */
+.recit-suite { display: none; }
+.recit.anime .recit-suite { position: absolute; left: 50%; bottom: 18px; z-index: 30; display: flex; align-items: center; gap: 10px; padding: 9px 16px 9px 18px;
+  transform: translateX(-50%); border: 1px solid rgba(143, 198, 234, 0.24); border-radius: 999px; background: rgba(6, 26, 44, 0.74); color: var(--c0);
+  font: inherit; font-size: 0.86rem; cursor: pointer; -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px); transition: border-color 0.2s ease; }
+.recit.anime .recit-suite[hidden] { display: none; }
+.recit-suite:hover, .recit-suite:focus-visible { border-color: rgba(255, 182, 37, 0.7); }
+.recit-suite .rs-l { color: var(--c1); font-weight: 600; }
+.recit-suite .rs-t { color: #fff; font-weight: 650; white-space: nowrap; }
+.recit-suite i { width: 8px; height: 8px; margin: -4px 0 0 2px; border-right: 1.6px solid var(--lampe); border-bottom: 1.6px solid var(--lampe); transform: rotate(45deg); }
+@media (prefers-reduced-motion: no-preference) {
+  .recit-suite.neuf { animation: v9-suite 0.6s cubic-bezier(0.2, 0.75, 0.2, 1) 0.5s both; }
+  .recit-suite i { animation: v9-chevron 1.8s ease-in-out 1.2s infinite; }
+  @keyframes v9-suite { from { opacity: 0; transform: translate(-50%, 12px); } to { opacity: 1; transform: translate(-50%, 0); } }
+  @keyframes v9-chevron { 0%, 60%, 100% { transform: rotate(45deg) translate(0, 0); } 30% { transform: rotate(45deg) translate(3px, 3px); } }
+}
+.c3-note { margin: 8px 0 0; color: var(--c1); font-size: 0.8rem; }
+
+/* page site : le parc qui s'allume, son compteur, les champs de la licence */
+.c3-site-parc { display: flex; align-items: flex-end; gap: 18px; margin-top: 18px; }
+.c3-site-parc .c3-site-flotte { flex: 0 1 300px; margin: 0; }
+.c3-site-parc .flotte { width: 100%; max-width: 300px; max-height: min(20svh, 180px); }
+.c3-site-compte { margin: 0 0 6px; }
+.c3-site-compte b { display: block; color: var(--lampe); font-weight: 620; font-stretch: 72%; font-size: clamp(2.6rem, 4.6vw, 3.8rem); line-height: 0.9; text-shadow: 0 0 40px rgba(255, 182, 37, 0.35); font-variant-numeric: tabular-nums; }
+.c3-site-compte span { display: block; max-width: 11rem; margin-top: 6px; color: var(--c1); font-size: 0.78rem; line-height: 1.35; }
+.c3-site-chiffres { display: flex; flex-wrap: wrap; gap: 6px 26px; margin: 14px 0 0; }
+.c3-site-chiffres div { display: grid; gap: 1px; }
+.c3-site-chiffres dt { color: var(--c1); font-size: 0.76rem; }
+.c3-site-chiffres dd { margin: 0; color: #fff; font-weight: 700; font-size: 1.02rem; }
+.c3-site-lic { margin-top: 14px; padding-top: 12px; border-top: 1px solid var(--n-trait); }
+.c3-site-lic p { margin: 0 0 8px; color: var(--c1); font-size: 0.78rem; }
+.c3-site-lic ul { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 7px 14px; }
+.c3-site-lic li { display: flex; align-items: center; gap: 8px; color: var(--c0); font-size: 0.82rem; line-height: 1.25; }
+.c3-site-lic .badge-licence { flex: none; }
+.c3-site-lien { display: inline-block; margin-top: 14px; color: #fff; font-weight: 650; text-decoration: underline; text-decoration-color: var(--lampe); text-underline-offset: 4px; }
+@media (max-width: 999px) {
+  .c3-site-parc { margin-top: 0; gap: 12px; }
+  .c3-site-parc .flotte { max-height: 16svh; }
+  .c3-site-chiffres { margin-top: 8px; gap: 4px 18px; }
+  .c3-site-lic { margin-top: 8px; padding-top: 8px; }
+  .c3-site-lic ul { gap: 5px 10px; }
+  .c3-site-lic li { font-size: 0.76rem; }
+  .c3-site-lien { margin-top: 8px; }
+}
+@media (max-width: 999px) and (max-height: 760px) {
+  .c3-site-lic p, .c3-site-etat { display: none; }
+  .c3-site-compte b { font-size: 2.2rem; }
+}
+
+/* mur des pièces sources : une tuile par document suivi chaque jour */
+.mur { display: grid; grid-template-columns: repeat(13, minmax(0, 1fr)); gap: 5px; max-width: 440px; }
+.mur .d { display: block; aspect-ratio: 3 / 4; border-radius: 2px 6px 2px 2px; background: rgba(231, 238, 245, 0.86); font-size: 0; font-style: normal; }
+.mur .d.nv { background: rgba(143, 198, 234, 0.2); }
+.mur .d.retire { position: relative; background: transparent; box-shadow: inset 0 0 0 1px rgba(238, 159, 159, 0.85); }
+.mur .d.retire::after { content: ""; position: absolute; left: 18%; right: 18%; top: 50%; height: 1.4px; background: rgba(238, 159, 159, 0.9); transform: rotate(-52deg); }
+.mur-legende { display: flex; flex-wrap: wrap; gap: 6px 16px; margin: 14px 0 0; color: var(--c1); font-size: 0.78rem; }
+.mur-legende span::before { content: ""; display: inline-block; width: 9px; height: 12px; margin-right: 6px; vertical-align: -1px; border-radius: 1px 3px 1px 1px; }
+.mur-legende .ok::before { background: rgba(231, 238, 245, 0.86); }
+.mur-legende .retire::before { box-shadow: inset 0 0 0 1px rgba(238, 159, 159, 0.85); }
+.mur-legende .nv::before { background: rgba(143, 198, 234, 0.2); }
+@media (prefers-reduced-motion: no-preference) {
+  .recit.anime .s-fuite.joue .mur .d { animation: v9-tuile 0.45s ease calc(var(--j) * 5ms) both; }
+  .recit.anime .s-fuite.joue .mur .d.retire { animation: v9-tuile 0.45s ease calc(var(--j) * 5ms) both, v9-retire 0.55s ease calc(1100ms + var(--r) * 70ms) both; }
+  .recit.anime .s-fuite.joue .mur .d.retire::after { animation: v9-trait 0.4s ease calc(1250ms + var(--r) * 70ms) both; }
+  @keyframes v9-tuile { from { opacity: 0; transform: translateY(8px) scale(0.85); } to { opacity: 1; transform: none; } }
+  @keyframes v9-retire { from { background: rgba(231, 238, 245, 0.86); box-shadow: inset 0 0 0 1px rgba(238, 159, 159, 0); } 40% { background: rgba(238, 159, 159, 0.9); } to { background: transparent; box-shadow: inset 0 0 0 1px rgba(238, 159, 159, 0.85); } }
+  @keyframes v9-trait { from { transform: rotate(-52deg) scaleX(0); } to { transform: rotate(-52deg) scaleX(1); } }
+}
+.fuite-stat b { font-variant-numeric: tabular-nums; }
+@media (max-width: 999px) {
+  .mur { max-width: none; gap: 4px; }
+  .recit.anime .s-fuite .fuite-visuel { margin-top: 4px; }
+}
+/* téléphones : l'annonce de la page suivante seulement s'il y a la place */
+@media (max-width: 699px) {
+  .recit.anime .recit-suite { bottom: 10px; padding: 7px 13px 7px 14px; font-size: 0.8rem; }
+}
+@media (max-width: 699px) and (min-height: 741px) {
+  .recit.anime .scene > .cadre { padding-bottom: 58px; }
+  .recit.anime .s-carte .h5-outils, .recit.anime .s-carte .c3-site { padding-bottom: 54px; }
+  .recit.anime .s-parc > .cadre { padding-bottom: calc(7svh + 40px); }
+}
+@media (max-width: 699px) and (max-height: 740px) {
+  .recit.anime .recit-suite { display: none; }
+}
+
+@media (max-width: 699px) {
+  .mur { grid-template-columns: repeat(19, minmax(0, 1fr)); gap: 3px; }
+  .recit.anime .s-moteurs .m-proj { display: none; }
+  .recit.anime .s-moteurs .v5-barres { gap: 8px; }
+  .recit.anime .s-moteurs .v5-note { margin-top: 12px; font-size: 0.84rem; }
+}
+@media (min-width: 700px) and (max-width: 999px) {
+  .mur { max-width: 520px; grid-template-columns: repeat(17, minmax(0, 1fr)); }
+}
