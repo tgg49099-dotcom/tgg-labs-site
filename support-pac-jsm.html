@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Support — Portal Accessibility Checker for JSM — Tgg Labs</title>
+<meta name="description" content="Support page for Portal Accessibility Checker for JSM, a read-only Atlassian Forge app. How to ask for help, how to report a security issue, and what the app can and cannot check.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%231f6feb'/%3E%3Ctext x='16' y='22' font-family='system-ui,sans-serif' font-size='16' font-weight='700' fill='white' text-anchor='middle'%3ET%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="site">
+  <a class="brand" href="index.html">Tgg Labs</a>
+  <nav class="nav">
+    <a href="index.html#jetbrains">JetBrains plugins</a>
+    <a href="index.html#gumroad">Digital products</a>
+  </nav>
+</header>
+<main>
+    <article class="produit">
+      <p class="fil"><a href="index.html">Tgg Labs</a></p>
+      <h1>Support — Portal Accessibility Checker for JSM</h1>
+      <p class="lead">How to ask for help, how to report a security issue, and what this app can and cannot check. This page describes version 2.5.0.</p>
+
+      <h2>Where to ask</h2>
+      <p>Support is handled in the public repository's issue tracker:
+        <code>https://github.com/tgg49099-dotcom/codegeist-jsm-accessibility-checker/issues</code></p>
+      <p class="note">This is a one-person project. There is no 24/7 support, no guaranteed response time and no support contract. A report that contains a reproducible example is usually answered faster than a question without one.</p>
+      <ul class="puces">
+        <li>Open a new issue and describe the problem in one sentence in the title.</li>
+        <li>Say which version you run (<code>Administration &rarr; Apps &rarr; Portal Accessibility Checker for JSM</code> shows it) and which environment: production, staging or development.</li>
+        <li>Paste the line that starts with <code>Mode:</code> from the result panel — it tells whether the scan ran in <code>jsm</code> or in <code>jira-fallback</code> mode, and how many sources were read.</li>
+        <li>If a finding is wrong, quote the criterion, the message and the location, and say what you expected instead. The rule engine is open source, so the rule can be checked and corrected in the open.</li>
+        <li>Do not paste customer data, ticket contents or personal data into a public issue. Describe them instead.</li>
+      </ul>
+      <p>For a question that does not need the tracker — "is my portal covered?", "can I use it on Jira Data Center?" — the answer is usually already in <a href="privacy.html">the privacy notice</a> and in the repository's <code>README.md</code>.</p>
+
+      <h2>What the app can and cannot check</h2>
+      <p>The app reads your site through the REST API. The REST API returns metadata, not a rendered page. Three things are therefore reported as <em>not checkable</em>, and the app says so instead of guessing:</p>
+      <ul class="puces">
+        <li>rendered contrast (criterion 1.4.3) — a ratio computed on a white-background assumption is reported as <em>uncertain contrast</em>, never as non-conformant;</li>
+        <li>reading order and focus order on screen (criterion 2.4.7);</li>
+        <li>visible rendered labels (for example the string a portal actually paints on the screen) and target size (criterion 2.5.8).</li>
+      </ul>
+      <p>Six criteria are <em>partial</em>: they produce a signal to verify, not a proof, and each finding says which of the two it is. The complete list, criterion by criterion, is in the repository: <code>docs/CRITERES-WCAG-2.2-AA.md</code>.</p>
+      <p>The app never says "compliant" or "non-compliant". It produces findings that a human verifies. If you need a certified accessibility audit, this app is not one.</p>
+
+      <h2>Security issues</h2>
+      <p>Report a suspected vulnerability in the same issue tracker, with the title prefixed <code>[SECURITY]</code>. Please do not open a public issue for a vulnerability that is still unfixed and exploitable — describe it in a private message first and the details will follow.</p>
+      <p>Known facts about the security model, stated plainly:</p>
+      <ul class="puces">
+        <li>there is <strong>no public URL</strong>: the scan is started from a button in the Jira administration page, which Jira renders only for a signed-in administrator, and the resolver refuses any call that carries no signed-in account;</li>
+        <li>until version 2.4.0 the app answered a web trigger declared with <code>authentication: none</code>; that module has been <strong>removed</strong> in 2.5.0 and its URLs now answer <code>424</code>;</li>
+        <li>the manifest declares only the read scopes <code>read:jira-work</code> and <code>read:servicedesk-request</code>: no write scope, no admin scope, no egress;</li>
+        <li>the whole source is public, so the behaviour described here can be read directly rather than taken on trust.</li>
+      </ul>
+
+      <h2>Privacy questions</h2>
+      <p>Everything about the data is in the <a href="privacy.html">privacy notice</a>: what is read, what is stored (nothing), where it goes (nowhere outside your own tenant), and how long it is kept (not at all). A request to stop processing is a request to remove the app: <code>Administration &rarr; Manage apps</code>.</p>
+
+      <h2>Links</h2>
+      <ul class="puces">
+        <li>Privacy notice: <code>https://labs.chiffreo.ch/privacy.html</code></li>
+        <li>Source code and documentation: <code>https://github.com/tgg49099-dotcom/codegeist-jsm-accessibility-checker</code></li>
+        <li>Issue tracker: <code>https://github.com/tgg49099-dotcom/codegeist-jsm-accessibility-checker/issues</code></li>
+        <li>Licence: MIT — see <code>LICENSE</code> in the repository.</li>
+      </ul>
+      <p class="src">Written 9 November 2026 for version 2.5.0, by Tgg Labs &mdash; personal projects by Tgg, in Switzerland.</p>
+    </article>
+</main>
+<footer class="site-foot">
+  <p>Tgg Labs &mdash; Personal projects by Tgg, in Switzerland.</p>
+  <p>Every product on this page links to the listing where it is actually published.
+     Facts and prices on this page were checked on 9 November 2026.</p>
+</footer>
+</body>
+</html>
