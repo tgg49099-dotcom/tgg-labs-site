@@ -102,5 +102,20 @@
   "url_licence": "https://creativecommons.org/licenses/by/4.0/",
   "page": "https://commons.wikimedia.org/wiki/File:NOIRLab_HQ_Server_Racks_(6V6A0395-CC).jpg",
   "recadree": true
+ },
+ "campus-frauenfeld-large": {
+  "tailles": [
+   1280,
+   1920,
+   2560
+  ],
+  "rapport": 1.7769551133734383,
+  "legende": "Data centre in Frauenfeld, Switzerland",
+  "auteur": "Kecko",
+  "licence": "CC BY 2.0",
+  "url_licence": "https://creativecommons.org/licenses/by/2.0/",
+  "page": "https://commons.wikimedia.org/wiki/File:CAMPUS_-_Military_Data_Center_(52106762896).jpg",
+  "recadree": false,
+  "miroir": true
  }
 }
