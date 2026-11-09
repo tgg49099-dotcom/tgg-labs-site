@@ -399,3 +399,10 @@ table.dico { min-width: 520px; }
   #projets td:nth-child(6) { grid-area: d; text-align: right; color: var(--steel); }
   #projets td.vide { display: none; }
 }
+
+/* langues */
+.langues { display: flex; gap: 2px; font-size: 0.85rem; font-weight: 600; }
+.langues a { color: rgba(255, 255, 255, 0.75); text-decoration: none; padding: 4px 6px; border-radius: 4px; }
+.langues a:hover { color: #fff; }
+.langues a[aria-current="true"] { color: #fff; background: rgba(255, 255, 255, 0.14); }
+@media (max-width: 700px) { .langues { margin-left: auto; } }

@@ -1,0 +1,106 @@
+{
+ "campus-frauenfeld": {
+  "tailles": [
+   900,
+   1500
+  ],
+  "rapport": 1.1,
+  "legende": "Data centre in Frauenfeld, Switzerland",
+  "auteur": "Kecko",
+  "licence": "CC BY 2.0",
+  "url_licence": "https://creativecommons.org/licenses/by/2.0/",
+  "page": "https://commons.wikimedia.org/wiki/File:CAMPUS_-_Military_Data_Center_(52106762896).jpg",
+  "recadree": true
+ },
+ "campus-frauenfeld-tel": {
+  "tailles": [
+   720,
+   1080
+  ],
+  "rapport": 1.3333333333333333,
+  "legende": "Data centre in Frauenfeld, Switzerland",
+  "auteur": "Kecko",
+  "licence": "CC BY 2.0",
+  "url_licence": "https://creativecommons.org/licenses/by/2.0/",
+  "page": "https://commons.wikimedia.org/wiki/File:CAMPUS_-_Military_Data_Center_(52106762896).jpg",
+  "recadree": true
+ },
+ "poste-nuit": {
+  "tailles": [
+   1280,
+   1920
+  ],
+  "rapport": 2.3333333333333335,
+  "legende": "Substation at night, Vääksy, Finland",
+  "auteur": "Unnerving duck",
+  "licence": "CC BY-SA 4.0",
+  "url_licence": "https://creativecommons.org/licenses/by-sa/4.0/",
+  "page": "https://commons.wikimedia.org/wiki/File:Substation_in_V%C3%A4%C3%A4ksy_at_night.jpg",
+  "recadree": true
+ },
+ "groupes-italie": {
+  "tailles": [
+   800,
+   1400
+  ],
+  "rapport": 1.3333333333333333,
+  "legende": "Diesel generators at a data centre nearing completion, Italy",
+  "auteur": "Lapalmauz",
+  "licence": "CC BY-SA 4.0",
+  "url_licence": "https://creativecommons.org/licenses/by-sa/4.0/",
+  "page": "https://commons.wikimedia.org/wiki/File:Una_batteria_di_grossi_generatori_alimentati_a_gasolio_in_un_Data_Center_in_via_di_ultimazione.jpg",
+  "recadree": true
+ },
+ "groupe-cummins": {
+  "tailles": [
+   640,
+   1100
+  ],
+  "rapport": 1.3333333333333333,
+  "legende": "Standby generator in a hospital data centre",
+  "auteur": "Mikael Häggström",
+  "licence": "CC0",
+  "url_licence": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "page": "https://commons.wikimedia.org/wiki/File:Power_generator_of_a_hospital_data_center.jpg",
+  "recadree": true
+ },
+ "chantier-dresde": {
+  "tailles": [
+   640,
+   1100
+  ],
+  "rapport": 1.3333333333333333,
+  "legende": "Construction site with tower cranes, Dresden",
+  "auteur": "Bybbisch94",
+  "licence": "CC BY-SA 4.0",
+  "url_licence": "https://creativecommons.org/licenses/by-sa/4.0/",
+  "page": "https://commons.wikimedia.org/wiki/File:20260721.Dresden_Baustelle_Lehmann-Zentrum-B%C3%BCrogeb%C3%A4ude_LZB.-011.jpg",
+  "recadree": true
+ },
+ "poste-750kv": {
+  "tailles": [
+   640,
+   1100
+  ],
+  "rapport": 1.3333333333333333,
+  "legende": "Switchyard of a 750 kV substation",
+  "auteur": "Novoklimov",
+  "licence": "CC BY 4.0",
+  "url_licence": "https://creativecommons.org/licenses/by/4.0/",
+  "page": "https://commons.wikimedia.org/wiki/File:Switchyard_of_electric_substation_750kV.png",
+  "recadree": true
+ },
+ "baies-serveurs": {
+  "tailles": [
+   640,
+   1100
+  ],
+  "rapport": 1.3333333333333333,
+  "legende": "Server racks",
+  "auteur": "NOIRLab/NSF/AURA/T. Slovinský",
+  "licence": "CC BY 4.0",
+  "url_licence": "https://creativecommons.org/licenses/by/4.0/",
+  "page": "https://commons.wikimedia.org/wiki/File:NOIRLab_HQ_Server_Racks_(6V6A0395-CC).jpg",
+  "recadree": true
+ }
+}
