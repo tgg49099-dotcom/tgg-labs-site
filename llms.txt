@@ -7,8 +7,9 @@
 - [Method and coverage](https://standbyatlas.com/method/): definitions, coverage by country, corrections
 - [Free sample and data dictionary](https://standbyatlas.com/data/): 20 records as CSV
 - [Report and licences](https://standbyatlas.com/pricing/): founding report, annual watch, team and resale licences
-- [New filings feed](https://standbyatlas.com/feed.xml): Atom
+- [New filings feed](https://standbyatlas.com/feed.xml): Atom; feeds per engine make and per country at https://standbyatlas.com/alerts/
 - [Free JSON API](https://standbyatlas.com/api/v1/projects.json): every project with free fields and its official source; OpenAPI at https://standbyatlas.com/api/openapi.json
+- [MCP server](https://standbyatlas.com/mcp): Streamable HTTP, no sign-in; tools search_projects, latest_filings, pipeline_stats, search, fetch. How to connect: https://standbyatlas.com/api/
 
 ## Citation
 Standby Atlas, European data-centre pipeline, data as of 9 November 2026, https://standbyatlas.com/
