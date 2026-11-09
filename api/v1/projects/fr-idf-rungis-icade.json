@@ -1,0 +1,15 @@
+{
+ "id": "FR-IDF-RUNGIS-ICADE",
+ "country": "France",
+ "municipality": "Rungis",
+ "operator": "Icade",
+ "stage": "Environmental-authority opinion (MRAe)",
+ "filing_date": "2025-05-07",
+ "it_mw": 84.0,
+ "grid_mw": 130.0,
+ "backup_generators": 59,
+ "thermal_mw": 505.0,
+ "engine_makes": "",
+ "source_authority": "Mission régionale d'autorité environnementale (MRAe)",
+ "source_url": "https://www.mrae.developpement-durable.gouv.fr/IMG/pdf/2025-05-07_rungis_94_projet_de_datacenter_dicade_delibere.pdf"
+}

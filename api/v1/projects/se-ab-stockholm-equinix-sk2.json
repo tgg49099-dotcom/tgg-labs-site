@@ -1,0 +1,15 @@
+{
+ "id": "SE-AB-STOCKHOLM-EQUINIX-SK2",
+ "country": "Sweden",
+ "municipality": "Stockholm (Förbrännaren 10)",
+ "operator": "Equinix (Sweden) AB",
+ "stage": "Environmental permit granted",
+ "filing_date": "2023-06-08",
+ "it_mw": null,
+ "grid_mw": null,
+ "backup_generators": 16,
+ "thermal_mw": 88.3,
+ "engine_makes": "",
+ "source_authority": "Naturvårdsverket",
+ "source_url": "https://naturvardsverket.se/497b37/contentassets/781859e933a341fab467a6212408a590/240418/2023-06-08-mpd-stockholm.pdf"
+}

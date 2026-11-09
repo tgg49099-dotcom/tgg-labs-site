@@ -1,0 +1,15 @@
+{
+ "id": "NO-ROGALAND-SAUDA-YFOSS",
+ "country": "Norway",
+ "municipality": "Sauda (Handelandsvegen 140)",
+ "operator": "Yfoss AS",
+ "stage": "Air-emissions permit application",
+ "filing_date": "2026-01-29",
+ "it_mw": null,
+ "grid_mw": 10.0,
+ "backup_generators": null,
+ "thermal_mw": null,
+ "engine_makes": "",
+ "source_authority": "Statsforvalteren",
+ "source_url": "https://www.statsforvalteren.no/contentassets/68f174540503416f92fc5343668ad615/offentleg-hoyring--industri--sauda--yfoss-as--soknad-om-loyve-etter-forureiningslova-for-etablering-av-datasenter.pdf"
+}

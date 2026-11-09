@@ -1,0 +1,15 @@
+{
+ "id": "FR-IDF-BAILLY-BNPPARIBAS-MAE2",
+ "country": "France",
+ "municipality": "Bailly-Romainvilliers",
+ "operator": "BNP Paribas",
+ "stage": "Environmental-authority opinion (MRAe)",
+ "filing_date": "2021-08-18",
+ "it_mw": null,
+ "grid_mw": null,
+ "backup_generators": 6,
+ "thermal_mw": null,
+ "engine_makes": "",
+ "source_authority": "Mission régionale d'autorité environnementale (MRAe)",
+ "source_url": "https://www.mrae.developpement-durable.gouv.fr/IMG/pdf/2021-08-18__avis_data_center_bailly_77_v_deliberee.pdf"
+}

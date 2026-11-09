@@ -1,0 +1,15 @@
+{
+ "id": "GB-LND-EALING-EQUINIX-POWERGATE",
+ "country": "United Kingdom",
+ "municipality": "London (Park Royal, 2 Powergate Business Park, Volt Avenue)",
+ "operator": "Equinix (UK) Limited",
+ "stage": "Permit variation granted",
+ "filing_date": "2023-12-21",
+ "it_mw": null,
+ "grid_mw": null,
+ "backup_generators": 33,
+ "thermal_mw": 199.0,
+ "engine_makes": "",
+ "source_authority": "Environment Agency",
+ "source_url": "https://assets.publishing.service.gov.uk/media/659d56477e39680013a81a40/Variation_Notice_TP3500PB-V003.pdf"
+}

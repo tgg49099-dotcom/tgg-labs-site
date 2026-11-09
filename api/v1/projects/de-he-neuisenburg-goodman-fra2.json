@@ -1,0 +1,15 @@
+{
+ "id": "DE-HE-NEUISENBURG-GOODMAN-FRA2",
+ "country": "Germany",
+ "municipality": "Neu-Isenburg",
+ "operator": "Goodman Alana Logistics (Lux) S.à r.l.",
+ "stage": "Emissions permit granted (BImSchG)",
+ "filing_date": "2025-12-15",
+ "it_mw": null,
+ "grid_mw": null,
+ "backup_generators": 40,
+ "thermal_mw": 292.0,
+ "engine_makes": "Caterpillar",
+ "source_authority": "Regierungspräsidium Darmstadt",
+ "source_url": "https://rp-darmstadt.hessen.de/sites/rp-darmstadt.hessen.de/files/2025-12/oeb_goodman_alana_logistics_entscheidung_homepage.pdf"
+}

@@ -1,0 +1,15 @@
+{
+ "id": "DE-NW-BEDBURG-MICROSOFT-NRW08-09",
+ "country": "Germany",
+ "municipality": "Bedburg",
+ "operator": "Microsoft Deutschland MCIO GmbH",
+ "stage": "Emissions permit application (BImSchG)",
+ "filing_date": "2026-07-29",
+ "it_mw": null,
+ "grid_mw": null,
+ "backup_generators": 66,
+ "thermal_mw": 545.3,
+ "engine_makes": "",
+ "source_authority": "Bezirksregierung Köln",
+ "source_url": "https://www.bezreg-koeln.nrw.de/bekanntmachungen?type=83&page=0"
+}

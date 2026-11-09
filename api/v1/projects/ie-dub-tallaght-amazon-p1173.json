@@ -1,0 +1,15 @@
+{
+ "id": "IE-DUB-TALLAGHT-AMAZON-P1173",
+ "country": "Ireland",
+ "municipality": "Tallaght (Airton Road)",
+ "operator": "Amazon Data Services Ireland Limited",
+ "stage": "Industrial-emissions licence application",
+ "filing_date": "2023-01-20",
+ "it_mw": null,
+ "grid_mw": null,
+ "backup_generators": null,
+ "thermal_mw": null,
+ "engine_makes": "",
+ "source_authority": "Environmental Protection Agency (Ireland)",
+ "source_url": "https://epawebapp.epa.ie/licences/lic_eDMS/090151b28085f950.pdf"
+}

@@ -1,0 +1,15 @@
+{
+ "id": "FR-HDF-GRAVELINES-OVHCLOUD",
+ "country": "France",
+ "municipality": "Gravelines",
+ "operator": "OVHcloud",
+ "stage": "Environmental-authority opinion (MRAe)",
+ "filing_date": "2025-10-28",
+ "it_mw": null,
+ "grid_mw": null,
+ "backup_generators": 69,
+ "thermal_mw": 185.0,
+ "engine_makes": "",
+ "source_authority": "Mission régionale d'autorité environnementale (MRAe)",
+ "source_url": "https://www.mrae.developpement-durable.gouv.fr/IMG/pdf/005469_ap__actualisation7183_datacenter_ovh_gravelines.pdf"
+}

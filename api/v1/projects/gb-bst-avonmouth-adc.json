@@ -1,0 +1,15 @@
+{
+ "id": "GB-BST-AVONMOUTH-ADC",
+ "country": "United Kingdom",
+ "municipality": "Bristol (Severn Road, Avonmouth / Pilning)",
+ "operator": "Avonmouth Data Centre Limited",
+ "stage": "Environmental permit application",
+ "filing_date": "2026-05-21",
+ "it_mw": null,
+ "grid_mw": null,
+ "backup_generators": 32,
+ "thermal_mw": 233.28,
+ "engine_makes": "",
+ "source_authority": "Environment Agency",
+ "source_url": "https://consult.environment-agency.gov.uk/psc/bs11-0yu-avonmouth-data-centre-limited/supporting_documents/non-technical-summarypdf"
+}

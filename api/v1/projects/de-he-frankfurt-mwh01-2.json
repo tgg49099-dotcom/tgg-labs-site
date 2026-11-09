@@ -1,0 +1,15 @@
+{
+ "id": "DE-HE-FRANKFURT-MWH01-2",
+ "country": "Germany",
+ "municipality": "Frankfurt am Main (Seckbach)",
+ "operator": "MWH01 GmbH & Co. KG",
+ "stage": "Emissions permit granted (BImSchG)",
+ "filing_date": "2025-03-18",
+ "it_mw": null,
+ "grid_mw": null,
+ "backup_generators": 8,
+ "thermal_mw": 53.1,
+ "engine_makes": "MTU",
+ "source_authority": "Regierungspräsidium Darmstadt",
+ "source_url": "https://rp-darmstadt.hessen.de/sites/rp-darmstadt.hessen.de/files/2025-03/veroeffentlichung_bescheid_homepagerp_mwh01.2.pdf"
+}

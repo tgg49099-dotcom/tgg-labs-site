@@ -1,0 +1,15 @@
+{
+ "id": "IE-DUB-BALLYCOOLIN-SDR4-ORION",
+ "country": "Ireland",
+ "municipality": "Dublin 15 (Ballycoolin, Orion Business Campus)",
+ "operator": "South Dublin Routing 4 No. 2 Limited",
+ "stage": "Industrial-emissions licence application",
+ "filing_date": "2024-09-01",
+ "it_mw": null,
+ "grid_mw": null,
+ "backup_generators": 10,
+ "thermal_mw": null,
+ "engine_makes": "",
+ "source_authority": "Environmental Protection Agency (Ireland)",
+ "source_url": "https://epawebapp.epa.ie/licences/lic_eDMS/090151b2808f5072.pdf"
+}

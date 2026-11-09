@@ -1,0 +1,15 @@
+{
+ "id": "IE-DUB-CLONDALKIN-MICROSOFT-DB3-5",
+ "country": "Ireland",
+ "municipality": "Clondalkin (Grange Castle South Business Park)",
+ "operator": "Microsoft Operations Ireland Ltd",
+ "stage": "Industrial-emissions licence application",
+ "filing_date": "2023-03-01",
+ "it_mw": null,
+ "grid_mw": null,
+ "backup_generators": 41,
+ "thermal_mw": 212.58,
+ "engine_makes": "",
+ "source_authority": "Environmental Protection Agency (Ireland)",
+ "source_url": "https://epawebapp.epa.ie/licences/lic_eDMS/090151b28086a720.pdf"
+}

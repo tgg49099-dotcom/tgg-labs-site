@@ -1,0 +1,15 @@
+{
+ "id": "FR-IDF-DUGNY-DIGITALREALTY-HUB",
+ "country": "France",
+ "municipality": "Dugny",
+ "operator": "Digital Dugny",
+ "stage": "Environmental-authority opinion",
+ "filing_date": "2024-04-11",
+ "it_mw": null,
+ "grid_mw": null,
+ "backup_generators": 108,
+ "thermal_mw": 814.0,
+ "engine_makes": "",
+ "source_authority": "Autorité environnementale (IGEDD)",
+ "source_url": "https://www.igedd.developpement-durable.gouv.fr/IMG/pdf/240411_centre_donnees_dugny_digital_hub_93_debattu_corrige_cle565e1b.pdf"
+}

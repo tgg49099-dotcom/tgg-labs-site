@@ -1,0 +1,15 @@
+{
+ "id": "GB-LND-HAYES-ARK-UNIONPARK-EC3",
+ "country": "United Kingdom",
+ "municipality": "Hayes (Union Park)",
+ "operator": "Ark Data Centres Limited",
+ "stage": "Environmental permit granted",
+ "filing_date": "2025-10-06",
+ "it_mw": null,
+ "grid_mw": null,
+ "backup_generators": 12,
+ "thermal_mw": 96.12,
+ "engine_makes": "",
+ "source_authority": "Environment Agency",
+ "source_url": "https://assets.publishing.service.gov.uk/media/68e64d9649e17d00a56fff0e/Application_Bespoke_A001_Decision_Document_-_03102025.pdf"
+}

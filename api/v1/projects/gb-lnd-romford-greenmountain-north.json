@@ -1,0 +1,15 @@
+{
+ "id": "GB-LND-ROMFORD-GREENMOUNTAIN-NORTH",
+ "country": "United Kingdom",
+ "municipality": "Romford",
+ "operator": "Green Mountain DC UK Limited",
+ "stage": "Permit variation granted",
+ "filing_date": "2026-02-19",
+ "it_mw": null,
+ "grid_mw": null,
+ "backup_generators": 17,
+ "thermal_mw": null,
+ "engine_makes": "",
+ "source_authority": "Environment Agency",
+ "source_url": "https://assets.publishing.service.gov.uk/media/69a160a1c497bac082bc776c/Application_Variation_V002_Decision_Document_-_19022026.pdf"
+}

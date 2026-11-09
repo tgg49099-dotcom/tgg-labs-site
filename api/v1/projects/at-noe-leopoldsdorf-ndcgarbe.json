@@ -1,0 +1,15 @@
+{
+ "id": "AT-NOE-LEOPOLDSDORF-NDCGARBE",
+ "country": "Austria",
+ "municipality": "Leopoldsdorf",
+ "operator": "NDC-Garbe",
+ "stage": "Rezoning pending",
+ "filing_date": "2026-08-27",
+ "it_mw": null,
+ "grid_mw": null,
+ "backup_generators": null,
+ "thermal_mw": null,
+ "engine_makes": "",
+ "source_authority": "Landtag of Lower Austria",
+ "source_url": "https://noe-landtag.gv.at/fileadmin/gegenstaende/20/10/1059/1059_Antrag.pdf"
+}

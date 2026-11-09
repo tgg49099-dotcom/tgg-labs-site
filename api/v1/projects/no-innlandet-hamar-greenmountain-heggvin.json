@@ -1,0 +1,15 @@
+{
+ "id": "NO-INNLANDET-HAMAR-GREENMOUNTAIN-HEGGVIN",
+ "country": "Norway",
+ "municipality": "Hamar (Heggvin næringspark)",
+ "operator": "Green Mountain AS / Green Mountain Innlandet AS",
+ "stage": "Air-emissions permit application",
+ "filing_date": "2024-02-14",
+ "it_mw": 90.0,
+ "grid_mw": 110.0,
+ "backup_generators": 130,
+ "thermal_mw": null,
+ "engine_makes": "",
+ "source_authority": "NVE (Norwegian Water Resources and Energy Directorate)",
+ "source_url": "https://webfileservice.nve.no/API/PublishedFiles/Download/03000120-5976-47f4-a382-1d90d6edcaff/202315098/3437013"
+}

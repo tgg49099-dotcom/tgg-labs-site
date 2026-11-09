@@ -1,0 +1,15 @@
+{
+ "id": "IE-DUB-LUCAN-EDGECONNEX-DUB06",
+ "country": "Ireland",
+ "municipality": "Lucan (Ballymakaily)",
+ "operator": "EdgeConneX Ireland Limited",
+ "stage": "Planning permission granted on appeal",
+ "filing_date": "2025-07-31",
+ "it_mw": null,
+ "grid_mw": null,
+ "backup_generators": 24,
+ "thermal_mw": null,
+ "engine_makes": "",
+ "source_authority": "An Coimisiún Pleanála",
+ "source_url": "https://www.pleanala.ie/anbordpleanala/media/abp/cases/orders/317/d317802.pdf"
+}

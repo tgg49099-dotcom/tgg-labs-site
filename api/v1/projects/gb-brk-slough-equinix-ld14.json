@@ -1,0 +1,15 @@
+{
+ "id": "GB-BRK-SLOUGH-EQUINIX-LD14",
+ "country": "United Kingdom",
+ "municipality": "Slough (Slough Trading Estate, Buckingham Avenue)",
+ "operator": "Equinix (UK) Limited",
+ "stage": "Permit variation granted",
+ "filing_date": "2025-08-29",
+ "it_mw": null,
+ "grid_mw": null,
+ "backup_generators": 89,
+ "thermal_mw": 495.5,
+ "engine_makes": "",
+ "source_authority": "Environment Agency",
+ "source_url": "https://assets.publishing.service.gov.uk/media/68bed2cdde0987fe84e0dd49/Application_Variation_V004_Notice_Issued_-_29082025.pdf"
+}

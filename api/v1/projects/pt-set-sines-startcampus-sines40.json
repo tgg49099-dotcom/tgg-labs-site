@@ -1,0 +1,15 @@
+{
+ "id": "PT-SET-SINES-STARTCAMPUS-SINES40",
+ "country": "Portugal",
+ "municipality": "Sines (Zona Industrial e Logística de Sines)",
+ "operator": "START – Sines Transatlantic Renewable & Technology Campus (Start Campus)",
+ "stage": "Final design compliance review",
+ "filing_date": "2024-11-13",
+ "it_mw": 495.0,
+ "grid_mw": null,
+ "backup_generators": 506,
+ "thermal_mw": null,
+ "engine_makes": "",
+ "source_authority": "siaia.apambiente.pt",
+ "source_url": "https://siaia.apambiente.pt/AIADOC/RECAPE564/parecer_recape_aia363320241113135846.pdf"
+}

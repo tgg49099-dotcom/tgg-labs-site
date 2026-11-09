@@ -1,0 +1,15 @@
+{
+ "id": "DE-HE-HATTERSHEIM-DIGITALFRANKFURT2-FRA33",
+ "country": "Germany",
+ "municipality": "Hattersheim am Main",
+ "operator": "Digital Frankfurt 2 B.V.",
+ "stage": "Emissions permit granted (BImSchG)",
+ "filing_date": "2024-08-09",
+ "it_mw": null,
+ "grid_mw": null,
+ "backup_generators": 33,
+ "thermal_mw": 189.0,
+ "engine_makes": "Cummins",
+ "source_authority": "Regierungspräsidium Darmstadt",
+ "source_url": "https://rp-darmstadt.hessen.de/sites/rp-darmstadt.hessen.de/files/2024-10/besch-ie-rl_digital-f_2024-08-09.pdf"
+}

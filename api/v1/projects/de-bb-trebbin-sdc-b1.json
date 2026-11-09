@@ -1,0 +1,15 @@
+{
+ "id": "DE-BB-TREBBIN-SDC-B1",
+ "country": "Germany",
+ "municipality": "Trebbin",
+ "operator": "SDC T Lux Investor S.à r.l.",
+ "stage": "Emissions permit application (BImSchG)",
+ "filing_date": "2025-06-06",
+ "it_mw": null,
+ "grid_mw": null,
+ "backup_generators": 25,
+ "thermal_mw": 187.0,
+ "engine_makes": "",
+ "source_authority": "UVP-Portal",
+ "source_url": "https://www.uvp-verbund.de/documents-ige-ng/igc_bb/b18fc926-7fb9-4645-a65e-8560f963a1a3/Bekanntmachung%20UVP-Vorpr%C3%BCfung%20-%20Unterbleiben%20UVP.pdf"
+}

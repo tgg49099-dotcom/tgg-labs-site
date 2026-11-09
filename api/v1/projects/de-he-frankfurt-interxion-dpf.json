@@ -1,0 +1,15 @@
+{
+ "id": "DE-HE-FRANKFURT-INTERXION-DPF",
+ "country": "Germany",
+ "municipality": "Frankfurt am Main (Fechenheim)",
+ "operator": "InterXion Real Estate XXII B.V.",
+ "stage": "Emissions permit granted (BImSchG)",
+ "filing_date": "2023-11-28",
+ "it_mw": null,
+ "grid_mw": null,
+ "backup_generators": 64,
+ "thermal_mw": 459.0,
+ "engine_makes": "MTU; Mitsubishi",
+ "source_authority": "UVP-Portal",
+ "source_url": "https://www.uvp-verbund.de/documents-ige-ng/igc_he/4ac70157-8eb1-4bd3-a5c0-dd7c46cb010b/Ver%C3%B6ffentlichungstext_DPF_Bescheid-Gen2021-040_StAnz.docx"
+}

@@ -1,0 +1,15 @@
+{
+ "id": "SE-W-FALUN-ECODC",
+ "country": "Sweden",
+ "municipality": "Falun",
+ "operator": "EcoDC Falun AB",
+ "stage": "Environmental permit application",
+ "filing_date": "2024-08-22",
+ "it_mw": null,
+ "grid_mw": null,
+ "backup_generators": null,
+ "thermal_mw": null,
+ "engine_makes": "",
+ "source_authority": "Mark- och miljödomstolen",
+ "source_url": "https://domstol.se/globalassets/filer/domstol/nacka_tingsratt/kungorelser-mmd/nacka-tr-m-4352-24-aktbil-9.pdf"
+}

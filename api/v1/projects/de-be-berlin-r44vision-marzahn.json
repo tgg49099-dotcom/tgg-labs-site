@@ -1,0 +1,15 @@
+{
+ "id": "DE-BE-BERLIN-R44VISION-MARZAHN",
+ "country": "Germany",
+ "municipality": "Berlin (Marzahn)",
+ "operator": "R44 Vision DC GmbH",
+ "stage": "Emissions permit application (BImSchG)",
+ "filing_date": "2026-07-13",
+ "it_mw": null,
+ "grid_mw": null,
+ "backup_generators": 14,
+ "thermal_mw": 111.846,
+ "engine_makes": "",
+ "source_authority": "Senate of Berlin",
+ "source_url": "https://www.berlin.de/sen/uvk/_assets/umwelt/bekanntmachungen/20260713_bek_ic210-14099.pdf"
+}

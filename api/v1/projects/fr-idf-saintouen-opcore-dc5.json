@@ -1,0 +1,15 @@
+{
+ "id": "FR-IDF-SAINTOUEN-OPCORE-DC5",
+ "country": "France",
+ "municipality": "Saint-Ouen-l'Aumône",
+ "operator": "OPCORE",
+ "stage": "Environmental-authority opinion (MRAe)",
+ "filing_date": "2026-01-21",
+ "it_mw": null,
+ "grid_mw": null,
+ "backup_generators": 27,
+ "thermal_mw": 71.92,
+ "engine_makes": "",
+ "source_authority": "Mission régionale d'autorité environnementale (MRAe)",
+ "source_url": "https://www.mrae.developpement-durable.gouv.fr/IMG/pdf/2026-01-21_st-ouen-l_aumone_extension_datacenterdc5_delegue.pdf"
+}

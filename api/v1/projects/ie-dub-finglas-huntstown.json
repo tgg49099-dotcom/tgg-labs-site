@@ -1,0 +1,15 @@
+{
+ "id": "IE-DUB-FINGLAS-HUNTSTOWN",
+ "country": "Ireland",
+ "municipality": "Finglas (Huntstown, North Road)",
+ "operator": "Huntstown Power Company Limited",
+ "stage": "Planning permission granted on appeal",
+ "filing_date": "2025-02-27",
+ "it_mw": null,
+ "grid_mw": null,
+ "backup_generators": 58,
+ "thermal_mw": null,
+ "engine_makes": "",
+ "source_authority": "An Coimisiún Pleanála",
+ "source_url": "https://www.pleanala.ie/anbordpleanala/media/abp/cases/orders/313/d313583.pdf"
+}

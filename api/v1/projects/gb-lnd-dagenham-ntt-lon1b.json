@@ -1,0 +1,15 @@
+{
+ "id": "GB-LND-DAGENHAM-NTT-LON1B",
+ "country": "United Kingdom",
+ "municipality": "Dagenham",
+ "operator": "NTT Global Data Centers EMEA UK Ltd",
+ "stage": "Permit variation granted",
+ "filing_date": "2024-12-17",
+ "it_mw": null,
+ "grid_mw": null,
+ "backup_generators": 52,
+ "thermal_mw": 335.15,
+ "engine_makes": "",
+ "source_authority": "Environment Agency",
+ "source_url": "https://assets.publishing.service.gov.uk/media/6769485a4e2d5e9c0bde9d1f/Application_Variation_V003_Decision_Document_-_17122024.pdf"
+}

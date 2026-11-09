@@ -1,0 +1,15 @@
+{
+ "id": "FR-IDF-AULNAY-DATAHILLS",
+ "country": "France",
+ "municipality": "Aulnay-sous-Bois",
+ "operator": "SNC Data Hills",
+ "stage": "Environmental-authority opinion (MRAe)",
+ "filing_date": "2025-02-12",
+ "it_mw": 240.0,
+ "grid_mw": null,
+ "backup_generators": 114,
+ "thermal_mw": null,
+ "engine_makes": "",
+ "source_authority": "Mission régionale d'autorité environnementale (MRAe)",
+ "source_url": "https://www.mrae.developpement-durable.gouv.fr/IMG/pdf/2025-02-12-aulnay-sous-bois_centre_de_donnees_data_hills_avis_adopte_-__1_.pdf"
+}

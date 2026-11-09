@@ -1,0 +1,15 @@
+{
+ "id": "IT-LAZIO-ROMA-ARUBA-TIBURTINO",
+ "country": "Italy",
+ "municipality": "Rome (Tecnopolo Tiburtino)",
+ "operator": "Aruba S.p.A.",
+ "stage": "EIA screening",
+ "filing_date": "2024-10-03",
+ "it_mw": null,
+ "grid_mw": null,
+ "backup_generators": 51,
+ "thermal_mw": 146.11,
+ "engine_makes": "",
+ "source_authority": "Ministero dell'Ambiente e della Sicurezza Energetica",
+ "source_url": "https://va.mite.gov.it/File/Documento/1163196"
+}

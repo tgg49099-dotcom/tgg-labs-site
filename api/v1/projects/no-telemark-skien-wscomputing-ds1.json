@@ -1,0 +1,15 @@
+{
+ "id": "NO-TELEMARK-SKIEN-WSCOMPUTING-DS1",
+ "country": "Norway",
+ "municipality": "Skien (Gromstul)",
+ "operator": "WS Computing AS",
+ "stage": "Pollution permit granted",
+ "filing_date": "2025-08-25",
+ "it_mw": null,
+ "grid_mw": null,
+ "backup_generators": 46,
+ "thermal_mw": 334.0,
+ "engine_makes": "",
+ "source_authority": "Statsforvalteren",
+ "source_url": "https://www.statsforvalteren.no/siteassets/fm-vestfold-og-telemark/miljo-og-klima/forurensning/dokumenter/2025/kunngjoringer/ws-computing-as/tillatelse---ws-computing-as---datasenter-1---gromstul.pdf"
+}

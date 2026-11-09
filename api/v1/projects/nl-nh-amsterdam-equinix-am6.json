@@ -1,0 +1,15 @@
+{
+ "id": "NL-NH-AMSTERDAM-EQUINIX-AM6",
+ "country": "Netherlands",
+ "municipality": "Amsterdam",
+ "operator": "Equinix (Netherlands) B.V.",
+ "stage": "Environmental permit application",
+ "filing_date": "2026-04-20",
+ "it_mw": null,
+ "grid_mw": null,
+ "backup_generators": null,
+ "thermal_mw": null,
+ "engine_makes": "",
+ "source_authority": "Officiële bekendmakingen",
+ "source_url": "https://zoek.officielebekendmakingen.nl/prb-2026-6693.pdf"
+}

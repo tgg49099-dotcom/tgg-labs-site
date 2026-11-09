@@ -1,0 +1,15 @@
+{
+ "id": "GB-ESS-HARLOW-KAO-KLON03",
+ "country": "United Kingdom",
+ "municipality": "Harlow",
+ "operator": "Harlow Operations Limited",
+ "stage": "Permit variation granted",
+ "filing_date": "2026-06-03",
+ "it_mw": null,
+ "grid_mw": null,
+ "backup_generators": 25,
+ "thermal_mw": 152.0,
+ "engine_makes": "",
+ "source_authority": "Environment Agency",
+ "source_url": "https://assets.publishing.service.gov.uk/media/6a202c72dbcb60fc6ccb29d2/Application_Variation_V002_Decision_Document_-_03062026.pdf"
+}

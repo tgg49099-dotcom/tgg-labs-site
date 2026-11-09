@@ -1,0 +1,15 @@
+{
+ "id": "DE-BE-BERLIN-NTT-BER2-C2",
+ "country": "Germany",
+ "municipality": "Berlin",
+ "operator": "NTT Global Data Centers BER 2 GmbH",
+ "stage": "Permit amendment filed (BImSchG)",
+ "filing_date": "2026-04-20",
+ "it_mw": null,
+ "grid_mw": null,
+ "backup_generators": 24,
+ "thermal_mw": 300.32,
+ "engine_makes": "",
+ "source_authority": "Senate of Berlin",
+ "source_url": "https://www.berlin.de/sen/uvk/_assets/umwelt/bekanntmachungen/20260417_bek_ic210-14054.pdf"
+}

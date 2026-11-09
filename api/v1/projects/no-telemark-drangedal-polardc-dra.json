@@ -1,0 +1,15 @@
+{
+ "id": "NO-TELEMARK-DRANGEDAL-POLARDC-DRA",
+ "country": "Norway",
+ "municipality": "Drangedal (Varpet, Tørdal)",
+ "operator": "PolarDC DRA AS",
+ "stage": "Pollution permit granted",
+ "filing_date": "2026-09-14",
+ "it_mw": null,
+ "grid_mw": null,
+ "backup_generators": 53,
+ "thermal_mw": 260.27,
+ "engine_makes": "",
+ "source_authority": "Statsforvalteren",
+ "source_url": "https://www.statsforvalteren.no/siteassets/vestfold-og-telemark/miljo-og-klima/forurensing/dokumenter/2026/tillatelser/polar-dc/tillatelse---polardc-dra-as.pdf"
+}

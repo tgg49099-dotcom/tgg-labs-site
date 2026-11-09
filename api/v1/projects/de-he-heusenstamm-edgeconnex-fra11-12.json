@@ -1,0 +1,15 @@
+{
+ "id": "DE-HE-HEUSENSTAMM-EDGECONNEX-FRA11-12",
+ "country": "Germany",
+ "municipality": "Heusenstamm",
+ "operator": "EdgeConneX Heusenstamm GmbH",
+ "stage": "Emissions permit granted (BImSchG)",
+ "filing_date": "2026-02-16",
+ "it_mw": null,
+ "grid_mw": null,
+ "backup_generators": 42,
+ "thermal_mw": 305.0,
+ "engine_makes": "MTU",
+ "source_authority": "Regierungspräsidium Darmstadt",
+ "source_url": "https://rp-darmstadt.hessen.de/sites/rp-darmstadt.hessen.de/files/2026-06/26_02_16_genehmigungsbescheid_rz_heusenstamm_edgeconnex.pdf"
+}

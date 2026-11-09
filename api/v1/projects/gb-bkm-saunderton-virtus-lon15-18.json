@@ -1,0 +1,15 @@
+{
+ "id": "GB-BKM-SAUNDERTON-VIRTUS-LON15-18",
+ "country": "United Kingdom",
+ "municipality": "Saunderton (Haw Lane)",
+ "operator": "Virtus Holdco Limited",
+ "stage": "Environmental permit application",
+ "filing_date": "2026-04-23",
+ "it_mw": 78.0,
+ "grid_mw": null,
+ "backup_generators": 57,
+ "thermal_mw": 356.22,
+ "engine_makes": "Baudouin",
+ "source_authority": "Environment Agency",
+ "source_url": "https://consult.environment-agency.gov.uk/psc/hp14-4jd-virtus-holdco-limited-epr-sp3429ln-a001/supporting_documents/non-technical-summarypdf"
+}

@@ -1,0 +1,15 @@
+{
+ "id": "DE-HE-SCHWALBACH-TAGO",
+ "country": "Germany",
+ "municipality": "Schwalbach am Taunus",
+ "operator": "TAGO Schwalbach GmbH & Co. KG",
+ "stage": "Emissions permit granted (BImSchG)",
+ "filing_date": "2025-09-26",
+ "it_mw": null,
+ "grid_mw": null,
+ "backup_generators": 12,
+ "thermal_mw": 95.28,
+ "engine_makes": "MTU",
+ "source_authority": "Regierungspräsidium Darmstadt",
+ "source_url": "https://rp-darmstadt.hessen.de/sites/rp-darmstadt.hessen.de/files/2025-10/zoeb_tago-10-8-bimschg_2025-12-03_end.pdf"
+}

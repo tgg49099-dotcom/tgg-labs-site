@@ -1,0 +1,15 @@
+{
+ "id": "DE-HE-DIETZENBACH-EDGECONNEX-FRA01",
+ "country": "Germany",
+ "municipality": "Dietzenbach",
+ "operator": "EdgeConneX Dietzenbach GmbH",
+ "stage": "Emissions permit granted (BImSchG)",
+ "filing_date": "2024-05-23",
+ "it_mw": null,
+ "grid_mw": null,
+ "backup_generators": 42,
+ "thermal_mw": 246.8,
+ "engine_makes": "MTU",
+ "source_authority": "UVP-Portal",
+ "source_url": "https://uvp-verbund.de/documents-ige-ng/igc_he/15e0a370-6bd5-4c8d-a13d-6048d2720838/Ver%C3%B6ffentlichungtext%20Bescheid%20Homepage%20RZ%20Dietzenbach%20EdgeConnex.pdf"
+}

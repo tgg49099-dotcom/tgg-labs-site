@@ -1,0 +1,15 @@
+{
+ "id": "FR-IDF-WISSOUS-CYRUSONE",
+ "country": "France",
+ "municipality": "Wissous",
+ "operator": "Société anonymisée dans le jugement",
+ "stage": "Refused or not admitted",
+ "filing_date": "2025-01-28",
+ "it_mw": null,
+ "grid_mw": 60.0,
+ "backup_generators": 15,
+ "thermal_mw": 49.5,
+ "engine_makes": "",
+ "source_authority": "Commune de Wissous",
+ "source_url": "https://www.wissous.fr/userfile/documents/CyrusOne_Projet%20de%20datacenter%20%C3%A0%20Wissous%20%28augmentation%20capacit%C3%A9s%20du%20data%20center%29.pdf"
+}

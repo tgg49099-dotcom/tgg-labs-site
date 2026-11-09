@@ -1,0 +1,15 @@
+{
+ "id": "DE-HE-FRANKFURT-FRA03",
+ "country": "Germany",
+ "municipality": "Frankfurt am Main (Schwanheim)",
+ "operator": "Esfandyar Ventures One SARL",
+ "stage": "Emissions permit granted (BImSchG)",
+ "filing_date": "2025-09-10",
+ "it_mw": null,
+ "grid_mw": null,
+ "backup_generators": 60,
+ "thermal_mw": 392.0,
+ "engine_makes": "MTU; Caterpillar; Kohler (Rehlko)",
+ "source_authority": "Regierungspräsidium Darmstadt",
+ "source_url": "https://rp-darmstadt.hessen.de/sites/rp-darmstadt.hessen.de/files/2025-09/2025-09-10_genehmigungsbescheid_fra03_final_mit_unterschrift_scan.pdf"
+}

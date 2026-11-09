@@ -1,0 +1,15 @@
+{
+ "id": "FR-PACA-PENNES-TELEHOUSE-CEZANNE",
+ "country": "France",
+ "municipality": "Les Pennes-Mirabeau",
+ "operator": "TELEHOUSE International Corporation of Europe Ltd",
+ "stage": "Environmental-authority opinion (MRAe)",
+ "filing_date": "2025-10-09",
+ "it_mw": null,
+ "grid_mw": null,
+ "backup_generators": 36,
+ "thermal_mw": 289.0,
+ "engine_makes": "",
+ "source_authority": "Public consultation register (France)",
+ "source_url": "https://www.registre-dematerialise.fr/6580/download/component/117434/avis-de-la-mrae-pennes-mirabeau-13-p-icpe-datacenter"
+}

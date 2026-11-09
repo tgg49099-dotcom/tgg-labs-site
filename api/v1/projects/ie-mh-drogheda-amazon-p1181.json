@@ -1,0 +1,15 @@
+{
+ "id": "IE-MH-DROGHEDA-AMAZON-P1181",
+ "country": "Ireland",
+ "municipality": "Drogheda (IDA Business and Technology Park, Donore Road)",
+ "operator": "Amazon Data Services Ireland Ltd",
+ "stage": "Industrial-emissions licence application",
+ "filing_date": "2025-09-01",
+ "it_mw": null,
+ "grid_mw": null,
+ "backup_generators": 54,
+ "thermal_mw": 358.17,
+ "engine_makes": "",
+ "source_authority": "Environmental Protection Agency (Ireland)",
+ "source_url": "https://epawebapp.epa.ie/licences/lic_eDMS/090151b280958cd1.pdf"
+}

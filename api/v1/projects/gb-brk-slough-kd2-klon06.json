@@ -1,0 +1,15 @@
+{
+ "id": "GB-BRK-SLOUGH-KD2-KLON06",
+ "country": "United Kingdom",
+ "municipality": "Slough (Slough Trading Estate)",
+ "operator": "KD 2 Limited",
+ "stage": "Environmental permit granted",
+ "filing_date": "2025-01-22",
+ "it_mw": null,
+ "grid_mw": null,
+ "backup_generators": 13,
+ "thermal_mw": 99.0,
+ "engine_makes": "",
+ "source_authority": "Environment Agency",
+ "source_url": "https://assets.publishing.service.gov.uk/media/67938f8c7b75412c254f4b0e/Application_Bespoke_A001_-_Decision_Document_-_22012025.pdf"
+}

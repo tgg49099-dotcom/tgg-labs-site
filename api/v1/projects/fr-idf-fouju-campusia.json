@@ -1,0 +1,15 @@
+{
+ "id": "FR-IDF-FOUJU-CAMPUSIA",
+ "country": "France",
+ "municipality": "Fouju",
+ "operator": "Campus IA",
+ "stage": "Permit granted",
+ "filing_date": "2025-10-13",
+ "it_mw": null,
+ "grid_mw": 700.0,
+ "backup_generators": null,
+ "thermal_mw": null,
+ "engine_makes": "",
+ "source_authority": "Commission nationale du débat public",
+ "source_url": "https://www.debatpublic.fr/sites/default/files/2025-10/1234-campusia-dossier-de-concertation-vff-web_a9652f7dbce0d3e25a51a79770df7849.pdf"
+}

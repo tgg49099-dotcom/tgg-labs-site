@@ -1,0 +1,15 @@
+{
+ "id": "FR-IDF-ARGENTEUIL-EQUINIX-PA16",
+ "country": "France",
+ "municipality": "Argenteuil",
+ "operator": "Equinix France SAS",
+ "stage": "Environmental-authority opinion (MRAe)",
+ "filing_date": "2025-04-23",
+ "it_mw": null,
+ "grid_mw": 240.0,
+ "backup_generators": 18,
+ "thermal_mw": 142.2,
+ "engine_makes": "",
+ "source_authority": "Mission régionale d'autorité environnementale (MRAe)",
+ "source_url": "https://www.mrae.developpement-durable.gouv.fr/IMG/pdf/2025-04-23-avis_projet_dc_pa_16_argenteuil_equinix_avis_delibere_.pdf"
+}

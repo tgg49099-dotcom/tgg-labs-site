@@ -1,0 +1,55 @@
+{
+ "openapi": "3.1.0",
+ "info": {
+  "title": "Standby Atlas free index",
+  "version": "1.0",
+  "description": "Free fields, reuse with attribution: Standby Atlas, standbyatlas.com"
+ },
+ "servers": [
+  {
+   "url": "https://standbyatlas.com"
+  }
+ ],
+ "paths": {
+  "/api/v1/projects.json": {
+   "get": {
+    "summary": "Every upcoming European data-centre project in the free index, with its official source",
+    "responses": {
+     "200": {
+      "description": "JSON"
+     }
+    }
+   }
+  },
+  "/api/v1/projects/{id}.json": {
+   "get": {
+    "summary": "One project record",
+    "parameters": [
+     {
+      "name": "id",
+      "in": "path",
+      "required": true,
+      "schema": {
+       "type": "string"
+      }
+     }
+    ],
+    "responses": {
+     "200": {
+      "description": "JSON"
+     }
+    }
+   }
+  },
+  "/api/v1/meta.json": {
+   "get": {
+    "summary": "Data date and field list",
+    "responses": {
+     "200": {
+      "description": "JSON"
+     }
+    }
+   }
+  }
+ }
+}

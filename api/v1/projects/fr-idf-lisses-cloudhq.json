@@ -1,0 +1,15 @@
+{
+ "id": "FR-IDF-LISSES-CLOUDHQ",
+ "country": "France",
+ "municipality": "Lisses",
+ "operator": "CloudHQ France",
+ "stage": "Environmental-authority opinion (MRAe)",
+ "filing_date": "2021-05-15",
+ "it_mw": null,
+ "grid_mw": 240.0,
+ "backup_generators": 114,
+ "thermal_mw": 608.0,
+ "engine_makes": "",
+ "source_authority": "DRIEAT Île-de-France",
+ "source_url": "https://www.drieat.ile-de-france.developpement-durable.gouv.fr/IMG/pdf/2021-08-15__avis_projet_dc_lisses91_150521__signe.pdf"
+}

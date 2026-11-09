@@ -1,0 +1,15 @@
+{
+ "id": "DE-HE-HANAU-DATA4-CAMPUS",
+ "country": "Germany",
+ "municipality": "Hanau (Großauheim)",
+ "operator": "Data 4 Germany S.à r.l.",
+ "stage": "Emissions permit granted (BImSchG)",
+ "filing_date": "2026-07-07",
+ "it_mw": null,
+ "grid_mw": null,
+ "backup_generators": 65,
+ "thermal_mw": 457.0,
+ "engine_makes": "",
+ "source_authority": "Gemeinde Großkrotzenburg",
+ "source_url": "https://www.grosskrotzenburg.de/rathaus-politik/aktuelles/amtliche-bekanntmachungen/2026/07/notstromdieselmotoranlage/26-06-30-veroeffentlichung-bescheid-homepagerp-data-4-1.-tg-kep.pdf?cid=c5k"
+}

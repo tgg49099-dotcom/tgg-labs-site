@@ -1,0 +1,15 @@
+{
+ "id": "IT-LOMB-BORNASCO-MICROSOFT-MIL05",
+ "country": "Italy",
+ "municipality": "Bornasco",
+ "operator": "Microsoft 4825 Italy S.r.l.",
+ "stage": "Other filing",
+ "filing_date": "2023-11-14",
+ "it_mw": null,
+ "grid_mw": null,
+ "backup_generators": 10,
+ "thermal_mw": null,
+ "engine_makes": "",
+ "source_authority": "Ministero dell'Ambiente e della Sicurezza Energetica",
+ "source_url": "https://va.mite.gov.it/File/Documento/985661"
+}

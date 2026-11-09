@@ -1,0 +1,15 @@
+{
+ "id": "DE-HE-OFFENBACH-VDC-FRA12",
+ "country": "Germany",
+ "municipality": "Offenbach am Main",
+ "operator": "VDC FRA 12 GmbH",
+ "stage": "Emissions permit granted (BImSchG)",
+ "filing_date": "2025-09-08",
+ "it_mw": null,
+ "grid_mw": null,
+ "backup_generators": 12,
+ "thermal_mw": 81.12,
+ "engine_makes": "MTU",
+ "source_authority": "Regierungspräsidium Darmstadt",
+ "source_url": "https://rp-darmstadt.hessen.de/sites/rp-darmstadt.hessen.de/files/2025-09/08_bekanntmachung_entscheidung_rpda_entwurf_250904.pdf"
+}

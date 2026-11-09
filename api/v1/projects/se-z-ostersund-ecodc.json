@@ -1,0 +1,15 @@
+{
+ "id": "SE-Z-OSTERSUND-ECODC",
+ "country": "Sweden",
+ "municipality": "Östersund (Massaveden 4)",
+ "operator": "EcoDC Östersund AB",
+ "stage": "Environmental permit granted",
+ "filing_date": "2025-06-23",
+ "it_mw": null,
+ "grid_mw": 150.0,
+ "backup_generators": 40,
+ "thermal_mw": 350.0,
+ "engine_makes": "",
+ "source_authority": "Mark- och miljödomstolen",
+ "source_url": "https://energirapportering.domstol.se/globalassets/filer/domstol/ostersunds_tingsratt/kungorelser/dom-2009-24.pdf"
+}

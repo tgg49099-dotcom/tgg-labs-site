@@ -1,0 +1,15 @@
+{
+ "id": "NO-AKERSHUS-ENEBAKK-GREENMOUNTAIN-OSLENE",
+ "country": "Norway",
+ "municipality": "Enebakk (Gran, Ytre Enebakk)",
+ "operator": "Green Mountain AS",
+ "stage": "Pollution permit granted",
+ "filing_date": "2026-06-23",
+ "it_mw": null,
+ "grid_mw": 90.0,
+ "backup_generators": null,
+ "thermal_mw": null,
+ "engine_makes": "",
+ "source_authority": "Statsforvalteren",
+ "source_url": "https://www.statsforvalteren.no/siteassets/fm-oslo-og-viken/horinger-og-kunngjoringer/green-mountain-as/vedtak-om-tillatelse.pdf"
+}

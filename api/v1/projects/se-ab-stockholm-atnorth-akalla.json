@@ -1,0 +1,15 @@
+{
+ "id": "SE-AB-STOCKHOLM-ATNORTH-AKALLA",
+ "country": "Sweden",
+ "municipality": "Stockholm (Akalla, Kista)",
+ "operator": "atNorth AB",
+ "stage": "Pre-application consultation",
+ "filing_date": "2026-01-14",
+ "it_mw": null,
+ "grid_mw": null,
+ "backup_generators": 12,
+ "thermal_mw": 100.0,
+ "engine_makes": "",
+ "source_authority": "Consultation file published by the operator",
+ "source_url": "https://www.atnorth.com/wp-content/uploads/2026/02/Samradsunderlag-uppdaterat-20260114.pdf"
+}

@@ -1,0 +1,15 @@
+{
+ "id": "NO-NORDLAND-NARVIK-AKER-NSCALE",
+ "country": "Norway",
+ "municipality": "Narvik (Bjerkvik)",
+ "operator": "Aker Nscale AS (client unique)",
+ "stage": "Grid concession granted",
+ "filing_date": "2026-03-11",
+ "it_mw": null,
+ "grid_mw": 250.0,
+ "backup_generators": null,
+ "thermal_mw": null,
+ "engine_makes": "",
+ "source_authority": "NVE (Norwegian Water Resources and Energy Directorate)",
+ "source_url": "https://webfileservice.nve.no/API/PublishedFiles/Download/ef898a5b-14a7-4d5e-8dfa-51fc72100e4a/202503343/3450303"
+}

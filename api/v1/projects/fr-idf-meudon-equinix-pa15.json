@@ -1,0 +1,15 @@
+{
+ "id": "FR-IDF-MEUDON-EQUINIX-PA15",
+ "country": "France",
+ "municipality": "Meudon",
+ "operator": "Equinix Hyperscale 2 (PA15) SAS",
+ "stage": "Environmental-authority opinion (MRAe)",
+ "filing_date": "2025-11-19",
+ "it_mw": null,
+ "grid_mw": 80.0,
+ "backup_generators": 33,
+ "thermal_mw": null,
+ "engine_makes": "",
+ "source_authority": "Mission régionale d'autorité environnementale (MRAe)",
+ "source_url": "https://www.mrae.developpement-durable.gouv.fr/IMG/pdf/19-11-2025_meudon-_centre_de_donnees_delibere.pdf"
+}

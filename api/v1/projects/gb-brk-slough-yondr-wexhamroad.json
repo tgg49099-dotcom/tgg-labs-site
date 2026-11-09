@@ -1,0 +1,15 @@
+{
+ "id": "GB-BRK-SLOUGH-YONDR-WEXHAMROAD",
+ "country": "United Kingdom",
+ "municipality": "Slough (Wexham Road)",
+ "operator": "Yondr Group Limited",
+ "stage": "Environmental permit granted",
+ "filing_date": "2023-11-29",
+ "it_mw": null,
+ "grid_mw": null,
+ "backup_generators": 52,
+ "thermal_mw": 295.0,
+ "engine_makes": "MTU",
+ "source_authority": "Environment Agency",
+ "source_url": "https://assets.publishing.service.gov.uk/media/6566050a75007400131ded52/Decision_Document_NP3829SP.pdf"
+}

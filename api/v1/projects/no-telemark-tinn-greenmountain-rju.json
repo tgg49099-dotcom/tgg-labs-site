@@ -1,0 +1,15 @@
+{
+ "id": "NO-TELEMARK-TINN-GREENMOUNTAIN-RJU",
+ "country": "Norway",
+ "municipality": "Tinn (Rjukan)",
+ "operator": "Green Mountain AS",
+ "stage": "Air-emissions permit application",
+ "filing_date": "2025-12-12",
+ "it_mw": null,
+ "grid_mw": 112.0,
+ "backup_generators": 12,
+ "thermal_mw": null,
+ "engine_makes": "",
+ "source_authority": "NVE (Norwegian Water Resources and Energy Directorate)",
+ "source_url": "https://webfileservice.nve.no/API/PublishedFiles/Download/90bc2c9d-5a9a-4fa4-b9b6-96376ebccb6a/202519881/3448901"
+}

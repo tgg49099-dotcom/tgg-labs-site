@@ -1,0 +1,15 @@
+{
+ "id": "DE-HE-DIETZENBACH-REDTEC-DC1A",
+ "country": "Germany",
+ "municipality": "Dietzenbach",
+ "operator": "Redtec Computing GmbH",
+ "stage": "Emissions permit granted (BImSchG)",
+ "filing_date": "2026-06-29",
+ "it_mw": null,
+ "grid_mw": null,
+ "backup_generators": 38,
+ "thermal_mw": 230.0,
+ "engine_makes": "MTU",
+ "source_authority": "UVP-Portal",
+ "source_url": "https://www.uvp-verbund.de/documents-ige-ng/igc_he/b066d6cb-374e-46fd-9645-ba6f080b60fb/Ver%C3%B6ffentlichungstext%20Bescheid%20Homepage.pdf"
+}

@@ -1,0 +1,15 @@
+{
+ "id": "SE-AB-STOCKHOLM-DIGITALREALTY-VANDA",
+ "country": "Sweden",
+ "municipality": "Stockholm (Akalla, Rinkeby-Kista)",
+ "operator": "Digital Realty AB",
+ "stage": "Environmental permit application",
+ "filing_date": "2025-11-26",
+ "it_mw": null,
+ "grid_mw": null,
+ "backup_generators": null,
+ "thermal_mw": null,
+ "engine_makes": "",
+ "source_authority": "Mark- och miljödomstolen",
+ "source_url": "https://energirapportering.domstol.se/globalassets/filer/domstol/nacka_tingsratt/kungorelser-mmd/nacka-tr-m-8660-25-aktbil-4.pdf"
+}

@@ -1,0 +1,15 @@
+{
+ "id": "IT-LOMB-SETTIMO-EQUINIX-ML9",
+ "country": "Italy",
+ "municipality": "Settimo Milanese (località Il Castelletto)",
+ "operator": "Equinix Hyperscale 2 (ML9) S.r.l.",
+ "stage": "Application filed",
+ "filing_date": "2024-10-15",
+ "it_mw": null,
+ "grid_mw": 135.0,
+ "backup_generators": 16,
+ "thermal_mw": 108.0,
+ "engine_makes": "MTU",
+ "source_authority": "Ministero dell'Ambiente e della Sicurezza Energetica",
+ "source_url": "https://va.mite.gov.it/File/Documento/1165807"
+}

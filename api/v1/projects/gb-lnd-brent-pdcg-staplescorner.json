@@ -1,0 +1,15 @@
+{
+ "id": "GB-LND-BRENT-PDCG-STAPLESCORNER",
+ "country": "United Kingdom",
+ "municipality": "London (Staples Corner, JVC Business Park)",
+ "operator": "PDCG (Group Services) Limited",
+ "stage": "Permit variation granted",
+ "filing_date": "2025-05-20",
+ "it_mw": null,
+ "grid_mw": null,
+ "backup_generators": 56,
+ "thermal_mw": 409.36,
+ "engine_makes": "",
+ "source_authority": "Environment Agency",
+ "source_url": "https://assets.publishing.service.gov.uk/media/68371f0e4115cfe5bfaa2cb0/Application_Variation_V002_Permit_-_20052025.pdf"
+}

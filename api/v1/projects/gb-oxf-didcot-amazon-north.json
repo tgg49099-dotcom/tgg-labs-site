@@ -1,0 +1,15 @@
+{
+ "id": "GB-OXF-DIDCOT-AMAZON-NORTH",
+ "country": "United Kingdom",
+ "municipality": "Didcot (ancienne centrale Didcot A)",
+ "operator": "Amazon Data Services UK Limited",
+ "stage": "Environmental permit granted",
+ "filing_date": "2026-07-27",
+ "it_mw": null,
+ "grid_mw": null,
+ "backup_generators": 129,
+ "thermal_mw": 925.0,
+ "engine_makes": "",
+ "source_authority": "Environment Agency",
+ "source_url": "https://assets.publishing.service.gov.uk/media/6a7077d10ddb7e4831c62b62/Application_Bespoke_A001_Permit_-27072026.pdf"
+}

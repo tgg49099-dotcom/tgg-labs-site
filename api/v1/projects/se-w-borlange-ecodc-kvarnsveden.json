@@ -1,0 +1,15 @@
+{
+ "id": "SE-W-BORLANGE-ECODC-KVARNSVEDEN",
+ "country": "Sweden",
+ "municipality": "Borlänge (Kvarnsveden)",
+ "operator": "EcoDC 2 AB (EcoDataCenter)",
+ "stage": "Environmental permit granted",
+ "filing_date": "2026-05-12",
+ "it_mw": null,
+ "grid_mw": null,
+ "backup_generators": 280,
+ "thermal_mw": 2700.0,
+ "engine_makes": "",
+ "source_authority": "Borlänge kommun",
+ "source_url": "https://www.borlange.se/download/18.20c2c85d19eb7a927aae60e/1781770015551/Riskutredning%20Sevesoverksamhet.pdf"
+}

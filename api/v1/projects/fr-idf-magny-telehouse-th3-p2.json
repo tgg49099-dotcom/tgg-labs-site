@@ -1,0 +1,15 @@
+{
+ "id": "FR-IDF-MAGNY-TELEHOUSE-TH3-P2",
+ "country": "France",
+ "municipality": "Magny-les-Hameaux",
+ "operator": "Telehouse International Corporation of Europe Ltd",
+ "stage": "Public consultation",
+ "filing_date": "2023-10-03",
+ "it_mw": null,
+ "grid_mw": null,
+ "backup_generators": 3,
+ "thermal_mw": 19.38,
+ "engine_makes": "",
+ "source_authority": "Préfecture des Yvelines",
+ "source_url": "https://www.yvelines.gouv.fr/index.php/contenu/telechargement/30740/197794/file/Rapport.pdf"
+}

@@ -1,0 +1,15 @@
+{
+ "id": "DE-HE-RAUNHEIM-VDC-FRA31",
+ "country": "Germany",
+ "municipality": "Raunheim",
+ "operator": "VDC FRA31 GmbH",
+ "stage": "Emissions permit granted (BImSchG)",
+ "filing_date": "2026-06-17",
+ "it_mw": null,
+ "grid_mw": null,
+ "backup_generators": 22,
+ "thermal_mw": 134.94,
+ "engine_makes": "MTU",
+ "source_authority": "Regierungspräsidium Darmstadt",
+ "source_url": "https://rp-darmstadt.hessen.de/sites/rp-darmstadt.hessen.de/files/2026-06/zoeb_oeb_rz_raunheim_fra31_2026_08_13.pdf"
+}

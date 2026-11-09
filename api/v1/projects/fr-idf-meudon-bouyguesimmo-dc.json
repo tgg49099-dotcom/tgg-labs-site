@@ -1,0 +1,15 @@
+{
+ "id": "FR-IDF-MEUDON-BOUYGUESIMMO-DC",
+ "country": "France",
+ "municipality": "Meudon (Meudon-la-Forêt)",
+ "operator": "Bouygues Immobilier",
+ "stage": "Environmental-authority opinion (MRAe)",
+ "filing_date": "2019-01-10",
+ "it_mw": null,
+ "grid_mw": null,
+ "backup_generators": 24,
+ "thermal_mw": 132.0,
+ "engine_makes": "",
+ "source_authority": "DRIEAT Île-de-France",
+ "source_url": "https://www.drieat.ile-de-france.developpement-durable.gouv.fr/IMG/pdf/190110_mrae_idf_avis_delibere_sur_projet_data_center_a_meudon_92_.pdf"
+}

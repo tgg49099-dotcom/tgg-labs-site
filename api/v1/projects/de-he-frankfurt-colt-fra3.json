@@ -1,0 +1,15 @@
+{
+ "id": "DE-HE-FRANKFURT-COLT-FRA3",
+ "country": "Germany",
+ "municipality": "Frankfurt am Main (Sossenheim)",
+ "operator": "Horizon Data Center Frankfurt LLC",
+ "stage": "Emissions permit granted (BImSchG)",
+ "filing_date": "2024-08-08",
+ "it_mw": null,
+ "grid_mw": null,
+ "backup_generators": 24,
+ "thermal_mw": 170.0,
+ "engine_makes": "MTU; Caterpillar; Kohler (Rehlko)",
+ "source_authority": "Regierungspräsidium Darmstadt",
+ "source_url": "https://rp-darmstadt.hessen.de/sites/rp-darmstadt.hessen.de/files/2024-10/genehmigungsbescheid_colt_fra3.pdf"
+}

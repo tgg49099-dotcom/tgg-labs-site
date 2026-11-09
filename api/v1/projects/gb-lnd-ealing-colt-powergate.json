@@ -1,0 +1,15 @@
+{
+ "id": "GB-LND-EALING-COLT-POWERGATE",
+ "country": "United Kingdom",
+ "municipality": "London (Park Royal, Powergate Business Park)",
+ "operator": "Colt Data Centre Services UK Ltd",
+ "stage": "Environmental permit granted",
+ "filing_date": "2024-05-23",
+ "it_mw": null,
+ "grid_mw": null,
+ "backup_generators": 13,
+ "thermal_mw": 62.0,
+ "engine_makes": "",
+ "source_authority": "Environment Agency",
+ "source_url": "https://assets.publishing.service.gov.uk/media/6659b3d58f90ef31c23ebcd9/Applicatin_Bespoke_Decision_Document_23052024.pdf"
+}

@@ -1,0 +1,15 @@
+{
+ "id": "GB-LND-HAYES-AMAZON-UNIONPARK-EC2",
+ "country": "United Kingdom",
+ "municipality": "Hayes (Bulls Bridge Industrial Estate, North Hyde Gardens)",
+ "operator": "Amazon Data Services UK Limited",
+ "stage": "Permit variation granted",
+ "filing_date": "2024-12-05",
+ "it_mw": null,
+ "grid_mw": null,
+ "backup_generators": 28,
+ "thermal_mw": 224.25,
+ "engine_makes": "MTU",
+ "source_authority": "Environment Agency",
+ "source_url": "https://consult.environment-agency.gov.uk/psc/ub3-4dg-amazon-data-services-uk-ltd-dp3442qv-v002/supporting_documents/Application%20%20Variation%20V002%20%20NonTechnical%20Summary%2020122024.pdf"
+}

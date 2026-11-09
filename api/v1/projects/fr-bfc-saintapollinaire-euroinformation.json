@@ -1,0 +1,15 @@
+{
+ "id": "FR-BFC-SAINTAPOLLINAIRE-EUROINFORMATION",
+ "country": "France",
+ "municipality": "Saint-Apollinaire",
+ "operator": "Euro-Information SAS",
+ "stage": "Application filed",
+ "filing_date": "2021-01-15",
+ "it_mw": null,
+ "grid_mw": null,
+ "backup_generators": null,
+ "thermal_mw": 30.6,
+ "engine_makes": "",
+ "source_authority": "Géorisques (French installations register)",
+ "source_url": "https://georisques.gouv.fr/webappReport/ws/installations/document/8a9500af771aec2301771b42d4eb0087"
+}

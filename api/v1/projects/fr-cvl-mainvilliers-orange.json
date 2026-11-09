@@ -1,0 +1,15 @@
+{
+ "id": "FR-CVL-MAINVILLIERS-ORANGE",
+ "country": "France",
+ "municipality": "Mainvilliers / Amilly",
+ "operator": "Orange SA",
+ "stage": "Other filing",
+ "filing_date": "2025-07-09",
+ "it_mw": null,
+ "grid_mw": null,
+ "backup_generators": 18,
+ "thermal_mw": 87.12,
+ "engine_makes": "",
+ "source_authority": "Géorisques (French installations register)",
+ "source_url": "https://georisques.gouv.fr/webappReport/ws/installations/inspection/5Y6Deq9T6hsmBSp0eaUMSi2a1ugvLuWb"
+}

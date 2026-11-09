@@ -1,0 +1,15 @@
+{
+ "id": "NO-TELEMARK-SKIEN-WSCOMPUTING",
+ "country": "Norway",
+ "municipality": "Skien (Gromstul)",
+ "operator": "WS Computing AS",
+ "stage": "Grid concession granted",
+ "filing_date": "2026-01-28",
+ "it_mw": null,
+ "grid_mw": 240.0,
+ "backup_generators": 46,
+ "thermal_mw": 338.1,
+ "engine_makes": "",
+ "source_authority": "NVE (Norwegian Water Resources and Energy Directorate)",
+ "source_url": "https://webfileservice.nve.no/API/PublishedFiles/Download/0dd0ccd8-8a20-413e-bd03-bedc078ac3b8/202524612/3449545"
+}

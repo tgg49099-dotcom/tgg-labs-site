@@ -1,0 +1,15 @@
+{
+ "id": "IT-LOMB-SETTIMO-VANTAGE-MXP2",
+ "country": "Italy",
+ "municipality": "Settimo Milanese (località Il Castelletto)",
+ "operator": "VDC MXP 21 S.r.l. (Vantage Data Centers)",
+ "stage": "Other filing",
+ "filing_date": "2024-02-23",
+ "it_mw": 32.0,
+ "grid_mw": null,
+ "backup_generators": 22,
+ "thermal_mw": 143.0,
+ "engine_makes": "",
+ "source_authority": "Ministero dell'Ambiente e della Sicurezza Energetica",
+ "source_url": "https://va.mite.gov.it/File/Documento/987247"
+}

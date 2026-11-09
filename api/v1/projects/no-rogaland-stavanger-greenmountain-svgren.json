@@ -1,0 +1,15 @@
+{
+ "id": "NO-ROGALAND-STAVANGER-GREENMOUNTAIN-SVGREN",
+ "country": "Norway",
+ "municipality": "Stavanger (Rennesøy, Hodneveien 260)",
+ "operator": "Green Mountain AS",
+ "stage": "Pollution permit granted",
+ "filing_date": "2026-03-31",
+ "it_mw": null,
+ "grid_mw": null,
+ "backup_generators": 10,
+ "thermal_mw": null,
+ "engine_makes": "",
+ "source_authority": "Statsforvalteren",
+ "source_url": "https://www.statsforvalteren.no/contentassets/48b79422c72a43d196b96a31095d9435/vedtak-om-tillatelse-etter-forurensningsloven---industri---stavanger---green-mountain-as---forbrenningsanlegg-forurensningsforsk.pdf"
+}

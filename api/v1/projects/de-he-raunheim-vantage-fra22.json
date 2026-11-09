@@ -1,0 +1,15 @@
+{
+ "id": "DE-HE-RAUNHEIM-VANTAGE-FRA22",
+ "country": "Germany",
+ "municipality": "Raunheim",
+ "operator": "VDC FRA22 GmbH (Vantage Data Centers FRA22 GmbH)",
+ "stage": "Emissions permit granted (BImSchG)",
+ "filing_date": "2024-02-16",
+ "it_mw": null,
+ "grid_mw": null,
+ "backup_generators": 11,
+ "thermal_mw": 78.386,
+ "engine_makes": "Caterpillar",
+ "source_authority": "Regierungspräsidium Darmstadt",
+ "source_url": "https://rp-darmstadt.hessen.de/sites/rp-darmstadt.hessen.de/files/2024-03/24_02_16_genehmigungsbescheid_final_rz_raunheim_vantage_fra_22_gez.pdf"
+}

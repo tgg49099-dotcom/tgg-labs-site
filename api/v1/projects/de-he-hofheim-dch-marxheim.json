@@ -1,0 +1,15 @@
+{
+ "id": "DE-HE-HOFHEIM-DCH-MARXHEIM",
+ "country": "Germany",
+ "municipality": "Hofheim am Taunus (Marxheim)",
+ "operator": "DCH GmbH",
+ "stage": "Emissions permit granted (BImSchG)",
+ "filing_date": "2026-08-19",
+ "it_mw": null,
+ "grid_mw": null,
+ "backup_generators": 14,
+ "thermal_mw": 100.8,
+ "engine_makes": "MTU",
+ "source_authority": "Regierungspräsidium Darmstadt",
+ "source_url": "https://rp-darmstadt.hessen.de/sites/rp-darmstadt.hessen.de/files/2026-08/zoeb_dch-gen_2026-09-21_end.pdf"
+}

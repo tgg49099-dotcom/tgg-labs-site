@@ -1,0 +1,15 @@
+{
+ "id": "NO-AGDER-VENNESLA-BULK-N01-STOLEN",
+ "country": "Norway",
+ "municipality": "Vennesla (Stølen / Støleheia)",
+ "operator": "Bulk Data Centers N01 AS et al.",
+ "stage": "Air-emissions permit application",
+ "filing_date": "2026-10-09",
+ "it_mw": null,
+ "grid_mw": 400.0,
+ "backup_generators": null,
+ "thermal_mw": null,
+ "engine_makes": "",
+ "source_authority": "Statsforvalteren",
+ "source_url": "https://www.statsforvalteren.no/agder/horinger/2026/11/horing-soknad-om-utslipp-til-luft-fra-stolen-datalagringspark/"
+}

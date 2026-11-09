@@ -8,6 +8,7 @@
 - [Free sample and data dictionary](https://standbyatlas.com/data/): 20 records as CSV
 - [Report and licences](https://standbyatlas.com/pricing/): founding report, annual watch, team and resale licences
 - [New filings feed](https://standbyatlas.com/feed.xml): Atom
+- [Free JSON API](https://standbyatlas.com/api/v1/projects.json): every project with free fields and its official source; OpenAPI at https://standbyatlas.com/api/openapi.json
 
 ## Citation
 Standby Atlas, European data-centre pipeline, data as of 9 November 2026, https://standbyatlas.com/

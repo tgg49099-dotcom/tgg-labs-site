@@ -1,0 +1,15 @@
+{
+ "id": "CH-SH-BERINGEN-DC2",
+ "country": "Switzerland",
+ "municipality": "Beringen",
+ "operator": "",
+ "stage": "Building permit application",
+ "filing_date": "2026-09-01",
+ "it_mw": null,
+ "grid_mw": 40.0,
+ "backup_generators": null,
+ "thermal_mw": null,
+ "engine_makes": "",
+ "source_authority": "Canton of Schaffhausen",
+ "source_url": "https://sh.ch/CMS/get/file/46b69d80-0ec9-4ff7-8e9d-052fced83482"
+}

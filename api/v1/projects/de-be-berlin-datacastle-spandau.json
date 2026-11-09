@@ -1,0 +1,15 @@
+{
+ "id": "DE-BE-BERLIN-DATACASTLE-SPANDAU",
+ "country": "Germany",
+ "municipality": "Berlin (Spandau)",
+ "operator": "AG Datacastle Spandau B.V.",
+ "stage": "Emissions permit application (BImSchG)",
+ "filing_date": "2024-11-01",
+ "it_mw": null,
+ "grid_mw": null,
+ "backup_generators": 18,
+ "thermal_mw": 106.02,
+ "engine_makes": "",
+ "source_authority": "UVP-Portal",
+ "source_url": "https://uvp-verbund.de/documents-ige-ng/igc_be/3edd73f5-12dd-49c1-bfe8-90bfcac90131/20241101%20Bekanntmachung%20UVP-Vorpr%C3%BCfung%20The%20Hub.pdf"
+}

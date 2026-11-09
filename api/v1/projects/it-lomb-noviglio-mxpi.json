@@ -1,0 +1,15 @@
+{
+ "id": "IT-LOMB-NOVIGLIO-MXPI",
+ "country": "Italy",
+ "municipality": "Noviglio (frazione Santa Corinna)",
+ "operator": "Noviglio Datacenters MXP I S.r.l.",
+ "stage": "Application filed",
+ "filing_date": "2023-05-09",
+ "it_mw": null,
+ "grid_mw": null,
+ "backup_generators": 21,
+ "thermal_mw": 113.0,
+ "engine_makes": "Cummins",
+ "source_authority": "Ministero dell'Ambiente e della Sicurezza Energetica",
+ "source_url": "https://va.mite.gov.it/File/Documento/856499"
+}

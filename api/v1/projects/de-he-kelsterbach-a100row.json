@@ -1,0 +1,15 @@
+{
+ "id": "DE-HE-KELSTERBACH-A100ROW",
+ "country": "Germany",
+ "municipality": "Kelsterbach",
+ "operator": "A100 ROW GmbH",
+ "stage": "Emissions permit granted (BImSchG)",
+ "filing_date": "2024-04-04",
+ "it_mw": null,
+ "grid_mw": null,
+ "backup_generators": 19,
+ "thermal_mw": 141.0,
+ "engine_makes": "MTU",
+ "source_authority": "Regierungspräsidium Darmstadt",
+ "source_url": "https://rp-darmstadt.hessen.de/sites/rp-darmstadt.hessen.de/files/2024-04/24_04_04_genehmigungsbescheid_final_rz_kelsterbach_a_100_row.pdf"
+}

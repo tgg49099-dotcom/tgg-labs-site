@@ -1,0 +1,15 @@
+{
+ "id": "DE-HE-RAUNHEIM-VANTAGE-FRA32",
+ "country": "Germany",
+ "municipality": "Raunheim",
+ "operator": "VDC FRA32 GmbH (Vantage Data Centers FRA32 GmbH)",
+ "stage": "Emissions permit granted (BImSchG)",
+ "filing_date": "2026-03-23",
+ "it_mw": null,
+ "grid_mw": null,
+ "backup_generators": 20,
+ "thermal_mw": 154.0,
+ "engine_makes": "",
+ "source_authority": "Regierungspräsidium Darmstadt",
+ "source_url": "https://rp-darmstadt.hessen.de/veroeffentlichungen-und-digitales/oeffentliche-bekanntmachungen/industrieemissionen"
+}

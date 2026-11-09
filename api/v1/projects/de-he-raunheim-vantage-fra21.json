@@ -1,0 +1,15 @@
+{
+ "id": "DE-HE-RAUNHEIM-VANTAGE-FRA21",
+ "country": "Germany",
+ "municipality": "Raunheim",
+ "operator": "VDC FRA21 GmbH",
+ "stage": "Emissions permit granted (BImSchG)",
+ "filing_date": "2023-03-31",
+ "it_mw": null,
+ "grid_mw": null,
+ "backup_generators": 28,
+ "thermal_mw": 199.528,
+ "engine_makes": "Caterpillar",
+ "source_authority": "Regierungspräsidium Darmstadt",
+ "source_url": "https://rp-darmstadt.hessen.de/sites/rp-darmstadt.hessen.de/files/2026-05/fra21_rechenzentrum_genehmigungsbescheid_final.pdf"
+}

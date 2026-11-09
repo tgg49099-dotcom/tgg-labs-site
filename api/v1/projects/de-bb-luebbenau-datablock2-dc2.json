@@ -1,0 +1,15 @@
+{
+ "id": "DE-BB-LUEBBENAU-DATABLOCK2-DC2",
+ "country": "Germany",
+ "municipality": "Lübbenau/Spreewald (Groß-Klessow)",
+ "operator": "Data Block II GmbH",
+ "stage": "Emissions permit application (BImSchG)",
+ "filing_date": "2025-05-27",
+ "it_mw": null,
+ "grid_mw": null,
+ "backup_generators": 73,
+ "thermal_mw": 571.0,
+ "engine_makes": "MTU; Volvo Penta",
+ "source_authority": "UVP-Portal",
+ "source_url": "https://www.uvp-verbund.de/documents-ige-ng/igc_bb/9e378fb2-3825-4203-bda8-5fff2255c09d/Bekanntmachung%20Vorhaben%2040.102.00_24_m.%20UVP_Kein%20WR.pdf"
+}

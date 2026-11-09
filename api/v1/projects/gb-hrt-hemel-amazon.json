@@ -1,0 +1,15 @@
+{
+ "id": "GB-HRT-HEMEL-AMAZON",
+ "country": "United Kingdom",
+ "municipality": "Hemel Hempstead (Prologis Industrial Park)",
+ "operator": "Amazon Data Services UK Limited",
+ "stage": "Environmental permit granted",
+ "filing_date": "2023-12-19",
+ "it_mw": null,
+ "grid_mw": null,
+ "backup_generators": 34,
+ "thermal_mw": 222.0,
+ "engine_makes": "",
+ "source_authority": "Environment Agency",
+ "source_url": "https://assets.publishing.service.gov.uk/media/6582d797fc07f300128d456a/Application_Bespoke_Decision_Document_-_19122023.pdf"
+}

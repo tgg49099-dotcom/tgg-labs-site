@@ -1,0 +1,15 @@
+{
+ "id": "DE-BE-BERLIN-AVENTOS-MOTARDSTRASSE",
+ "country": "Germany",
+ "municipality": "Berlin (Siemensstadt)",
+ "operator": "Aventos Eta Investment GmbH",
+ "stage": "Emissions permit application (BImSchG)",
+ "filing_date": "2025-05-21",
+ "it_mw": null,
+ "grid_mw": null,
+ "backup_generators": 36,
+ "thermal_mw": 213.0,
+ "engine_makes": "MTU",
+ "source_authority": "UVP-Portal",
+ "source_url": "https://www.uvp-verbund.de/documents-ige-ng/igc_be/02f04d4d-fbfb-4f7a-8556-6aea024d45e2/Bekanntmachung_IC202-13918.pdf"
+}

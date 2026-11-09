@@ -1,0 +1,15 @@
+{
+ "id": "NO-TRONDELAG-TYDAL-TDC-FASE2",
+ "country": "Norway",
+ "municipality": "Tydal (Stugudalsvegen)",
+ "operator": "Tydal Data Center AS",
+ "stage": "Grid concession granted",
+ "filing_date": "2025-03-28",
+ "it_mw": null,
+ "grid_mw": 180.0,
+ "backup_generators": null,
+ "thermal_mw": null,
+ "engine_makes": "",
+ "source_authority": "NVE (Norwegian Water Resources and Energy Directorate)",
+ "source_url": "https://webfileservice.nve.no/API/PublishedFiles/Download/d4dc1fea-cdf5-45a7-bbfd-e4c302c05854/202406238/3443915"
+}

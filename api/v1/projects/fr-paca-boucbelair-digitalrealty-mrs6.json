@@ -1,0 +1,15 @@
+{
+ "id": "FR-PACA-BOUCBELAIR-DIGITALREALTY-MRS6",
+ "country": "France",
+ "municipality": "Bouc-Bel-Air",
+ "operator": "Digital Realty",
+ "stage": "Environmental-authority opinion",
+ "filing_date": "2025-06-12",
+ "it_mw": null,
+ "grid_mw": 80.0,
+ "backup_generators": 32,
+ "thermal_mw": 219.0,
+ "engine_makes": "",
+ "source_authority": "Autorité environnementale (IGEDD)",
+ "source_url": "https://www.igedd.developpement-durable.gouv.fr/IMG/pdf/4_-_centre_de_donnees_a_bouc-bel-air_13__cle71f681.pdf"
+}

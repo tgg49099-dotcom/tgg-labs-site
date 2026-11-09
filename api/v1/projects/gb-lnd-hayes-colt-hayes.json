@@ -1,0 +1,15 @@
+{
+ "id": "GB-LND-HAYES-COLT-HAYES",
+ "country": "United Kingdom",
+ "municipality": "Hayes (Brook Industrial Estate)",
+ "operator": "Colt Data Centre Services UK Limited",
+ "stage": "Environmental permit granted",
+ "filing_date": "2025-07-30",
+ "it_mw": null,
+ "grid_mw": null,
+ "backup_generators": 46,
+ "thermal_mw": 283.0,
+ "engine_makes": "MTU",
+ "source_authority": "Environment Agency",
+ "source_url": "https://assets.publishing.service.gov.uk/media/6899eccdad0cbc0e27643221/Application_Bespoke_A001_Decision_document_-_30_07_2025.pdf"
+}

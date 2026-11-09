@@ -1,0 +1,15 @@
+{
+ "id": "FR-IDF-ARGENTEUIL-EQUINIX-PA12X",
+ "country": "France",
+ "municipality": "Argenteuil",
+ "operator": "Equinix Hyperscale 2",
+ "stage": "Environmental-authority opinion (MRAe)",
+ "filing_date": "2021-11-18",
+ "it_mw": null,
+ "grid_mw": null,
+ "backup_generators": 22,
+ "thermal_mw": null,
+ "engine_makes": "",
+ "source_authority": "DRIEAT Île-de-France",
+ "source_url": "https://www.drieat.ile-de-france.developpement-durable.gouv.fr/IMG/pdf/2021-11-18_avis_data_center_argenteuil_delibere.pdf"
+}

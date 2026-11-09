@@ -1,0 +1,15 @@
+{
+ "id": "IT-LOMB-SIZIANO-STACK-MOD2",
+ "country": "Italy",
+ "municipality": "Siziano (via Marche 8)",
+ "operator": "STACK EMEA Italy S.r.l.",
+ "stage": "Other filing",
+ "filing_date": "2023-11-01",
+ "it_mw": null,
+ "grid_mw": null,
+ "backup_generators": 12,
+ "thermal_mw": 68.05,
+ "engine_makes": "",
+ "source_authority": "Ministero dell'Ambiente e della Sicurezza Energetica",
+ "source_url": "https://va.mite.gov.it/File/Documento/967362"
+}

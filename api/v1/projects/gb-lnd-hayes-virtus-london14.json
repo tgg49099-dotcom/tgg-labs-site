@@ -1,0 +1,15 @@
+{
+ "id": "GB-LND-HAYES-VIRTUS-LONDON14",
+ "country": "United Kingdom",
+ "municipality": "Hayes",
+ "operator": "Virtus Holdco Limited",
+ "stage": "Environmental permit granted",
+ "filing_date": "2025-03-04",
+ "it_mw": null,
+ "grid_mw": null,
+ "backup_generators": 16,
+ "thermal_mw": 110.0,
+ "engine_makes": "",
+ "source_authority": "Environment Agency",
+ "source_url": "https://assets.publishing.service.gov.uk/media/67ceee211e2f37b1f3fd1401/Decision_Document_London_14_Data_Centre.pdf"
+}

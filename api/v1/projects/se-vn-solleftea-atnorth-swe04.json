@@ -1,0 +1,15 @@
+{
+ "id": "SE-VN-SOLLEFTEA-ATNORTH-SWE04",
+ "country": "Sweden",
+ "municipality": "Sollefteå (Långsele)",
+ "operator": "atNorth AB",
+ "stage": "Pre-application consultation",
+ "filing_date": "2026-06-16",
+ "it_mw": null,
+ "grid_mw": null,
+ "backup_generators": 145,
+ "thermal_mw": 1200.0,
+ "engine_makes": "",
+ "source_authority": "Consultation file published by the operator",
+ "source_url": "https://www.atnorth.com/wp-content/uploads/2026/06/SWE04-Samradsunderlag-260616.pdf"
+}

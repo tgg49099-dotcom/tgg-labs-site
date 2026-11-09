@@ -1,0 +1,15 @@
+{
+ "id": "DE-BE-BERLIN-BMDF-MARIENPARK",
+ "country": "Germany",
+ "municipality": "Berlin (Mariendorf)",
+ "operator": "BMDF Gewerbepark Berlin-Mariendorf GmbH & Co. KG",
+ "stage": "Emissions permit granted (BImSchG)",
+ "filing_date": "2024-12-02",
+ "it_mw": null,
+ "grid_mw": null,
+ "backup_generators": 48,
+ "thermal_mw": 284.0,
+ "engine_makes": "",
+ "source_authority": "UVP-Portal",
+ "source_url": "https://uvp-verbund.de/documents-ige-ng/igc_be/128b757a-9adf-4928-b61a-bab5d33a893a/20241202%20Genehmigung%20Reinschrift.pdf"
+}

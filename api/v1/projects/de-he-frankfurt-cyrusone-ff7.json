@@ -1,0 +1,15 @@
+{
+ "id": "DE-HE-FRANKFURT-CYRUSONE-FF7",
+ "country": "Germany",
+ "municipality": "Frankfurt am Main (Griesheim)",
+ "operator": "CyrusOne Frankfurt 7 Holdings B.V.",
+ "stage": "Emissions permit granted (BImSchG)",
+ "filing_date": "2026-06-17",
+ "it_mw": null,
+ "grid_mw": null,
+ "backup_generators": 43,
+ "thermal_mw": 255.3,
+ "engine_makes": "MTU; Cummins",
+ "source_authority": "Regierungspräsidium Darmstadt",
+ "source_url": "https://rp-darmstadt.hessen.de/sites/rp-darmstadt.hessen.de/files/2026-07/bescheid-4_ndma-ff7-cyrusone_end.pdf"
+}

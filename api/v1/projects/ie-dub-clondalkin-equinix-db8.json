@@ -1,0 +1,15 @@
+{
+ "id": "IE-DUB-CLONDALKIN-EQUINIX-DB8",
+ "country": "Ireland",
+ "municipality": "Clondalkin (Profile Park, Plot 100, Nangor Road)",
+ "operator": "Equinix (Ireland) Limited",
+ "stage": "Refused or not admitted",
+ "filing_date": "2025-02-19",
+ "it_mw": null,
+ "grid_mw": null,
+ "backup_generators": 9,
+ "thermal_mw": null,
+ "engine_makes": "",
+ "source_authority": "An Coimisiún Pleanála",
+ "source_url": "https://www.pleanala.ie/en-ie/case/317936"
+}

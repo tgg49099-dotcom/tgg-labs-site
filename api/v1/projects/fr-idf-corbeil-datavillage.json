@@ -1,0 +1,15 @@
+{
+ "id": "FR-IDF-CORBEIL-DATAVILLAGE",
+ "country": "France",
+ "municipality": "Corbeil-Essonnes / Le Coudray-Montceaux",
+ "operator": "LCP FR DC1",
+ "stage": "Environmental-authority opinion (MRAe)",
+ "filing_date": "2025-05-07",
+ "it_mw": null,
+ "grid_mw": null,
+ "backup_generators": 62,
+ "thermal_mw": 527.0,
+ "engine_makes": "",
+ "source_authority": "Mission régionale d'autorité environnementale (MRAe)",
+ "source_url": "https://www.mrae.developpement-durable.gouv.fr/IMG/pdf/2025-05-07_corbeil-essonnes_91_data_center_village_delibere_.pdf"
+}

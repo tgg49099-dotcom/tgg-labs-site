@@ -1,0 +1,22 @@
+{
+ "name": "Standby Atlas free index",
+ "data_as_of": "2026-11-09",
+ "records": 172,
+ "fields": [
+  "id",
+  "country",
+  "municipality",
+  "operator",
+  "stage",
+  "filing_date",
+  "it_mw",
+  "grid_mw",
+  "backup_generators",
+  "thermal_mw",
+  "engine_makes",
+  "source_authority",
+  "source_url"
+ ],
+ "licence": "Free fields, reuse with attribution: Standby Atlas, standbyatlas.com",
+ "full_fields": "Backup Fleet, Team and Intelligence licences, https://standbyatlas.com/pricing/"
+}

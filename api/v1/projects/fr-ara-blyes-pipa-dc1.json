@@ -1,0 +1,15 @@
+{
+ "id": "FR-ARA-BLYES-PIPA-DC1",
+ "country": "France",
+ "municipality": "Blyes",
+ "operator": "SAS PIPA-DC1",
+ "stage": "Environmental-authority opinion (MRAe)",
+ "filing_date": "2026-08-13",
+ "it_mw": 130.0,
+ "grid_mw": 195.0,
+ "backup_generators": 74,
+ "thermal_mw": 547.0,
+ "engine_makes": "",
+ "source_authority": "Mission régionale d'autorité environnementale (MRAe)",
+ "source_url": "https://www.mrae.developpement-durable.gouv.fr/IMG/pdf/avis-20260730-ap-2098-n022432-datacenter-blyes-01.pdf"
+}

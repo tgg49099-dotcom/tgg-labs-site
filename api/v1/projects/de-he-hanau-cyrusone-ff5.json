@@ -1,0 +1,15 @@
+{
+ "id": "DE-HE-HANAU-CYRUSONE-FF5",
+ "country": "Germany",
+ "municipality": "Hanau",
+ "operator": "CyrusOne Frankfurt 5 Holdings B.V.",
+ "stage": "Permit amendment filed (BImSchG)",
+ "filing_date": "2026-06-16",
+ "it_mw": null,
+ "grid_mw": null,
+ "backup_generators": 43,
+ "thermal_mw": 244.0,
+ "engine_makes": "Cummins",
+ "source_authority": "Regierungspräsidium Darmstadt",
+ "source_url": "https://rp-darmstadt.hessen.de/sites/rp-darmstadt.hessen.de/files/2026-07/aenderungsgenehmigungsbescheid_ndma_ff5_1_hanau_fb_mit_anlagen.pdf"
+}

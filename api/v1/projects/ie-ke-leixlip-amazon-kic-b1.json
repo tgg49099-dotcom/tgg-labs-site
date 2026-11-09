@@ -1,0 +1,15 @@
+{
+ "id": "IE-KE-LEIXLIP-AMAZON-KIC-B1",
+ "country": "Ireland",
+ "municipality": "Leixlip",
+ "operator": "Amazon Data Services Ireland Limited",
+ "stage": "Refused or not admitted",
+ "filing_date": "2025-10-17",
+ "it_mw": null,
+ "grid_mw": null,
+ "backup_generators": 15,
+ "thermal_mw": 111.9,
+ "engine_makes": "",
+ "source_authority": "Environmental Protection Agency (Ireland)",
+ "source_url": "https://epawebapp.epa.ie/licences/lic_eDMS/090151b28095e27e.pdf"
+}

@@ -1,0 +1,15 @@
+{
+ "id": "FR-IDF-MAGNY-TELEHOUSE-NOUVEAU-BATIMENT",
+ "country": "France",
+ "municipality": "Magny-les-Hameaux",
+ "operator": "Telehouse",
+ "stage": "Public consultation",
+ "filing_date": "2026-06-18",
+ "it_mw": null,
+ "grid_mw": null,
+ "backup_generators": null,
+ "thermal_mw": null,
+ "engine_makes": "",
+ "source_authority": "Public consultation register (France)",
+ "source_url": "https://www.registre-dematerialise.fr/7391/download/document/7295/Avis%20de%20consultation%20du%20public"
+}

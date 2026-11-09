@@ -1,0 +1,15 @@
+{
+ "id": "NO-AGDER-SIRDAL-TONSTAD",
+ "country": "Norway",
+ "municipality": "Sirdal (Tonstad)",
+ "operator": "Tonstad Datapark AS",
+ "stage": "Grid concession granted",
+ "filing_date": "2025-12-10",
+ "it_mw": null,
+ "grid_mw": 300.0,
+ "backup_generators": null,
+ "thermal_mw": null,
+ "engine_makes": "",
+ "source_authority": "NVE (Norwegian Water Resources and Energy Directorate)",
+ "source_url": "https://webfileservice.nve.no/API/PublishedFiles/Download/dc9be507-8aea-400a-9c3a-f6bad0d15006/202519658/3449201"
+}

@@ -1,0 +1,15 @@
+{
+ "id": "IE-DUB-BALDONNELL-AMAZON-P1184",
+ "country": "Ireland",
+ "municipality": "Baldonnell (Grange Castle Business Park South, Baldonnell Road)",
+ "operator": "Amazon Data Services Ireland Limited",
+ "stage": "Industrial-emissions licence application",
+ "filing_date": "2023-05-11",
+ "it_mw": null,
+ "grid_mw": null,
+ "backup_generators": 16,
+ "thermal_mw": 103.84,
+ "engine_makes": "",
+ "source_authority": "Environmental Protection Agency (Ireland)",
+ "source_url": "https://epawebapp.epa.ie/licences/lic_eDMS/090151b280875e4e.pdf"
+}

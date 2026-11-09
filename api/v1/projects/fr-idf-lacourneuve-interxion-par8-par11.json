@@ -1,0 +1,15 @@
+{
+ "id": "FR-IDF-LACOURNEUVE-INTERXION-PAR8-PAR11",
+ "country": "France",
+ "municipality": "La Courneuve",
+ "operator": "Interxion France",
+ "stage": "Other filing",
+ "filing_date": "2025-05-23",
+ "it_mw": null,
+ "grid_mw": null,
+ "backup_generators": 72,
+ "thermal_mw": 355.75,
+ "engine_makes": "Kohler (Rehlko)",
+ "source_authority": "Géorisques (French installations register)",
+ "source_url": "https://georisques.gouv.fr/webappReport/ws/installations/inspection/GHRNDIb4uTay9Tb1TTjAAz8QJB1mhqX2"
+}

@@ -1,0 +1,15 @@
+{
+ "id": "DE-HE-FRANKFURT-EQUINIX-FR16X",
+ "country": "Germany",
+ "municipality": "Frankfurt am Main (Seckbach)",
+ "operator": "Equinix Hyperscale 2 (FR16) GmbH",
+ "stage": "Emissions permit granted (BImSchG)",
+ "filing_date": "2025-04-17",
+ "it_mw": null,
+ "grid_mw": null,
+ "backup_generators": 11,
+ "thermal_mw": 76.01,
+ "engine_makes": "Cummins",
+ "source_authority": "Regierungspräsidium Darmstadt",
+ "source_url": "https://rp-darmstadt.hessen.de/sites/rp-darmstadt.hessen.de/files/2026-07/bescheid_gen-2022-001_equ-ndma-fr16x_endfassung.pdf"
+}

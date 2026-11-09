@@ -1,0 +1,15 @@
+{
+ "id": "FR-IDF-LEBOURGET-SEGRO",
+ "country": "France",
+ "municipality": "Le Bourget",
+ "operator": "Segro Bourget",
+ "stage": "Environmental-authority opinion (MRAe)",
+ "filing_date": "2025-06-30",
+ "it_mw": null,
+ "grid_mw": 75.0,
+ "backup_generators": 33,
+ "thermal_mw": null,
+ "engine_makes": "",
+ "source_authority": "Mission régionale d'autorité environnementale (MRAe)",
+ "source_url": "https://www.mrae.developpement-durable.gouv.fr/IMG/pdf/2025_06_30_bourget_centre_de_donnees_segro_avis_signe.pdf"
+}

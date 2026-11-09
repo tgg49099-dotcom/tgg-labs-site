@@ -1,0 +1,15 @@
+{
+ "id": "GB-SRY-REDHILL-DLR-LGW10-11",
+ "country": "United Kingdom",
+ "municipality": "Redhill (Foxboro Park, St Anne's Boulevard)",
+ "operator": "Digital Realty (UK) Limited",
+ "stage": "Environmental permit granted",
+ "filing_date": "2025-02-11",
+ "it_mw": null,
+ "grid_mw": null,
+ "backup_generators": 21,
+ "thermal_mw": 72.4,
+ "engine_makes": "",
+ "source_authority": "Environment Agency",
+ "source_url": "https://assets.publishing.service.gov.uk/media/67adda2a2c594609b38acd39/Application_Bespoke_A001_Decision_Document_-_11_02_2025.pdf"
+}

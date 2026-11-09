@@ -1,0 +1,15 @@
+{
+ "id": "FR-ARA-SAINTPRIEST-PENTA",
+ "country": "France",
+ "municipality": "Saint-Priest",
+ "operator": "Penta Lyon",
+ "stage": "Environmental-authority opinion (MRAe)",
+ "filing_date": "2026-06-11",
+ "it_mw": null,
+ "grid_mw": 23.0,
+ "backup_generators": 12,
+ "thermal_mw": null,
+ "engine_makes": "",
+ "source_authority": "Mission régionale d'autorité environnementale (MRAe)",
+ "source_url": "https://www.mrae.developpement-durable.gouv.fr/IMG/pdf/20260611_apara2064-n16668_icpe_datacenter_saintpriest_69_delibere.pdf"
+}

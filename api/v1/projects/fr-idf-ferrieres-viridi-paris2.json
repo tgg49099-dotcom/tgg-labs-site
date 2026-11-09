@@ -1,0 +1,15 @@
+{
+ "id": "FR-IDF-FERRIERES-VIRIDI-PARIS2",
+ "country": "France",
+ "municipality": "Ferrières-en-Brie",
+ "operator": "Viridi Data Paris 2 SAS",
+ "stage": "Environmental-authority opinion (MRAe)",
+ "filing_date": "2018-02-08",
+ "it_mw": null,
+ "grid_mw": null,
+ "backup_generators": 8,
+ "thermal_mw": 38.4,
+ "engine_makes": "",
+ "source_authority": "DRIEAT Île-de-France",
+ "source_url": "https://www.drieat.ile-de-france.developpement-durable.gouv.fr/IMG/pdf/180208_mrae_avis_sur_projet_data_center_ferrieres-en-brie_77_.pdf"
+}

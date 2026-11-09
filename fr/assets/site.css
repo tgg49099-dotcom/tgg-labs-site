@@ -786,3 +786,22 @@ table.tableur th { color: var(--lampe); font-weight: 600; font-size: 0.76rem; ba
 .ef-pied { padding: 10px 0 0; margin-top: 12px; border-top: 1px solid rgba(231, 238, 245, 0.16); justify-content: flex-end; }
 .ef-pied .compteur { margin-right: auto; text-align: left; }
 .preuve-fenetre { margin: 22px 0 0; padding: 12px 16px; border-left: 3px solid #B97C00; background: rgba(185, 124, 0, 0.08); font-weight: 600; max-width: 46rem; }
+
+/* badge des champs réservés à la licence (remplace la barre grise) */
+.badge-licence { display: inline-flex; align-items: center; gap: 4px; padding: 1px 8px 1px 6px; margin-right: 6px; border: 1px solid var(--lampe); border-radius: 999px; color: var(--lampe); font-size: 0.74rem; font-weight: 700; font-stretch: 88%; vertical-align: 0.1em; }
+.badge-licence svg { width: 11px; height: 11px; fill: none; stroke: currentColor; stroke-width: 1.6; }
+.verrou { color: #CFE6F6; }
+/* formats : onglets Excel / API / assistant IA */
+.onglets-formats { display: inline-flex; gap: 2px; padding: 4px; background: rgba(255, 255, 255, 0.06); border-radius: 10px; margin-bottom: 18px; }
+.onglets-formats button { font: inherit; font-size: 0.9rem; font-weight: 650; color: rgba(231, 238, 245, 0.75); background: none; border: 0; border-radius: 7px; padding: 9px 18px; cursor: pointer; }
+.onglets-formats button[aria-selected="true"] { background: var(--lampe); color: var(--amber-ink); }
+.panneau-format { margin-bottom: 26px; max-width: 900px; }
+.panneau-format pre { margin: 0; padding: 16px; border: 1px solid var(--rule-navy); border-radius: 10px; background: #0A1C2E; overflow: auto; max-height: 340px; font: 500 0.8rem/1.55 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; color: #CFE6F6; }
+.api-texte { color: var(--on-navy-2); margin: 0 0 10px; max-width: 40rem; }
+.api-url { font: 500 0.82rem/1.4 ui-monospace, Menlo, monospace; color: #fff; margin: 0 0 10px; overflow-wrap: anywhere; }
+.api-url b { color: var(--lampe); margin-right: 8px; }
+.chat { display: grid; gap: 12px; max-width: 680px; }
+.bulle { margin: 0; padding: 14px 16px; border-radius: 14px; }
+.bulle.q { justify-self: end; background: var(--lampe); color: var(--amber-ink); font-weight: 600; border-bottom-right-radius: 4px; max-width: 85%; }
+.bulle.r { background: rgba(255, 255, 255, 0.06); border: 1px solid var(--rule-navy); border-bottom-left-radius: 4px; }
+.bulle.r p { margin: 0 0 8px; } .bulle.r ul { margin: 0; padding-left: 1.1em; display: grid; gap: 6px; } .bulle.r a { color: #fff; }

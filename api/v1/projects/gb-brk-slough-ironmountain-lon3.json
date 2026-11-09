@@ -1,0 +1,15 @@
+{
+ "id": "GB-BRK-SLOUGH-IRONMOUNTAIN-LON3",
+ "country": "United Kingdom",
+ "municipality": "Slough (111 Buckingham Avenue)",
+ "operator": "Iron Mountain (UK) Data Centre Limited",
+ "stage": "Environmental permit granted",
+ "filing_date": "2026-01-07",
+ "it_mw": null,
+ "grid_mw": null,
+ "backup_generators": 17,
+ "thermal_mw": 113.31,
+ "engine_makes": "",
+ "source_authority": "Environment Agency",
+ "source_url": "https://assets.publishing.service.gov.uk/media/6968eb235fd54abe6531a7ed/Application_Bespoke_A001_Permit_Issue_-_07012026.pdf"
+}
