@@ -31,7 +31,8 @@
   // ordre de montée : dates de dépôt croissantes (le pipeline s'allume dans l'ordre où il est apparu)
   var parDate = P.slice().sort(function (a, b) { return (a.d || '0') < (b.d || '0') ? -1 : 1; });
   parDate.forEach(function (p, k) { p.t0 = 300 + k / N * 2600; });
-  var debut = 0, choisi = -1, survol = -1, filtreM = 'tous', filtreE = 'tous', dernierRendu = 0, enVue = true;
+  var attendre = racine.hasAttribute('data-attendre'), demarre = !attendre;
+  var debut = attendre ? 1e15 : 0, choisi = -1, survol = -1, filtreM = 'tous', filtreE = 'tous', dernierRendu = 0, enVue = true;
 
   // ------------------------------------------------------------------ sprites (dégradés précalculés)
   function sprite(w, h, dessin) { var c = document.createElement('canvas'); c.width = w; c.height = h; dessin(c.getContext('2d'), w, h); return c; }
@@ -89,7 +90,10 @@
       var x0 = Math.min(W * 0.5, Math.max(W * 0.3, droite + 28));
       return { x0: x0, x1: W - 16, y0: H * 0.08, y1: H * 0.97 };
     }
-    return { x0: W * 0.02, x1: W * 0.98, y0: H * 0.1, y1: H * 0.98 };
+    var rc2 = canvas.getBoundingClientRect(), haut = H * 0.1, bas = H * 0.98;
+    racine.querySelectorAll('[data-c3-haut]').forEach(function (el) { var r = el.getBoundingClientRect(); if (r.height && r.bottom - rc2.top < H * 0.5) haut = Math.max(haut, r.bottom - rc2.top + 10); });
+    racine.querySelectorAll('[data-c3-bas]').forEach(function (el) { var r = el.getBoundingClientRect(); if (r.height && r.top - rc2.top > H * 0.5) bas = Math.min(bas, r.top - rc2.top - 6); });
+    return { x0: W * 0.02, x1: W * 0.98, y0: haut, y1: Math.max(haut + 160, bas) };
   }
   function bornes(k) {
     var b = [1e9, 1e9, -1e9, -1e9];
@@ -159,7 +163,7 @@
     var liste = [];
     for (var i = 0; i < N; i++) {
       var p = P[i];
-      var m = calme ? 1 : Math.max(0, Math.min(1, (t - debut - p.t0) / 750));
+      var m = calme ? 1 : !demarre ? 0 : Math.max(0, Math.min(1, (t - debut - p.t0) / 750));
       p.monte = m;
       if (m <= 0) continue;
       var e = 1 - Math.pow(1 - m, 3);
@@ -213,7 +217,7 @@
   // ------------------------------------------------------------------ boucle
   var anime = false, interaction = 0;
   function enCours(t) {
-    if (calme) return false;
+    if (calme || !demarre) return false;
     if (t - debut < 3800) return true;
     for (var i = 0; i < N; i++) if (Math.abs(P[i].a - P[i].v) > 0.004) return true;
     if (Math.abs(vue.az - cible.az) > 0.0005 || Math.abs(vue.el - cible.el) > 0.0005) return true;
@@ -346,6 +350,8 @@
     new IntersectionObserver(function (es) { es.forEach(function (x) { enVue = x.isIntersecting; if (enVue) demander(); }); }, { threshold: 0.05 }).observe(racine);
   }
   window.addEventListener('resize', function () { clearTimeout(taille.t); taille.t = setTimeout(taille, 120); });
-  function lancer() { taille(); debut = performance.now(); interaction = debut; appliquer(); montrer(-1); demander(); }
+  function demarrer() { if (demarre) return; demarre = true; debut = performance.now(); interaction = debut; demander(); }
+  racine.c3.demarrer = demarrer;
+  function lancer() { taille(); if (!attendre) { debut = performance.now(); } interaction = performance.now(); appliquer(); montrer(-1); demander(); }
   if (document.fonts && document.fonts.ready) document.fonts.ready.then(lancer); else lancer();
 })();
