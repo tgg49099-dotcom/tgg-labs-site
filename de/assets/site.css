@@ -1798,3 +1798,61 @@ body.accueil .tete, body.accueil .tete.sur-carte { position: fixed; top: 0; left
   .recit.anime .s-fuite .fuite-faits li { padding: 8px 12px; }
   .recit.anime .scene > .cadre { padding-top: 62px; padding-bottom: 14px; }
 }
+
+/* v8 : la carte compte trois pages (Europe, région, site). Les blocs de texte de chaque page se superposent et s'échangent. */
+.recit.anime .s-carte .c3-etape { transition: none; will-change: opacity; }
+.recit.anime .s-carte .c3-etape:not(.etape-active), .recit.anime .s-carte .c3-etape:not(.etape-active) * { pointer-events: none !important; }
+.c3-site-lieu { margin: 0 0 8px; color: var(--c1); font-size: 0.86rem; font-weight: 600; }
+.c3-site-etat { display: flex; align-items: center; gap: 8px; margin: 12px 0 0; color: var(--c0); font-size: 0.92rem; }
+.c3-site-flotte { margin: 18px 0 0; }
+.c3-site-flotte .flotte { width: 100%; max-width: 380px; height: auto; max-height: min(22svh, 200px); }
+.c3-site-flotte figcaption { margin-top: 6px; color: var(--c1); font-size: 0.78rem; }
+.c3-site-faits { margin-top: 14px; }
+.c3-site-faits li { background: rgba(6, 26, 44, 0.72); }
+.c3-site .btn { margin-top: 16px; }
+.recit:not(.anime) .s-carte .c3-etape[data-etape="1"] { display: none; }
+.recit:not(.anime) .s-carte .c3-site { position: static; margin-top: 24px; }
+@media (min-width: 1000px) {
+  .recit.anime .s-carte .c3-site { padding-top: 92px; }
+  .recit.anime .s-carte .c3-site > * { max-width: min(33vw, 440px); }
+  .recit.anime .s-carte .c3-site-faits { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 999px) {
+  .recit.anime .s-carte .c3-site { bottom: 0; display: flex; flex-direction: column; padding-top: 76px; padding-bottom: 14px; }
+  .recit.anime .s-carte .c3-site-bas { margin-top: auto; padding-top: 30px; background: linear-gradient(180deg, rgba(6, 26, 44, 0), rgba(6, 26, 44, 0.9) 26%); }
+  .c3-site-flotte { margin: 0; display: flex; align-items: flex-end; gap: 12px; }
+  .c3-site-flotte .flotte { width: 52%; max-height: 18svh; }
+  .c3-site-flotte figcaption { flex: 1; margin: 0 0 4px; }
+  .c3-site-faits { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 6px; margin-top: 10px; }
+  .c3-site-faits li { padding: 7px 10px; }
+  .c3-site-faits li b { font-size: 0.98rem; }
+  .c3-site .btn { margin-top: 10px; align-self: flex-start; }
+}
+@media (max-width: 999px) and (max-height: 700px) {
+  .c3-site-etat { display: none; }
+  .c3-site-flotte .flotte { max-height: 15svh; }
+  .c3-site-faits li:nth-child(2) { display: none; }
+}
+.recit.anime .c3-site-faits li, .c3-site-faits li { opacity: 1; transform: none; animation: none; }
+.s-carte .c3-etape h2 { font-size: clamp(1.5rem, min(2.7vw, 4.6svh), 2.5rem); }
+.s-carte .c3-etape[data-etape="0"] h2 { font-size: clamp(1.6rem, min(3.4vw, 5.4svh), 3rem); }
+@media (min-width: 1000px) and (max-height: 760px) {
+  .c3-site-flotte .flotte { max-height: 18svh; }
+  .c3-site-etat { margin-top: 8px; }
+  .c3-site-faits li { padding: 8px 12px; }
+}
+
+/* v8 : le champ de blocs est une couche commune aux scènes « parc » et « moteurs » ; les blocs se rangent dans les barres */
+.recit.anime .parc-canvas { position: absolute; inset: 0; top: 0; right: auto; width: 100%; height: 100%; z-index: 1; pointer-events: none; visibility: hidden; opacity: 0; }
+.recit.anime .s-parc, .recit.anime .s-moteurs { background: transparent; }
+.recit:not(.anime) > .recit-vue > .parc-canvas { display: none; }
+.recit:not(.anime) .s-parc .parc-canvas { display: block; }
+.recit.morph .s-moteurs .m-barre { height: 20px; border-radius: 4px; background: rgba(143, 198, 234, 0.05); box-shadow: inset 0 0 0 1px rgba(143, 198, 234, 0.12); }
+.recit.morph .s-moteurs .m-barre span { visibility: hidden; }
+@media (max-width: 999px) {
+  .recit.anime .parc-canvas { top: 0; width: 100%; height: 100%; }
+  .recit.morph .s-moteurs .m-barre { height: 18px; }
+}
+@media (max-width: 999px) and (max-height: 700px) {
+  .recit.anime .s-carte .ouv-legende { padding-top: 72px; }
+}
