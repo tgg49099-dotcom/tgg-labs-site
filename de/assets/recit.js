@@ -187,7 +187,7 @@
     s.querySelectorAll('[data-etape]').forEach(function (b) {
       var j = +b.getAttribute('data-etape'), o = Math.max(0, Math.min(1, 1 - Math.abs(u - j) * 2.4));
       b.style.opacity = o.toFixed(3);
-      b.style.visibility = o > 0.01 ? 'visible' : 'hidden';
+      b.style.visibility = o > 0.01 ? '' : 'hidden'; // jamais « visible » : un bloc ne doit pas rester apparent quand sa scène est cachée
       b.classList.toggle('etape-active', o > 0.5);
       if (o > 0.6) { var f = b.querySelector('.flotte'); if (f) f.classList.add('allume'); }
     });
@@ -201,7 +201,7 @@
       var s = scenes[k], d = prog < s0 ? prog - s0 : prog > s1 ? prog - s1 : 0, a = Math.abs(d);
       if (etapes[k] > 1 && a < 1) etapesScene(s, Math.max(0, Math.min(etapes[k] - 1, prog - s0)));
       if (a >= 1) {
-        if (s.style.visibility !== 'hidden') { s.style.visibility = 'hidden'; s.classList.remove('active', 'transit'); }
+        if (s.style.visibility !== 'hidden') { s.style.visibility = 'hidden'; s.style.setProperty('--o', '0'); s.classList.remove('active', 'transit'); }
         continue;
       }
       s.style.visibility = 'visible';

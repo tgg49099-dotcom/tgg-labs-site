@@ -1959,3 +1959,46 @@ body.accueil .tete, body.accueil .tete.sur-carte { position: fixed; top: 0; left
 @media (min-width: 700px) and (max-width: 999px) {
   .mur { max-width: 520px; grid-template-columns: repeat(17, minmax(0, 1fr)); }
 }
+
+/* ------------------------------------------------------------------ v10 : besoins par métier, puis l'essai (les prix restent sur la page Prix) */
+.s-besoins { background: radial-gradient(60% 70% at 50% 100%, rgba(255, 182, 37, 0.07), rgba(6, 26, 44, 0) 70%), var(--n0); }
+.besoins { list-style: none; margin: 26px 0 0; padding: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; }
+.besoins li { position: relative; overflow: hidden; display: flex; flex-direction: column; border: 1px solid var(--n-trait); border-radius: 16px; background: #0A223A; }
+.besoins picture, .besoins img { display: block; width: 100%; }
+.besoins img { aspect-ratio: 16 / 9; max-height: 22svh; object-fit: cover; filter: saturate(0.75) brightness(0.62); }
+.b-corps { position: relative; margin-top: -42px; padding: 0 18px 18px; }
+.b-chiffre { margin: 0; color: var(--lampe); font-weight: 620; font-stretch: 72%; font-size: clamp(2.2rem, min(3.4vw, 6svh), 3.2rem); line-height: 0.95; text-shadow: 0 0 34px rgba(255, 182, 37, 0.35), 0 2px 18px rgba(6, 26, 44, 0.9); font-variant-numeric: tabular-nums; }
+.b-unite { margin: 4px 0 0; color: var(--c0); font-size: 0.8rem; }
+.besoins h3 { margin: 14px 0 0; color: #fff; font-size: 1rem; line-height: 1.25; }
+.b-besoin { margin: 6px 0 0; color: var(--c1); font-size: 0.88rem; line-height: 1.45; }
+@media (prefers-reduced-motion: no-preference) {
+  .recit.anime .s-besoins .besoins li { opacity: 0; transform: translateY(26px); }
+  .recit.anime .s-besoins.joue .besoins li { animation: v10-carte 0.7s cubic-bezier(0.2, 0.75, 0.2, 1) forwards; }
+  .recit.anime .s-besoins.joue .besoins li:nth-child(2) { animation-delay: 0.12s; }
+  .recit.anime .s-besoins.joue .besoins li:nth-child(3) { animation-delay: 0.24s; }
+  .recit.anime .s-besoins.joue .besoins li:nth-child(4) { animation-delay: 0.36s; }
+  @keyframes v10-carte { to { opacity: 1; transform: none; } }
+}
+.s-essai .actions { margin-top: 22px; }
+.s-essai .v5-trois { margin-top: 30px; }
+.essai-tarifs { margin: 18px 0 0; font-size: 0.86rem; }
+.essai-tarifs a { color: var(--c1); text-decoration: underline; text-underline-offset: 3px; }
+@media (max-width: 999px) {
+  .besoins { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; margin-top: 16px; }
+  .besoins img { max-height: 11svh; }
+  .b-corps { margin-top: -30px; padding: 0 12px 12px; }
+  .b-chiffre { font-size: 1.9rem; }
+  .b-unite { font-size: 0.72rem; }
+  .besoins h3 { margin-top: 8px; font-size: 0.86rem; }
+  .b-besoin { display: none; }
+  .recit.anime .s-besoins .v5-intro { font-size: 0.9rem; }
+  .recit.anime .s-essai .v5-trois p { display: none; }
+  .recit.anime .s-essai .v5-trois { margin-top: 18px; }
+}
+@media (min-width: 700px) and (max-width: 999px) and (min-height: 900px) {
+  .b-besoin { display: block; }
+  .besoins img { max-height: 16svh; }
+}
+@media (max-width: 999px) and (max-height: 700px) {
+  .recit.anime .s-besoins .v5-intro { display: none; }
+}
