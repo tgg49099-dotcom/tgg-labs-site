@@ -785,3 +785,4 @@ table.tableur th { color: var(--lampe); font-weight: 600; font-size: 0.76rem; ba
 .carte .appels, .releve { pointer-events: none; }
 .ef-pied { padding: 10px 0 0; margin-top: 12px; border-top: 1px solid rgba(231, 238, 245, 0.16); justify-content: flex-end; }
 .ef-pied .compteur { margin-right: auto; text-align: left; }
+.preuve-fenetre { margin: 22px 0 0; padding: 12px 16px; border-left: 3px solid #B97C00; background: rgba(185, 124, 0, 0.08); font-weight: 600; max-width: 46rem; }
