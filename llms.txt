@@ -1,0 +1,13 @@
+# Standby Atlas
+
+> Europe's data-centre pipeline read from public filings: 172 upcoming data-centre projects in 14 countries, with IT and grid MW, backup generators, thermal input, engine makes, stage, date and a link to the official document for every record. Data as of 9 November 2026.
+
+## Pages
+- [All projects](https://standbyatlas.com/projects/): one page per project with its official source
+- [Method and coverage](https://standbyatlas.com/method/): definitions, coverage by country, corrections
+- [Free sample and data dictionary](https://standbyatlas.com/data/): 20 records as CSV
+- [Report and licences](https://standbyatlas.com/pricing/): founding report, annual watch, team and resale licences
+- [New filings feed](https://standbyatlas.com/feed.xml): Atom
+
+## Citation
+Standby Atlas, European data-centre pipeline, data as of 9 November 2026, https://standbyatlas.com/
