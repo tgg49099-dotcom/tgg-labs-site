@@ -805,3 +805,110 @@ table.tableur th { color: var(--lampe); font-weight: 600; font-size: 0.76rem; ba
 .bulle.q { justify-self: end; background: var(--lampe); color: var(--amber-ink); font-weight: 600; border-bottom-right-radius: 4px; max-width: 85%; }
 .bulle.r { background: rgba(255, 255, 255, 0.06); border: 1px solid var(--rule-navy); border-bottom-left-radius: 4px; }
 .bulle.r p { margin: 0 0 8px; } .bulle.r ul { margin: 0; padding-left: 1.1em; display: grid; gap: 6px; } .bulle.r a { color: #fff; }
+
+/* ===================== v4 : nuit continue, chiffres géants, carte en colonnes de lumière ===================== */
+.accueil .bande h2 { font-size: clamp(2rem, 4vw, 3.5rem); font-stretch: 122%; letter-spacing: -0.02em; line-height: 1.04; }
+.accueil .bande.nuit { background: var(--console); }
+.accueil .bande.nuit.nuit-2 { background: radial-gradient(70% 60% at 85% 0%, rgba(25, 82, 128, 0.35), rgba(6, 26, 44, 0) 70%), #08203A; }
+.accueil .bande.nuit .intro, .accueil .bande.nuit .note-bas { color: var(--on-navy-2); }
+.accueil .bande.nuit .lien-suite a { color: #fff; }
+
+.chiffres-geants { background: linear-gradient(180deg, var(--console-2) 0%, var(--console) 100%); padding: clamp(64px, 9vw, 128px) 0; border-top: 1px solid var(--rule-navy); }
+.grille-geants { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 40px; align-items: start; }
+.grille-geants > div { position: relative; }
+.geant { margin: 0; font-weight: 620; font-stretch: 70%; font-size: clamp(4rem, 9.5vw, 9rem); line-height: 0.88; letter-spacing: -0.02em; color: #fff; white-space: nowrap; }
+.grille-geants > div:first-child .geant { color: var(--lampe); text-shadow: 0 0 48px rgba(255, 182, 37, 0.35); }
+.geant .u { font-size: 0.38em; margin-left: 8px; color: var(--lampe); font-stretch: 90%; }
+.geant-sur { margin: 4px 0 0; font-weight: 620; font-stretch: 72%; font-size: clamp(1.6rem, 3vw, 2.6rem); color: var(--on-navy-2); line-height: 1; }
+.geant-l { margin: 14px 0 0; color: var(--on-navy-2); max-width: 19rem; font-size: 1rem; line-height: 1.5; }
+
+/* la carte en relief : chaque projet est une colonne de lumière */
+.explorer-grille { grid-template-columns: minmax(0, 1.45fr) minmax(0, 0.55fr); }
+.scene3d { position: relative; height: min(70vh, 640px); perspective: 2400px; perspective-origin: 50% 8%; overflow: hidden; border-radius: 18px;
+  background: radial-gradient(60% 60% at 50% 60%, rgba(25, 82, 128, 0.45), rgba(6, 26, 44, 0) 72%); }
+.sol { position: absolute; left: 50%; top: 50%; width: min(900px, 132%); aspect-ratio: 760 / 820; transform-style: preserve-3d;
+  transform: translate(-50%, -50%) rotateX(56deg) rotateZ(-12deg); }
+@media (prefers-reduced-motion: no-preference) {
+  .explorer.anime .sol { animation: balance 28s ease-in-out 3s infinite alternate; }
+  @keyframes balance { from { transform: translate(-50%, -50%) rotateX(56deg) rotateZ(-12deg); } to { transform: translate(-50%, -50%) rotateX(54deg) rotateZ(-2deg); } }
+}
+.carte-sol { position: absolute; inset: 0; width: 100%; height: 100%; }
+.carte-sol .grille { fill: none; stroke: #8FC6EA; stroke-opacity: 0.16; stroke-width: 0.7; }
+.carte-sol .terre path { fill: rgba(143, 198, 234, 0.07); stroke: rgba(143, 198, 234, 0.5); stroke-width: 0.7; }
+.pilier { position: absolute; width: 0; height: 0; transform-style: preserve-3d; cursor: pointer; }
+.pilier .base { position: absolute; left: -11px; top: -11px; width: 22px; height: 22px; border-radius: 50%;
+  background: radial-gradient(circle, #FFC94D 0 26%, rgba(255, 182, 37, 0.35) 48%, rgba(255, 182, 37, 0) 70%); }
+.pilier .f { position: absolute; left: -2px; bottom: 0; width: 4px; height: var(--h); border-radius: 2px; transform-origin: 50% 100%; transform: rotateX(-90deg);
+  background: linear-gradient(to top, #FFC94D, rgba(255, 182, 37, 0.1)); box-shadow: 0 0 10px 1px rgba(255, 182, 37, 0.55); transition: opacity 0.3s; }
+.pilier .f2 { transform: rotateX(-90deg) rotateY(90deg); }
+.pilier .f::before { content: ""; position: absolute; left: -2px; top: -3px; width: 8px; height: 8px; border-radius: 50%; background: #FFF1C9; box-shadow: 0 0 10px 3px rgba(255, 200, 90, 0.8); }
+.explorer .pilier { animation: none !important; }
+.explorer.attend .pilier .f { transform: rotateX(-90deg) scaleY(0); }
+.explorer.attend .pilier .f2 { transform: rotateX(-90deg) rotateY(90deg) scaleY(0); }
+@media (prefers-reduced-motion: no-preference) {
+  .explorer.anime .pilier .f { animation: monte 0.9s cubic-bezier(0.2, 0.8, 0.2, 1) var(--d) both; }
+  .explorer.anime .pilier .f2 { animation: monte2 0.9s cubic-bezier(0.2, 0.8, 0.2, 1) var(--d) both; }
+  @keyframes monte { from { transform: rotateX(-90deg) scaleY(0); } to { transform: rotateX(-90deg) scaleY(1); } }
+  @keyframes monte2 { from { transform: rotateX(-90deg) rotateY(90deg) scaleY(0); } to { transform: rotateX(-90deg) rotateY(90deg) scaleY(1); } }
+}
+.explorer.attend .lampe { opacity: 1; }
+.pilier.eteint .f { opacity: 0.08; box-shadow: none; }
+.pilier.eteint .base { opacity: 0.2; }
+.pilier.choisi .f { background: linear-gradient(to top, #FFFFFF, rgba(255, 255, 255, 0.15)); box-shadow: 0 0 16px 3px rgba(255, 255, 255, 0.7); }
+.pilier.choisi .base { background: radial-gradient(circle, #FFFFFF 0 26%, rgba(255, 255, 255, 0.4) 48%, rgba(255, 255, 255, 0) 70%); }
+.pilier:hover .f { box-shadow: 0 0 16px 3px rgba(255, 220, 140, 0.9); }
+
+/* fenêtre de publication, sur fond de nuit */
+.accueil #window table.fenetres th, .accueil #window table.fenetres td, .accueil #window table.fenetres tr { border-color: var(--rule-navy); }
+.accueil #window table.fenetres th { color: #fff; }
+.accueil #window table.fenetres th span, .accueil #window .legende-fenetre, .accueil #window .axe-fenetre, .accueil #window table.fenetres .val { color: var(--on-navy-2); }
+.accueil #window tr.retire .val { color: #fff; }
+.accueil #window .piste { background: linear-gradient(90deg, rgba(231, 238, 245, 0.16) 1px, transparent 1px) 0 0 / 25% 100% repeat-x; }
+.accueil #window .piste::after { background: rgba(231, 238, 245, 0.16); }
+.accueil #window tr.retire .trait, .accueil #window .legende-fenetre .retire::before { background: #C07E05; }
+.accueil #window tr.reste .trait, .accueil #window .legende-fenetre .reste::before { background: #3D86C8; }
+.accueil #window .preuve-fenetre { background: rgba(192, 126, 5, 0.14); border-left-color: #C07E05; color: #fff; }
+/* couches, cibles, méthode, sur fond de nuit */
+.accueil #layers ol.couches { border-top-color: rgba(231, 238, 245, 0.5); }
+.accueil #layers ol.couches li { border-bottom-color: var(--rule-navy); }
+.accueil #layers .c-nom { color: #fff; }
+.accueil #layers .c-nom::after, .accueil #layers summary .q, .accueil #layers .champs { color: var(--on-navy-2); }
+.accueil #layers .couverture { color: #fff; }
+.accueil #layers .statut { border-color: rgba(231, 238, 245, 0.3); color: var(--on-navy-2); }
+.accueil #layers .statut.actif { color: var(--amber-ink); }
+.accueil #who ul.pour-qui h3 { color: #fff; }
+.accueil #who ul.pour-qui p, .accueil #method ul.regles, .accueil #method .sources-ligne p { color: var(--on-navy-2); }
+.accueil #method ul.regles b, .accueil #method .sources-ligne ul { color: #fff; }
+.accueil #method .sources-ligne { border-top-color: var(--rule-navy); }
+
+@media (max-width: 1000px) {
+  .explorer-grille { grid-template-columns: minmax(0, 1fr); }
+  .scene3d { height: 62vh; }
+  .sol { width: 150%; }
+}
+@media (max-width: 800px) {
+  .grille-geants { grid-template-columns: minmax(0, 1fr); gap: 44px; }
+  .pilier .f { height: calc(var(--h) * 0.7); }
+}
+.geant .sur { font-size: 0.42em; color: var(--on-navy-2); margin-left: 6px; font-stretch: 72%; }
+.ouverture h1 { max-width: 15ch; font-size: clamp(2.2rem, 4vw, 3.7rem); }
+.explorer-tete h2 { max-width: 22ch; }
+.explorer-tete .intro { margin-top: 12px; }
+/* la scène prend toute la largeur ; filtres, totaux et fiche en dessous */
+.explorer-grille { grid-template-columns: minmax(0, 1fr); gap: 20px; }
+.explorer-carte .scene3d { height: min(72vh, 680px); }
+.explorer-carte .sol { width: min(1000px, 96%); top: 50%; }
+.explorer-cote { position: static; display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 0.75fr) minmax(0, 1fr); gap: 20px 28px; align-items: start; }
+.explorer-cote .filtre + .filtre { grid-column: 1; }
+.explorer-cote .totaux { grid-column: 2; grid-row: 1 / span 2; }
+.explorer-cote .explorer-fiche { grid-column: 3; grid-row: 1 / span 2; }
+.explorer-cote .totaux { grid-template-columns: minmax(0, 1fr); }
+.explorer-cote .totaux > div + div { padding-left: 0; border-left: 0; border-top: 1px solid var(--rule-navy); }
+.explorer-cote .totaux dd { font-size: 2.2rem; }
+@media (max-width: 1000px) {
+  .explorer-cote { grid-template-columns: minmax(0, 1fr); }
+  .explorer-cote .filtre + .filtre, .explorer-cote .totaux, .explorer-cote .explorer-fiche { grid-column: 1; grid-row: auto; }
+  .explorer-cote .totaux { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .explorer-cote .totaux > div + div { padding-left: 12px; border-left: 1px solid var(--rule-navy); border-top: 0; }
+  .explorer-carte .sol { width: 170%; }
+}
