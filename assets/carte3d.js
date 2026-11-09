@@ -225,7 +225,7 @@
   }
   function image(t) {
     anime = false;
-    if (!enVue) return;
+    if (!enVue || pauseExt) return;
     // transitions
     for (var i = 0; i < N; i++) { var p = P[i]; p.a += (p.v - p.a) * 0.14; }
     if (!calme && t - interaction > 2600 && !glisse) {
@@ -250,14 +250,15 @@
     if (i < 0) { fiche.innerHTML = '<p class="c3-invite">' + esc(T.invite) + '</p>'; return; }
     var p = P[i], v = visibles(), rang = v.indexOf(p);
     var h = '<button type="button" class="c3-fermer" data-fermer aria-label="' + esc(T.fermer) + '">×</button>';
-    h += '<p class="c3-lieu">' + esc(p.l) + '</p><h3 class="c3-nom">' + esc(p.t) + '</h3><dl class="c3-chiffres">';
-    h += '<div class="ambre"><dt>' + esc(T.groupes) + '</dt><dd>' + (p.g ? fmt(p.g) : '–') + '</dd></div>';
-    h += '<div><dt>' + esc(T.thermique) + '</dt><dd>' + (p.th ? esc(p.th) : '–') + '</dd></div></dl>';
+    h += '<p class="c3-lieu">' + esc(p.l) + '</p><h3 class="c3-nom">' + esc(p.t) + '</h3>';
+    // seuls les chiffres écrits dans le dossier s'affichent ; aucun tiret à la place d'un chiffre absent
+    var cases = (p.g ? '<div class="ambre"><dt>' + esc(T.groupes) + '</dt><dd>' + fmt(p.g) + '</dd></div>' : '') + (p.th ? '<div><dt>' + esc(T.thermique) + '</dt><dd>' + esc(p.th) + '</dd></div>' : '');
+    h += cases ? '<dl class="c3-chiffres">' + cases + '</dl>' : '<p class="c3-nd">' + esc(T.non_dit) + '</p>';
     h += '<p class="c3-etat"><span class="c3-pastille ' + p.q + '"></span>' + esc(p.e) + (p.dl ? ', ' + esc(p.dl) : '') + '</p>';
     h += '<p class="c3-moteurs"><span>' + esc(T.moteurs) + '</span> ' + esc(p.m.length ? p.m.join(', ') : T.non_cite) + '</p>';
     if (groupe && groupe.length > 1) {
       h += '<div class="c3-groupe"><p>' + esc(T.ici.replace('{n}', groupe.length)) + '</p><ul>' + groupe.slice(0, 8).map(function (q) {
-        return '<li><button type="button" data-i="' + q.i + '"' + (q.i === i ? ' aria-current="true"' : '') + '>' + esc(q.t) + '<span>' + (q.g ? fmt(q.g) : '–') + '</span></button></li>';
+        return '<li><button type="button" data-i="' + q.i + '"' + (q.i === i ? ' aria-current="true"' : '') + '>' + esc(q.t) + (q.g ? '<span>' + fmt(q.g) + '</span>' : '') + '</button></li>';
       }).join('') + '</ul></div>';
     }
     h += '<div class="c3-pied"><a class="c3-ouvrir" href="' + esc(D.racine + 'projects/' + p.s + '/') + '">' + esc(T.ouvrir) + '</a>';
@@ -352,6 +353,8 @@
   window.addEventListener('resize', function () { clearTimeout(taille.t); taille.t = setTimeout(taille, 120); });
   function demarrer() { if (demarre) return; demarre = true; debut = performance.now(); interaction = debut; demander(); }
   racine.c3.demarrer = demarrer;
+  var pauseExt = false;
+  racine.c3.pause = function (b) { if (b === pauseExt) return; pauseExt = b; if (!b) demander(); };
   function lancer() { taille(); if (!attendre) { debut = performance.now(); } interaction = performance.now(); appliquer(); montrer(-1); demander(); }
   if (document.fonts && document.fonts.ready) document.fonts.ready.then(lancer); else lancer();
 })();

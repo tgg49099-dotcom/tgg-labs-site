@@ -1533,3 +1533,268 @@ body.accueil { background: var(--n0); color: var(--c0); }
   .v6-ecran, .v6-ecran:hover { transform: none; }
 }
 @media (prefers-reduced-motion: reduce) { .v6-ecran { transition: none; } }
+
+.c3-nd { margin: 12px 0 4px; color: var(--c1); font-size: 0.86rem; }
+
+/* Standby Atlas v7 : l'accueil est un récit en scènes plein écran. Un cran de molette, une scène.
+   Toutes les scènes restent de nuit pour que les fondus enchaînés restent nets ; l'ambre garde son rôle (groupes de secours, actions). */
+body.accueil .tete, body.accueil .tete.sur-carte { position: fixed; top: 0; left: 0; right: 0; }
+.recit { position: relative; background: var(--n0); color: var(--c0); }
+.recit-pas, .recit-points { display: none; }
+.scene h2 { margin: 0; color: #fff; font-weight: 760; font-stretch: 120%; font-size: clamp(1.6rem, min(3.4vw, 5.4svh), 3rem); line-height: 1.05; letter-spacing: -0.016em; text-wrap: balance; }
+.scene .v5-intro { font-size: clamp(0.95rem, min(1.2vw, 2.2svh), 1.08rem); }
+
+/* sans animation (mouvement réduit, ou script absent) : les scènes s'empilent */
+.recit:not(.anime) .scene { position: relative; display: flex; flex-direction: column; justify-content: center; min-height: 100svh; padding: 84px 0 56px; border-top: 1px solid var(--n-trait); }
+.recit:not(.anime) .s-ouv { padding: 0; border: 0; }
+.recit:not(.anime) .s-carte { min-height: 0; padding: 84px 0 40px; }
+.recit:not(.anime) .s-carte .c3-canvas { height: clamp(320px, 62vw, 720px); }
+.recit:not(.anime) .s-carte .c3-fiche { position: static; transform: none !important; margin: 14px auto 0; }
+.recit:not(.anime) .parc-canvas { position: relative; display: block; width: 100%; height: 42vh; margin-bottom: 24px; }
+
+/* animé : la vue reste en place, les scènes se succèdent par fondu */
+.recit.anime { height: calc(var(--n) * 100svh); }
+.recit.anime .recit-pas { display: block; position: absolute; inset: 0; pointer-events: none; }
+.recit.anime .recit-pas span { position: absolute; left: 0; top: calc(var(--i) * 100svh); width: 1px; height: 100svh; }
+.recit.anime .recit-vue { position: sticky; top: 0; height: 100svh; overflow: hidden; }
+.recit.anime .scene { position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: safe center; visibility: hidden; opacity: var(--o, 0);
+  transform: scale(calc(1 + var(--d, 0) * 0.12)); transform-origin: 50% 50%; }
+.recit.anime .scene:not(.active) { pointer-events: none; }
+.recit.anime .scene.active { z-index: 2; }
+.recit.anime .scene > .cadre { width: 100%; padding-top: 70px; padding-bottom: 24px; }
+.recit.anime .s-ouv, .recit.anime .s-carte { transform: none; }
+.recit.anime .s-carte .c3-canvas { transform: scale(calc(1 + max(0, var(--d, 0)) * 0.2)); transform-origin: 62% 52%; }
+.s-carte .c3-date { position: static; margin: 12px 0 0; }
+.c3-groupe ul { overscroll-behavior: contain; }
+.recit.anime .s-ouv .ouv-photo { transform: scale(calc(1 + max(0, var(--d, 0)) * 0.22)); }
+.recit.anime .s-ouv .ouv-texte { transform: translateY(calc(var(--d, 0) * -18vh)); }
+
+/* points de navigation (une scène par point) */
+.recit.anime .recit-points { display: block; position: absolute; right: 16px; top: 50%; z-index: 30; transform: translateY(-50%); }
+.recit-points ol { list-style: none; margin: 0; padding: 0; display: grid; gap: 6px; }
+.recit-points button { display: block; width: 24px; height: 24px; padding: 0; border: 0; background: transparent; cursor: pointer; }
+.recit-points button span { display: block; width: 8px; height: 8px; margin: 8px; border-radius: 50%; background: rgba(231, 238, 245, 0.35); transition: transform 0.25s ease, background 0.25s ease; }
+.recit-points button:hover span { background: #fff; }
+.recit-points li { position: relative; }
+.recit-points em { position: absolute; right: 30px; top: 50%; transform: translate(6px, -50%); color: var(--c0); font-style: normal; font-size: 0.78rem; font-weight: 600; letter-spacing: 0.01em; white-space: nowrap; pointer-events: none; opacity: 0; transition: opacity 0.3s ease, transform 0.3s ease; }
+.recit-points button:hover em, .recit-points button:focus-visible em { opacity: 0.9; transform: translate(0, -50%); }
+.recit-points button[aria-current="true"] span { background: var(--lampe); transform: scale(1.6); box-shadow: 0 0 12px rgba(255, 182, 37, 0.7); }
+
+/* 1. ouverture */
+.s-ouv { overflow: hidden; }
+.s-ouv .ouv-photo { position: absolute; inset: 0; }
+.s-ouv h1 { margin: 0; max-width: 15ch; color: #fff; font-weight: 760; font-stretch: 125%; font-size: clamp(2.4rem, min(5.3vw, 8.4svh), 4.9rem); line-height: 1; letter-spacing: -0.025em; text-wrap: balance; text-shadow: 0 6px 50px rgba(0, 0, 0, 0.35); }
+.s-ouv h1:lang(de) { font-size: clamp(2.2rem, min(4.7vw, 7.6svh), 4.3rem); }
+.s-ouv .actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 28px; }
+.recit:not(.anime) .s-ouv { height: 100svh; }
+.s-ouv .ouv-texte { padding-top: 0; }
+.recit.anime .s-ouv { justify-content: center; }
+
+/* 2. carte */
+.s-carte { background: radial-gradient(64% 70% at 66% 50%, rgba(23, 78, 124, 0.45), rgba(6, 26, 44, 0) 72%), var(--n0); }
+.recit.anime .s-carte .c3-canvas { position: absolute; inset: 0; width: 100%; height: 100%; }
+.s-carte .ouv-legende, .s-carte .h5-outils, .s-carte .c3-fiche { z-index: 3; }
+.recit.anime .s-carte .ouv-legende { position: absolute; left: 0; right: 0; top: 0; pointer-events: none; }
+.recit.anime .s-carte .ouv-legende > * { pointer-events: auto; }
+.recit.anime .s-carte .h5-outils { position: absolute; left: 0; right: 0; bottom: 0; pointer-events: none; }
+.recit.anime .s-carte .h5-outils > * { pointer-events: auto; }
+.s-carte::after { content: ""; position: absolute; inset: 0; z-index: 1; pointer-events: none; background: radial-gradient(ellipse 74% 70% at 62% 52%, rgba(6, 26, 44, 0) 56%, rgba(6, 26, 44, 0.9) 100%); }
+
+/* 3. parc de secours */
+.s-parc { background: radial-gradient(55% 65% at 70% 55%, rgba(255, 182, 37, 0.07), rgba(6, 26, 44, 0) 70%), var(--n0); }
+.recit.anime .parc-canvas { position: absolute; right: 0; top: 12%; width: 64%; height: 78%; }
+.parc-texte { position: relative; z-index: 2; }
+.parc-texte > * { max-width: 30rem; }
+.v7-geant { margin: 0; color: #fff; font-weight: 620; font-stretch: 70%; font-size: clamp(4rem, min(11vw, 17svh), 10rem); line-height: 0.88; letter-spacing: -0.02em; white-space: nowrap; }
+.v7-geant.ambre { color: var(--lampe); text-shadow: 0 0 60px rgba(255, 182, 37, 0.35); }
+.v7-geant-l { margin: 16px 0 0; color: var(--c0); font-size: clamp(1rem, min(1.4vw, 2.4svh), 1.2rem); line-height: 1.5; }
+.parc-plus { margin-top: 26px; padding-top: 18px; border-top: 1px solid var(--n-trait); }
+.v7-moyen { margin: 0; color: #fff; font-weight: 620; font-stretch: 72%; font-size: clamp(2.4rem, min(4.6vw, 7svh), 4rem); line-height: 1; }
+.parc-plus p:last-child { margin: 6px 0 0; color: var(--c1); }
+.parc-note { margin: 18px 0 0; color: var(--c1); font-size: 0.85rem; }
+
+/* 4. les documents qui disparaissent */
+.s-fuite { background: radial-gradient(50% 60% at 78% 50%, rgba(238, 159, 159, 0.06), rgba(6, 26, 44, 0) 70%), var(--n0); }
+.fuite-grille { display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr); gap: 32px 64px; align-items: center; }
+.fuite-stat { display: flex; align-items: baseline; gap: 14px; margin: 26px 0 0; color: var(--c0); font-size: 1rem; max-width: 32rem; }
+.fuite-stat b { flex: none; color: #fff; font-weight: 620; font-stretch: 72%; font-size: clamp(2.6rem, min(4.4vw, 7svh), 3.8rem); line-height: 0.9; }
+.fuite-stat small { color: var(--c1); font-size: 0.5em; margin-left: 2px; }
+.fuite-doc { padding: 18px 20px 16px; border: 1px solid rgba(143, 198, 234, 0.3); border-radius: 16px; background: linear-gradient(180deg, #10304E, #0A223A); box-shadow: 0 30px 70px -30px rgba(0, 0, 0, 0.7); filter: grayscale(1) brightness(0.62); opacity: 0.6; }
+.fuite-doc-tete { display: flex; align-items: center; gap: 12px; color: #fff; }
+.fuite-doc-icone { position: relative; flex: none; width: 26px; height: 32px; border-radius: 3px; background: linear-gradient(180deg, #E7EEF5, #A3B7C9); }
+.fuite-doc-icone::after { content: ""; position: absolute; right: 0; top: 0; border: 5px solid; border-color: #0A223A #0A223A #C9D5DD #C9D5DD; }
+.fuite-etat { position: relative; height: 26px; margin: 14px 0 10px; }
+.fuite-etat span { position: absolute; left: 0; top: 0; padding: 3px 11px; border-radius: 999px; font-size: 0.8rem; font-weight: 650; white-space: nowrap; }
+.fuite-etat .en-ligne { color: #84D9A8; border: 1px solid rgba(132, 217, 168, 0.5); opacity: 0; }
+.fuite-etat .retire { color: #EE9F9F; border: 1px solid rgba(238, 159, 159, 0.55); }
+.fuite-jours { height: 6px; overflow: hidden; border-radius: 3px; background: rgba(143, 198, 234, 0.15); }
+.fuite-jours i { display: block; width: 100%; height: 100%; background: linear-gradient(90deg, #84D9A8, #EE9F9F); }
+.fuite-jours-l { margin: 6px 0 0; color: var(--c1); font-size: 0.78rem; }
+.fuite-faits-t { margin: 22px 0 10px; color: var(--c1); font-size: 0.86rem; font-weight: 650; }
+.fuite-faits { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+.fuite-faits li { display: grid; gap: 2px; padding: 12px 14px; border: 1px solid rgba(255, 182, 37, 0.5); border-radius: 12px; background: rgba(255, 182, 37, 0.06); box-shadow: 0 0 30px rgba(255, 182, 37, 0.08); }
+.fuite-faits li span { color: var(--c1); font-size: 0.78rem; }
+.fuite-faits li b { color: #fff; font-weight: 700; font-size: 1.12rem; }
+.fuite-faits li.ferme { border-color: rgba(143, 198, 234, 0.3); background: transparent; box-shadow: none; }
+.fuite-faits .badge-licence { font-size: 0.74rem; }
+.fuite-exemple { margin: 10px 0 0; color: var(--c1); font-size: 0.78rem; }
+@media (prefers-reduced-motion: no-preference) {
+  .recit.anime .fuite-doc { filter: none; opacity: 1; }
+  .recit.anime .fuite-etat .en-ligne { opacity: 1; }
+  .recit.anime .fuite-etat .retire { opacity: 0; }
+  .recit.anime .fuite-jours i { width: 0; }
+  .recit.anime .fuite-faits li { opacity: 0; transform: translateY(12px); }
+  .recit.anime .s-fuite.vu .fuite-jours i { animation: v7-jours 2s ease-in-out 0.3s forwards; }
+  .recit.anime .s-fuite.vu .fuite-etat .en-ligne { animation: v7-sortir 0.35s ease 2.35s forwards; }
+  .recit.anime .s-fuite.vu .fuite-etat .retire { animation: v7-entrer 0.35s ease 2.45s forwards; }
+  .recit.anime .s-fuite.vu .fuite-doc { animation: v7-eteindre 0.9s ease 2.45s forwards; }
+  .recit.anime .s-fuite.vu .fuite-faits li { animation: v7-entrer-haut 0.5s ease calc(2.8s + var(--k) * 0.16s) forwards; }
+  @keyframes v7-jours { to { width: 100%; } }
+  @keyframes v7-sortir { to { opacity: 0; } }
+  @keyframes v7-entrer { to { opacity: 1; } }
+  @keyframes v7-entrer-haut { to { opacity: 1; transform: none; } }
+  @keyframes v7-eteindre { to { filter: grayscale(1) brightness(0.62); opacity: 0.6; } }
+}
+
+/* 5. le dossier */
+.s-produit { background: radial-gradient(48% 62% at 78% 50%, rgba(23, 78, 124, 0.5), rgba(6, 26, 44, 0) 70%), var(--n0); }
+.s-produit .v6-produit-texte h2 { font-size: clamp(1.6rem, min(3.2vw, 5.2svh), 2.8rem); }
+.s-produit .v6-points { margin-top: 22px; gap: 14px; }
+.recit.anime .s-produit .v6-ecran { max-height: 74svh; }
+.recit.anime .s-produit .v6-ecran img { max-height: calc(74svh - 40px); object-fit: cover; object-position: top; }
+@media (prefers-reduced-motion: no-preference) and (min-width: 1000px) {
+  .recit.anime .s-produit .v6-ecran { transform: perspective(1700px) rotateY(calc(-10deg + var(--a, 0) * -14deg)) rotateX(3deg) translateX(calc(var(--d, 0) * -6vw)); transition: none; }
+}
+@media (max-width: 999px) { .recit.anime .s-produit .v6-ecran { transform: none; } }
+
+/* 6. moteurs */
+.s-moteurs { background: radial-gradient(60% 80% at 85% 50%, rgba(23, 78, 124, 0.35), rgba(6, 26, 44, 0) 70%), var(--n0); }
+@media (prefers-reduced-motion: no-preference) {
+  .recit.anime .s-moteurs .m-barre span { width: 0; transition: width 1.1s cubic-bezier(0.2, 0.7, 0.2, 1); }
+  .recit.anime .s-moteurs.vu .m-barre span { width: var(--l); }
+  .recit.anime .s-moteurs .v5-barres li:nth-child(2) .m-barre span { transition-delay: 0.08s; }
+  .recit.anime .s-moteurs .v5-barres li:nth-child(3) .m-barre span { transition-delay: 0.16s; }
+  .recit.anime .s-moteurs .v5-barres li:nth-child(4) .m-barre span { transition-delay: 0.24s; }
+  .recit.anime .s-moteurs .v5-barres li:nth-child(5) .m-barre span { transition-delay: 0.32s; }
+  .recit.anime .s-moteurs .v5-barres li:nth-child(6) .m-barre span { transition-delay: 0.4s; }
+  .recit.anime .s-moteurs .v5-barres li:nth-child(7) .m-barre span { transition-delay: 0.48s; }
+}
+
+/* 7. pour qui */
+.qui-grille { list-style: none; margin: 28px 0 0; padding: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 18px; }
+.qui-grille picture, .qui-grille img { display: block; width: 100%; }
+.qui-grille img { aspect-ratio: 4 / 5; max-height: 42svh; object-fit: cover; border-radius: 14px; filter: saturate(0.82) brightness(0.9); }
+.qui-grille h3 { margin: 14px 0 0; color: #fff; font-size: 1.05rem; line-height: 1.25; }
+.qui-grille p { margin: 6px 0 0; color: var(--c1); font-size: 0.92rem; }
+@media (prefers-reduced-motion: no-preference) {
+  .recit.anime .qui-grille li { opacity: 0; transform: translateY(24px); transition: opacity 0.6s ease, transform 0.6s ease; }
+  .recit.anime .s-qui.vu .qui-grille li { opacity: 1; transform: none; }
+  .recit.anime .s-qui.vu .qui-grille li:nth-child(2) { transition-delay: 0.1s; }
+  .recit.anime .s-qui.vu .qui-grille li:nth-child(3) { transition-delay: 0.2s; }
+  .recit.anime .s-qui.vu .qui-grille li:nth-child(4) { transition-delay: 0.3s; }
+}
+
+/* 8. offres */
+.s-offres { background: radial-gradient(50% 60% at 50% 100%, rgba(255, 182, 37, 0.08), rgba(6, 26, 44, 0) 70%), var(--n0); }
+.offres-v7 { list-style: none; margin: 30px 0 0; padding: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px; }
+.offres-v7 a { display: grid; align-content: start; gap: 8px; height: 100%; padding: 22px 20px; border: 1px solid var(--n-trait); border-radius: 16px; background: rgba(255, 255, 255, 0.03); color: var(--c0); text-decoration: none; transition: border-color 0.2s ease, background 0.2s ease; }
+.offres-v7 a:hover { border-color: rgba(255, 182, 37, 0.6); background: rgba(255, 182, 37, 0.05); }
+.offres-v7 li.mise a { border-color: rgba(255, 182, 37, 0.65); background: radial-gradient(90% 120% at 100% 0%, rgba(255, 182, 37, 0.14), rgba(255, 182, 37, 0) 60%), rgba(255, 255, 255, 0.03); }
+.o-nom { color: #fff; font-weight: 700; }
+.o-prix { color: var(--lampe); font-weight: 760; font-stretch: 112%; font-size: 1.9rem; line-height: 1.05; }
+.o-prix small { margin-left: 4px; color: var(--c1); font-size: 0.5em; font-weight: 600; }
+.o-txt { color: var(--c1); font-size: 0.92rem; }
+.s-offres .v5-suite a { color: #fff; }
+
+/* 9. vos outils */
+.s-outils .v5-trois { margin-top: 28px; }
+.s-outils .actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 30px; }
+
+/* grand écran */
+@media (min-width: 1000px) {
+  .recit-points button[aria-current="true"] em { opacity: 0.75; transform: translate(0, -50%); color: var(--lampe); }
+  .recit.anime .recit-points { right: 22px; }
+  .recit.anime .s-carte .ouv-legende { padding-top: 92px; }
+  .recit.anime .s-carte .ouv-legende > * { max-width: min(33vw, 460px); }
+  .recit.anime .s-carte .h5-outils { padding-bottom: 22px; }
+  .recit.anime .s-carte .h5-outils > * { max-width: min(36vw, 540px); }
+  .s-carte::before { content: ""; position: absolute; inset: 0; z-index: 1; pointer-events: none; background: linear-gradient(90deg, rgba(6, 26, 44, 0.85) 0%, rgba(6, 26, 44, 0.4) 24%, rgba(6, 26, 44, 0) 42%); }
+}
+/* téléphone et tablette */
+@media (max-width: 999px) {
+  .recit.anime .recit-points { right: 4px; }
+  .recit-points ol { gap: 0; }
+  .recit-points button { width: 20px; height: 20px; }
+  .recit-points button span { width: 6px; height: 6px; margin: 7px; }
+  .recit.anime .s-carte .ouv-legende { padding-top: 76px; }
+  .recit.anime .s-carte .h5-outils { padding-top: 34px; padding-bottom: 14px; background: linear-gradient(180deg, rgba(6, 26, 44, 0), rgba(6, 26, 44, 0.92) 32%); }
+  .recit.anime .s-carte .c3-legende { display: none; }
+  .recit.anime .s-carte .c3-fiche { position: absolute; left: 12px; right: 12px; bottom: 12px; z-index: 6; width: auto; max-width: none; margin: 0; background: #0B2540; -webkit-backdrop-filter: none; backdrop-filter: none; }
+  .recit.anime .parc-canvas { top: 64px; width: 100%; height: 40svh; }
+  .recit.anime .s-parc { justify-content: flex-end; }
+  .recit.anime .s-parc > .cadre { padding-bottom: 7svh; }
+  .fuite-grille, .v6-produit-grille, .v5-deux { grid-template-columns: minmax(0, 1fr); gap: 18px; }
+  .recit.anime .s-fuite .v5-intro { display: none; }
+  .recit.anime .s-produit .v6-points p, .recit.anime .s-produit .v6-produit-texte .actions .btn.contour { display: none; }
+  .recit.anime .s-produit .v6-ecran { max-height: 34svh; }
+  .recit.anime .s-produit .v6-ecran img { max-height: calc(34svh - 36px); }
+  .recit.anime .s-produit .v6-points { gap: 8px; margin-top: 14px; }
+  .recit.anime .s-produit .v6-points h3 { font-size: 0.98rem; }
+  .recit.anime .s-moteurs .v5-tete .v5-intro, .recit.anime .s-moteurs .v5-tete .btn { display: none; }
+  .recit.anime .s-moteurs .v5-barres { gap: 10px; }
+  .qui-grille { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; margin-top: 18px; }
+  .qui-grille img { aspect-ratio: 16 / 10; max-height: 18svh; }
+  .qui-grille h3 { margin-top: 8px; font-size: 0.9rem; }
+  .qui-grille p { display: none; }
+  .offres-v7 { grid-template-columns: minmax(0, 1fr); gap: 8px; margin-top: 16px; }
+  .offres-v7 a { grid-template-columns: minmax(0, 1fr) auto; gap: 2px 12px; padding: 12px 14px; }
+  .o-prix { grid-row: 1 / 3; grid-column: 2; align-self: center; font-size: 1.4rem; }
+  .o-txt { font-size: 0.82rem; display: -webkit-box; -webkit-line-clamp: 1; -webkit-box-orient: vertical; overflow: hidden; }
+  .recit.anime .s-offres .v5-intro { display: none; }
+  .recit.anime .s-outils .v5-trois li { padding: 12px 0 2px; }
+  .recit.anime .s-outils .v5-trois p { margin: 4px 0 6px; font-size: 0.9rem; }
+}
+@media (max-width: 999px) and (max-height: 700px) {
+  .recit.anime .scene h2 { font-size: 1.45rem; }
+  .recit.anime .s-moteurs .v5-barres li:nth-child(n+6) { display: none; }
+  .recit.anime .s-outils .v5-trois p { display: none; }
+}
+
+@media (min-width: 1000px) and (hover: hover) and (prefers-reduced-motion: no-preference) {
+  .recit.anime .scene.transit:not(.s-carte) { filter: blur(calc(max(0, var(--d, 0)) * 9px)); }
+}
+/* tablette debout : plus grand, pour remplir l'écran */
+@media (min-width: 700px) and (max-width: 999px) and (min-height: 900px) {
+  .recit.anime .scene > .cadre { padding-left: 44px; padding-right: 44px; }
+  .scene h2 { font-size: clamp(2rem, 5.4vw, 3rem); }
+  .s-ouv h1, .s-ouv h1:lang(de) { font-size: clamp(3rem, 8.6vw, 4.6rem); }
+  .scene .v5-intro, .v7-geant-l, .fuite-stat { font-size: 1.12rem; }
+  .v7-geant { font-size: clamp(6rem, 17vw, 9rem); }
+  .recit.anime .parc-canvas { height: 44svh; }
+  .recit.anime .s-produit .v6-ecran { max-height: 40svh; }
+  .recit.anime .s-produit .v6-ecran img { max-height: calc(40svh - 40px); }
+  .recit.anime .s-produit .v6-points p { display: block; }
+  .recit.anime .s-moteurs .v5-tete .v5-intro { display: block; }
+  .recit.anime .s-moteurs .v5-barres { gap: 18px; }
+  .qui-grille { gap: 18px; }
+  .qui-grille img { max-height: 24svh; }
+  .qui-grille h3 { font-size: 1.05rem; }
+  .qui-grille p { display: block; }
+  .offres-v7 { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
+  .offres-v7 a { grid-template-columns: minmax(0, 1fr); padding: 20px; gap: 8px; }
+  .o-prix { grid-row: auto; grid-column: auto; font-size: 1.9rem; }
+  .o-txt { font-size: 0.92rem; -webkit-line-clamp: 4; }
+  .recit.anime .s-offres .v5-intro { display: block; }
+  .recit.anime .s-outils .v5-trois li { padding: 20px 0 6px; }
+  .recit.anime .s-outils .v5-trois p { font-size: 1rem; }
+}
+/* petit téléphone : la scène des documents doit tenir sans rogner */
+@media (max-width: 999px) and (max-height: 700px) {
+  .recit.anime .s-fuite .fuite-jours-l, .recit.anime .s-fuite .fuite-exemple { display: none; }
+  .recit.anime .s-fuite .fuite-stat { margin-top: 12px; font-size: 0.92rem; }
+  .recit.anime .s-fuite .fuite-doc { padding: 12px 14px 12px; }
+  .recit.anime .s-fuite .fuite-etat { margin: 10px 0 8px; }
+  .recit.anime .s-fuite .fuite-faits-t { margin: 12px 0 8px; }
+  .recit.anime .s-fuite .fuite-faits li { padding: 8px 12px; }
+  .recit.anime .scene > .cadre { padding-top: 62px; padding-bottom: 14px; }
+}
