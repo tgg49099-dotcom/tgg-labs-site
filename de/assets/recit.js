@@ -15,6 +15,30 @@
   var calme = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
   var carte = r.querySelector('[data-carte3d]');
 
+  // hauteur réelle de l'en-tête (elle varie : encoche, taille du texte du téléphone) : chaque page commence juste dessous
+  var tete = document.querySelector('.tete');
+  function mesurerTete() {
+    if (!tete) return;
+    var h = Math.ceil(tete.getBoundingClientRect().height);
+    if (h > 20 && h < 240) document.documentElement.style.setProperty('--tete', h + 'px');
+  }
+  mesurerTete();
+  window.addEventListener('resize', mesurerTete);
+  if (window.ResizeObserver && tete) new ResizeObserver(mesurerTete).observe(tete);
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(mesurerTete);
+
+  // rangées de filtres qui défilent de côté : un fondu signale ce qui dépasse, à droite comme à gauche
+  Array.prototype.slice.call(r.querySelectorAll('.c3-rangee')).forEach(function (rg) {
+    function bords() {
+      var reste = rg.scrollWidth - rg.clientWidth - rg.scrollLeft;
+      rg.classList.toggle('g', rg.scrollLeft > 2);
+      rg.classList.toggle('d', reste > 2);
+    }
+    rg.addEventListener('scroll', bords, { passive: true });
+    window.addEventListener('resize', bords);
+    bords(); setTimeout(bords, 600);
+  });
+
   function avecCarte(f) { (function go(k) { if (carte && carte.c3 && carte.c3.demarrer) f(carte.c3); else if (k < 100) setTimeout(function () { go(k + 1); }, 80); })(0); }
   function vu(s) {
     if (s.classList.contains('vu')) return;

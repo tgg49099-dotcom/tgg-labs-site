@@ -9,6 +9,9 @@
   unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF; }
 
 :root {
+  /* marge de l'encoche : seulement en application plein écran ; dans un onglet, Chrome Android la signale sans dessiner sous la barre d'état */
+  --encart-haut: 0px;
+  --tete: calc(63px + var(--encart-haut));   /* hauteur de l'en-tête, remesurée par le script de l'accueil */
   --ink: #0E1A24;        /* texte */
   --steel: #4C5E6E;      /* texte secondaire */
   --line: #D3DBE1;       /* filets */
@@ -50,7 +53,8 @@ h3 { font-weight: 700; font-stretch: 108%; font-size: 1.12rem; line-height: 1.25
 .btn.contour:hover { background: rgba(255, 255, 255, 0.1); border-color: #fff; }
 
 /* en-tête posé sur la photo */
-.tete { position: absolute; top: 0; left: 0; right: 0; z-index: 5; color: #fff; padding-top: env(safe-area-inset-top, 0px); }
+.tete { position: absolute; top: 0; left: 0; right: 0; z-index: 5; color: #fff; padding-top: var(--encart-haut); }
+@media (display-mode: standalone), (display-mode: fullscreen) { :root { --encart-haut: env(safe-area-inset-top, 0px); } }
 .tete .cadre { display: flex; align-items: center; gap: 28px; padding-block: 18px; }
 .logo { display: inline-block; text-decoration: none; }
 .tete .logo svg { height: 38px; width: auto; display: block; }
@@ -421,7 +425,7 @@ table.dico { min-width: 520px; }
 }
 
 /* ouverture */
-.console { position: relative; isolation: isolate; color: var(--on-navy); padding-top: calc(84px + env(safe-area-inset-top, 0px));
+.console { position: relative; isolation: isolate; color: var(--on-navy); padding-top: calc(84px + var(--encart-haut));
   background: radial-gradient(56% 62% at 74% 40%, rgba(25, 82, 128, 0.5) 0%, rgba(6, 26, 44, 0) 72%), var(--console); }
 .console-grille { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 8px 40px; align-items: center; min-height: min(76vh, 740px); }
 .console-texte { padding-block: 28px 36px; }
@@ -576,7 +580,7 @@ ol.couches .champs { grid-column: 1 / -1; margin: 4px 0 0; color: var(--steel); 
 .sources-ligne ul { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 6px 22px; font-weight: 650; font-stretch: 92%; font-size: 0.97rem; }
 
 @media (max-width: 1000px) {
-  .console { padding-top: calc(112px + env(safe-area-inset-top, 0px)); }
+  .console { padding-top: calc(112px + var(--encart-haut)); }
   .console-grille, .plan-grille, .couches-bloc, .pipeline-bloc { grid-template-columns: minmax(0, 1fr); }
   .plan-grille { grid-template-areas: "fig" "specs" "plus"; grid-template-rows: auto; row-gap: 28px; }
   .console-grille { min-height: 0; }
@@ -668,7 +672,7 @@ table.licences tfoot td { border-bottom: 0; padding-top: 18px; }
   linear-gradient(0deg, rgba(4, 18, 31, 0.97) 0%, rgba(4, 18, 31, 0.6) 24%, rgba(4, 18, 31, 0) 44%),
   linear-gradient(180deg, rgba(6, 26, 44, 0.75) 0%, rgba(6, 26, 44, 0) 18%); }
 .ouverture-grille { display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr); gap: 32px 56px; align-items: center;
-  min-height: min(86vh, 800px); padding-top: calc(100px + env(safe-area-inset-top, 0px)); padding-bottom: 28px; }
+  min-height: min(86vh, 800px); padding-top: calc(100px + var(--encart-haut)); padding-bottom: 28px; }
 .ouverture h1 { font-weight: 760; font-stretch: 122%; font-size: clamp(2.3rem, 4.3vw, 4rem); line-height: 1.02; letter-spacing: -0.022em; margin: 0 0 22px; max-width: 13ch; }
 .ouverture .chapeau { font-size: clamp(1.02rem, 1.2vw, 1.15rem); line-height: 1.58; color: rgba(231, 238, 245, 0.9); max-width: 33rem; margin: 0 0 28px; }
 .credit-ouverture { margin: 0; padding: 0 max(20px, env(safe-area-inset-right, 0px)) 8px; text-align: right; font-size: 0.7rem; color: rgba(255, 255, 255, 0.55); }
@@ -1545,9 +1549,9 @@ body.accueil .tete, body.accueil .tete.sur-carte { position: fixed; top: 0; left
 .scene .v5-intro { font-size: clamp(0.95rem, min(1.2vw, 2.2svh), 1.08rem); }
 
 /* sans animation (mouvement réduit, ou script absent) : les scènes s'empilent */
-.recit:not(.anime) .scene { position: relative; display: flex; flex-direction: column; justify-content: center; min-height: 100svh; padding: 84px 0 56px; border-top: 1px solid var(--n-trait); }
+.recit:not(.anime) .scene { position: relative; display: flex; flex-direction: column; justify-content: center; min-height: 100svh; padding: calc(var(--tete) + 21px) 0 56px; border-top: 1px solid var(--n-trait); }
 .recit:not(.anime) .s-ouv { padding: 0; border: 0; }
-.recit:not(.anime) .s-carte { min-height: 0; padding: 84px 0 40px; }
+.recit:not(.anime) .s-carte { min-height: 0; padding: calc(var(--tete) + 21px) 0 40px; }
 .recit:not(.anime) .s-carte .c3-canvas { height: clamp(320px, 62vw, 720px); }
 .recit:not(.anime) .s-carte .c3-fiche { position: static; transform: none !important; margin: 14px auto 0; }
 .recit:not(.anime) .parc-canvas { position: relative; display: block; width: 100%; height: 42vh; margin-bottom: 24px; }
@@ -1561,7 +1565,7 @@ body.accueil .tete, body.accueil .tete.sur-carte { position: fixed; top: 0; left
   transform: scale(calc(1 + var(--d, 0) * 0.12)); transform-origin: 50% 50%; }
 .recit.anime .scene:not(.active) { pointer-events: none; }
 .recit.anime .scene.active { z-index: 2; }
-.recit.anime .scene > .cadre { width: 100%; padding-top: 70px; padding-bottom: 24px; }
+.recit.anime .scene > .cadre { width: 100%; padding-top: calc(var(--tete) + 7px); padding-bottom: 24px; }
 .recit.anime .s-ouv, .recit.anime .s-carte { transform: none; }
 .recit.anime .s-carte .c3-canvas { transform: scale(calc(1 + max(0, var(--d, 0)) * 0.2)); transform-origin: 62% 52%; }
 .s-carte .c3-date { position: static; margin: 12px 0 0; }
@@ -1714,7 +1718,7 @@ body.accueil .tete, body.accueil .tete.sur-carte { position: fixed; top: 0; left
 @media (min-width: 1000px) {
   .recit-points button[aria-current="true"] em { opacity: 0.75; transform: translate(0, -50%); color: var(--lampe); }
   .recit.anime .recit-points { right: 22px; }
-  .recit.anime .s-carte .ouv-legende { padding-top: 92px; }
+  .recit.anime .s-carte .ouv-legende { padding-top: calc(var(--tete) + 29px); }
   .recit.anime .s-carte .ouv-legende > * { max-width: min(33vw, 460px); }
   .recit.anime .s-carte .h5-outils { padding-bottom: 22px; }
   .recit.anime .s-carte .h5-outils > * { max-width: min(36vw, 540px); }
@@ -1726,7 +1730,7 @@ body.accueil .tete, body.accueil .tete.sur-carte { position: fixed; top: 0; left
   .recit-points ol { gap: 0; }
   .recit-points button { width: 20px; height: 20px; }
   .recit-points button span { width: 6px; height: 6px; margin: 7px; }
-  .recit.anime .s-carte .ouv-legende { padding-top: 76px; }
+  .recit.anime .s-carte .ouv-legende { padding-top: calc(var(--tete) + 13px); }
   .recit.anime .s-carte .h5-outils { padding-top: 34px; padding-bottom: 14px; background: linear-gradient(180deg, rgba(6, 26, 44, 0), rgba(6, 26, 44, 0.92) 32%); }
   .recit.anime .s-carte .c3-legende { display: none; }
   .recit.anime .s-carte .c3-fiche { position: absolute; left: 12px; right: 12px; bottom: 12px; z-index: 6; width: auto; max-width: none; margin: 0; background: #0B2540; -webkit-backdrop-filter: none; backdrop-filter: none; }
@@ -1796,7 +1800,7 @@ body.accueil .tete, body.accueil .tete.sur-carte { position: fixed; top: 0; left
   .recit.anime .s-fuite .fuite-etat { margin: 10px 0 8px; }
   .recit.anime .s-fuite .fuite-faits-t { margin: 12px 0 8px; }
   .recit.anime .s-fuite .fuite-faits li { padding: 8px 12px; }
-  .recit.anime .scene > .cadre { padding-top: 62px; padding-bottom: 14px; }
+  .recit.anime .scene > .cadre { padding-top: calc(var(--tete) + 2px); padding-bottom: 14px; }
 }
 
 /* v8 : la carte compte trois pages (Europe, région, site). Les blocs de texte de chaque page se superposent et s'échangent. */
@@ -1813,12 +1817,12 @@ body.accueil .tete, body.accueil .tete.sur-carte { position: fixed; top: 0; left
 .recit:not(.anime) .s-carte .c3-etape[data-etape="1"] { display: none; }
 .recit:not(.anime) .s-carte .c3-site { position: static; margin-top: 24px; }
 @media (min-width: 1000px) {
-  .recit.anime .s-carte .c3-site { padding-top: 92px; }
+  .recit.anime .s-carte .c3-site { padding-top: calc(var(--tete) + 29px); }
   .recit.anime .s-carte .c3-site > * { max-width: min(33vw, 440px); }
   .recit.anime .s-carte .c3-site-faits { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 @media (max-width: 999px) {
-  .recit.anime .s-carte .c3-site { bottom: 0; display: flex; flex-direction: column; padding-top: 76px; padding-bottom: 14px; }
+  .recit.anime .s-carte .c3-site { bottom: 0; display: flex; flex-direction: column; padding-top: calc(var(--tete) + 13px); padding-bottom: 14px; }
   .recit.anime .s-carte .c3-site-bas { margin-top: auto; padding-top: 30px; background: linear-gradient(180deg, rgba(6, 26, 44, 0), rgba(6, 26, 44, 0.9) 26%); }
   .c3-site-flotte { margin: 0; display: flex; align-items: flex-end; gap: 12px; }
   .c3-site-flotte .flotte { width: 52%; max-height: 18svh; }
@@ -1854,7 +1858,7 @@ body.accueil .tete, body.accueil .tete.sur-carte { position: fixed; top: 0; left
   .recit.morph .s-moteurs .m-barre { height: 18px; }
 }
 @media (max-width: 999px) and (max-height: 700px) {
-  .recit.anime .s-carte .ouv-legende { padding-top: 72px; }
+  .recit.anime .s-carte .ouv-legende { padding-top: calc(var(--tete) + 9px); }
 }
 
 /* ------------------------------------------------------------------ v9 : un fil d'une page à l'autre */
@@ -2001,4 +2005,75 @@ body.accueil .tete, body.accueil .tete.sur-carte { position: fixed; top: 0; left
 }
 @media (max-width: 999px) and (max-height: 700px) {
   .recit.anime .s-besoins .v5-intro { display: none; }
+}
+
+/* ------------------------------------------------------------------ v11 : chaque page tient sur tous les écrans */
+/* tablette et ordinateur : le contenu s'arrête au-dessus de l'annonce de la page suivante */
+@media (min-width: 700px) {
+  .recit.anime .scene > .cadre { padding-bottom: 72px; }
+}
+@media (min-width: 700px) and (max-width: 999px) {
+  .recit.anime .s-carte .h5-outils, .recit.anime .s-carte .c3-site { padding-bottom: 66px; }
+}
+/* filtres de la carte : un fondu sur le bord qui cache encore des puces */
+@media (max-width: 999px) {
+  .c3-rangee { --mg: #000; --md: #000;
+    -webkit-mask-image: linear-gradient(90deg, var(--mg) 0, #000 28px, #000 calc(100% - 48px), var(--md) 100%);
+    mask-image: linear-gradient(90deg, var(--mg) 0, #000 28px, #000 calc(100% - 48px), var(--md) 100%); }
+  .c3-rangee.g { --mg: transparent; }
+  .c3-rangee.d { --md: transparent; }
+}
+/* tablette debout : la place permet d'afficher toutes les puces */
+@media (min-width: 700px) and (max-width: 999px) and (min-height: 900px) {
+  .c3-rangee { flex-wrap: wrap; overflow: visible; margin-right: 0; padding-right: 0; -webkit-mask-image: none; mask-image: none; }
+}
+/* capture du dossier : elle se fond en bas au lieu d'être tranchée */
+.recit.anime .s-produit .v6-ecran { position: relative; }
+.recit.anime .s-produit .v6-ecran::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 22%; max-height: 90px; pointer-events: none;
+  background: linear-gradient(180deg, rgba(10, 31, 51, 0), #0A1F33 92%); }
+/* très petit téléphone (Safari avec ses barres, iPhone SE) : on garde l'essentiel */
+@media (max-width: 699px) and (max-height: 620px) {
+  .mur { grid-template-columns: repeat(23, minmax(0, 1fr)); gap: 2px; }
+  .recit.anime .s-essai .v5-trois { display: none; }
+}
+@media (max-width: 699px) and (max-height: 620px) {
+  .recit.anime .s-fuite h2 { font-size: 1.3rem; }
+  .recit.anime .s-fuite .fuite-stat { font-size: 0.86rem; line-height: 1.4; }
+  .mur { grid-template-columns: repeat(26, minmax(0, 1fr)); }
+}
+/* ordinateur portable peu haut : le mur des documents s'élargit au lieu de grandir, la capture se raccourcit */
+@media (min-width: 1000px) and (max-height: 760px) {
+  .mur { grid-template-columns: repeat(21, minmax(0, 1fr)); max-width: 460px; gap: 4px; }
+  .recit.anime .s-produit .v6-ecran { max-height: 66svh; }
+  .recit.anime .s-produit .v6-ecran img { max-height: calc(66svh - 40px); }
+}
+/* très petit écran (écran externe du Fold5, 344 px ; 320 px) : l'en-tête tient sur une ligne, marge de droite comprise */
+@media (max-width: 359px) {
+  .tete .cadre.cadre { gap: 8px; }
+  .tete .logo svg { height: 24px; }
+  .tete .langues a { padding-inline: 5px; }
+  .tete .menu summary { padding: 6px 9px; }
+}
+/* longs mots allemands (« Rechenzentrumsprojekte ») : césure plutôt que débordement */
+h1, h2, h3, .h1-page { overflow-wrap: break-word; }
+:lang(de) h1, :lang(de) h2, :lang(de) h3, :lang(de) .h1-page { -webkit-hyphens: auto; hyphens: auto; }
+/* nom de la page courante à côté des points : il apparaît à l'arrivée puis s'efface, pour ne jamais rester posé sur le contenu
+   (« Verschwindende Unterlagen » recouvrait le mur des documents) ; il revient au survol */
+@media (min-width: 1000px) {
+  .recit-points button[aria-current="true"] em { opacity: 0; animation: v11-etiquette 2.8s ease 0.2s; }
+  .recit-points button[aria-current="true"]:hover em, .recit-points button[aria-current="true"]:focus-visible em { opacity: 0.9; animation: none; }
+  @keyframes v11-etiquette { 0% { opacity: 0; transform: translate(6px, -50%); } 14%, 72% { opacity: 0.85; transform: translate(0, -50%); } 100% { opacity: 0; transform: translate(0, -50%); } }
+}
+/* tableau des licences sur téléphone : colonne des contenus plus étroite et fixe, une offre entière visible,
+   la suivante entrevue sous un fondu (on glisse pour voir les autres) */
+@media (max-width: 600px) {
+  table.licences { min-width: 0; width: auto; font-size: 0.86rem; }
+  table.licences tbody th, table.licences thead td:first-child, table.licences tfoot td:first-child {
+    position: sticky; left: 0; z-index: 2; background: var(--navy); min-width: 0; width: 9.6rem; max-width: 9.6rem; }
+  table.licences thead th { min-width: 8.8rem; padding: 14px 10px 12px; }
+  table.licences .prix-licence { font-size: 1.35rem; white-space: nowrap; }
+  table.licences .prix-licence span { font-size: 0.8rem; }
+  table.licences th, table.licences td { padding: 10px; }
+  .tableau-licences { -webkit-mask-image: linear-gradient(90deg, #000 calc(100% - 40px), transparent); mask-image: linear-gradient(90deg, #000 calc(100% - 40px), transparent); }
+  .tableau-licences.fin { -webkit-mask-image: none; mask-image: none; }
 }

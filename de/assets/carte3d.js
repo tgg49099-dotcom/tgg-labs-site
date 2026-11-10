@@ -161,6 +161,7 @@
 
   // ------------------------------------------------------------------ dessin
   function dessiner(t) {
+    var etiqAn = null, pris = null; // distances des anneaux à écrire, boîtes des noms déjà posés
     var k = faireCam(vue.az, Math.max(0.42, vue.el + (ET.length > 1 ? inclinaison(etU) : 0))); cam = k; centrer(k);
     var S0 = S, X0 = OX, Y0 = OY, Z = 1;
     if (etU > 0.0005 && ET.length > 1) { vueZoom(k, etU, S0, X0, Y0); Z = S / S0; }
@@ -208,8 +209,9 @@
           var rU = km / KMU; ctx.strokeStyle = 'rgba(255,194,74,' + (0.42 * aR).toFixed(3) + ')'; ctx.beginPath();
           for (var ai = 0; ai <= 72; ai++) { var an = ai / 72 * Math.PI * 2, q = ecran(k, en.x + Math.cos(an) * rU, 0, en.y + Math.sin(an) * rU); if (ai) ctx.lineTo(q[0], q[1]); else ctx.moveTo(q[0], q[1]); }
           ctx.stroke();
-          var ql = ecran(k, en.x + rU * 0.71, 0, en.y + rU * 0.71);
-          ctx.fillStyle = 'rgba(255,214,140,' + (0.85 * aR).toFixed(3) + ')'; ctx.fillText(km + ' km', ql[0] + 4, ql[1]);
+          // la distance s'écrit plus loin, là où elle ne cache aucun nom de commune (quatre places possibles sur l'anneau)
+          etiqAn = etiqAn || [];
+          etiqAn.push({ t: km + ' km', a: aR, c: [0.785, 2.356, -0.785, -2.356].map(function (an) { return ecran(k, en.x + Math.cos(an) * rU, 0, en.y + Math.sin(an) * rU); }) });
         });
         ctx.setLineDash([]);
       }
@@ -231,7 +233,7 @@
     if (aL > 0.02) {
       ctx.font = '600 ' + (petites ? 10 : 11.5) + 'px Archivo, Arial, sans-serif'; ctx.textAlign = 'center'; ctx.textBaseline = 'top';
       // les communes qui comptent le plus de groupes d'abord ; un nom qui en chevauche un autre n'est pas écrit
-      var pris = [], hL = petites ? 12 : 14;
+      pris = []; var hL = petites ? 12 : 14;
       LOCAL.slice().sort(function (a, b) { return (etU > 1.45 ? b.f - a.f : 0) || b.g - a.g; }).forEach(function (v) {
         var q = ecran(k, v.x, 0, v.y);
         if (q[0] < -60 || q[0] > W + 60 || q[1] < -20 || q[1] > H + 20) return;
@@ -243,6 +245,20 @@
       ctx.textAlign = 'start';
     }
     ctx.globalAlpha = 1;
+    if (etiqAn) {
+      ctx.font = '600 11px Archivo, Arial, sans-serif'; ctx.textBaseline = 'middle'; ctx.textAlign = 'start';
+      var occ = (pris || []).slice();
+      etiqAn.forEach(function (ea) {
+        var w = ctx.measureText(ea.t).width, choix = null;
+        for (var ci = 0; ci < ea.c.length && !choix; ci++) {
+          var q = ea.c[ci], bx = [q[0] + 2, q[1] - 8, q[0] + w + 8, q[1] + 8], libre = q[0] > 0 && q[0] + w + 8 < W && q[1] > 8 && q[1] < H - 8;
+          for (var oi = 0; libre && oi < occ.length; oi++) { var o = occ[oi]; if (bx[0] < o[2] && bx[2] > o[0] && bx[1] < o[3] && bx[3] > o[1]) libre = false; }
+          if (libre) { choix = q; occ.push(bx); }
+        }
+        if (!choix) return;
+        ctx.fillStyle = 'rgba(255,214,140,' + (0.85 * ea.a).toFixed(3) + ')'; ctx.fillText(ea.t, choix[0] + 4, choix[1]);
+      });
+    }
     // colonnes, de la plus lointaine à la plus proche
     var liste = [];
     for (var i = 0; i < N; i++) {
