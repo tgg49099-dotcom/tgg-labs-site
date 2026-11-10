@@ -2077,3 +2077,16 @@ h1, h2, h3, .h1-page { overflow-wrap: break-word; }
   .tableau-licences { -webkit-mask-image: linear-gradient(90deg, #000 calc(100% - 40px), transparent); mask-image: linear-gradient(90deg, #000 calc(100% - 40px), transparent); }
   .tableau-licences.fin { -webkit-mask-image: none; mask-image: none; }
 }
+
+/* v15 : tableau de faits empilé sur téléphone (dossier en exemple) */
+@media (max-width: 600px) {
+  .tableau.empile { overflow: visible; }
+  table.dico.empile { min-width: 0; width: 100%; }
+  table.dico.empile thead { display: none; }
+  table.dico.empile tr { display: grid; grid-template-columns: 1fr auto; gap: 4px 14px; padding: 12px 0; border-bottom: 1px solid #C9D3DA; }
+  table.dico.empile td { display: block; padding: 0; border: 0; }
+  table.dico.empile td:first-child { grid-column: 1; grid-row: 1; font-weight: 650; }
+  table.dico.empile td.n { grid-column: 2; grid-row: 1; text-align: right; white-space: nowrap; }
+  table.dico.empile td.n::before { content: attr(data-pre); font-weight: 400; color: #5B6B78; }
+  table.dico.empile td:nth-child(2) { grid-column: 1 / -1; grid-row: 2; }
+}
