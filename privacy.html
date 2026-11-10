@@ -1,4 +1,20 @@
 <!doctype html>
+<!--
+  PRIVACY NOTICE — version 2.8.0 (PREPARED 10/11/2026, READY TO PUBLISH).
+
+  This file describes the behaviour of the version DEPLOYED as production 2.8.0
+  (the administrator check applied to the two Rovo MCP tools).
+
+  THE PUBLICATION CONDITION IS MET: the 2.8.0 deployment was measured on the
+  production environment on 10/11/2026 (deployment record 01:15:28 UTC, version
+  record 01:15:46 UTC, version id 09201e49-daac-48f6-bf92-c1c73e01ffcc,
+  isLatest = true). The package uploaded for that deployment contains the
+  administrator check, called before any read of the site
+  (/work/preuves/cycle142-deploiement-prod.md).
+
+  The mother publishes this page (the site is a git repository); this file was
+  written by the assistant and measured, not published.
+-->
 <html lang="en">
 <head>
 <meta charset="utf-8">
@@ -32,7 +48,7 @@
       </ul>
 
       <h2>What it reads</h2>
-      <p class="note">Who may run a scan is decided <strong>on the server</strong>, not in the page: before reading anything, the resolver asks Jira for the caller's own global permissions (<code>GET /rest/api/3/mypermissions?permissions=ADMINISTER,SYSTEM_ADMIN</code>), with the caller's identity and <strong>no extra scope</strong>. If the platform refuses that question, or answers without those permissions, the scan does not run: you get a refusal, never a report. This is the same check for every caller, whoever calls the function.</p>
+      <p class="note">Who may run a scan is decided <strong>on the server</strong>, not in the page: before reading anything, the resolver and the two MCP tools ask Jira for the caller's own global permissions (<code>GET /rest/api/3/mypermissions?permissions=ADMINISTER,SYSTEM_ADMIN</code>), with the caller's identity and <strong>no extra scope</strong>. If the platform refuses that question, or answers without those permissions, the scan does not run: you get a refusal, never a report. This is the same check for every caller, whoever calls the function.</p>
       <p class="note">Every call is a relative <code>/rest/...</code> path on the site where the app is installed, made with <strong>your own</strong> Atlassian identity &mdash; the identity of the signed-in
         administrator who started the scan (<code>asUser</code>), never a wider one: the app makes
         <strong>no <code>asApp()</code> call at all</strong>. The manifest declares only the read scopes <code>read:jira-work</code> and <code>read:servicedesk-request</code>: no write scope, no admin scope.</p>
@@ -76,7 +92,17 @@
         refusal and reads nothing. <strong>What they read:</strong> the same relative <code>/rest/...</code>
         paths as above, through the same two read scopes &mdash; no scope was added and none was removed.
         <strong>What they write:</strong> nothing. <strong>Who can call them:</strong> a signed-in Atlassian
-        user who has granted the app access, through Atlassian's MCP server.</p>
+        user who has granted the app access, through Atlassian's MCP server &mdash; and, since production version
+        <strong>2.8.0</strong>, only an account that holds the global Jira permission
+        &laquo;&nbsp;Administer Jira&nbsp;&raquo; (<code>ADMINISTER</code>) or
+        &laquo;&nbsp;Jira System Administrators&nbsp;&raquo; (<code>SYSTEM_ADMIN</code>).</p>
+      <p><strong>The administrator check is the same one as the button's, and it is made on the server.</strong>
+        Before reading anything, the tool asks Jira for the caller's own global permissions
+        (<code>GET /rest/api/3/mypermissions?permissions=ADMINISTER,SYSTEM_ADMIN</code>), with the caller's
+        identity and <strong>no extra scope</strong>. If the platform refuses that question, or answers without
+        those permissions, the tool reads nothing and returns a refusal &mdash; never a report. The check is
+        written once and used by every entry point of the app (the administration page and the two tools);
+        the published source code shows it, and the test suite that guards it is public too.</p>
       <p><strong>What they need your site to have.</strong> Atlassian's MCP server is part of Rovo, which
         Atlassian reserves to paid Cloud plans &mdash; Standard, Premium or Enterprise
         (<a href="https://www.atlassian.com/licensing/rovo">Atlassian's licensing page</a>). A site on the
@@ -100,13 +126,13 @@
       <h2>Contact</h2>
       <p>Questions, corrections or a request to stop processing can be raised as an issue in the public repository:
         <code>https://github.com/tgg49099-dotcom/codegeist-jsm-accessibility-checker/issues</code></p>
-      <p class="src">Published 4 November 2026, last updated 9 November 2026 (production version 2.7.0, deployed 9 November 2026), by Tgg Labs &mdash; personal projects by Tgg, in Switzerland.</p>
+      <p class="src">Published 4 November 2026, last updated 10 November 2026 (production version 2.8.0, deployed 10 November 2026 at 01:15:28 UTC), by Tgg Labs &mdash; personal projects by Tgg, in Switzerland.</p>
     </article>
 </main>
 <footer class="site-foot">
   <p>Tgg Labs &mdash; Personal projects by Tgg, in Switzerland.</p>
   <p>Every product on this page links to the listing where it is actually published.
-     Facts and prices on this page were checked on 9 November 2026.</p>
+     Facts and prices on this page were checked on 10 November 2026.</p>
 </footer>
 </body>
 </html>

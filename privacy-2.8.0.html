@@ -1,0 +1,138 @@
+<!doctype html>
+<!--
+  PRIVACY NOTICE — version 2.8.0 (PREPARED 10/11/2026, READY TO PUBLISH).
+
+  This file describes the behaviour of the version DEPLOYED as production 2.8.0
+  (the administrator check applied to the two Rovo MCP tools).
+
+  THE PUBLICATION CONDITION IS MET: the 2.8.0 deployment was measured on the
+  production environment on 10/11/2026 (deployment record 01:15:28 UTC, version
+  record 01:15:46 UTC, version id 09201e49-daac-48f6-bf92-c1c73e01ffcc,
+  isLatest = true). The package uploaded for that deployment contains the
+  administrator check, called before any read of the site
+  (/work/preuves/cycle142-deploiement-prod.md).
+
+  The mother publishes this page (the site is a git repository); this file was
+  written by the assistant and measured, not published.
+-->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Privacy — Portal Accessibility Checker for JSM — Tgg Labs</title>
+<meta name="description" content="Privacy notice for Portal Accessibility Checker for JSM, a read-only Atlassian Forge app. The app stores nothing, uses no third-party service, and sends no data outside the Atlassian tenant where it is installed.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%231f6feb'/%3E%3Ctext x='16' y='22' font-family='system-ui,sans-serif' font-size='16' font-weight='700' fill='white' text-anchor='middle'%3ET%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+<header class="site">
+  <a class="brand" href="index.html">Tgg Labs</a>
+  <nav class="nav">
+    <a href="index.html#jetbrains">JetBrains plugins</a>
+    <a href="index.html#gumroad">Digital products</a>
+  </nav>
+</header>
+<main>
+    <article class="produit">
+      <p class="fil"><a href="index.html">Tgg Labs</a></p>
+      <h1>Privacy — Portal Accessibility Checker for JSM</h1>
+      <p class="lead">A read-only Atlassian Forge app for Jira Service Management customer portals. This notice says exactly what it reads, what it keeps, and where the data goes.</p>
+
+      <h2>What the app is</h2>
+      <ul class="puces">
+        <li>An Atlassian Forge app for Jira and Jira Service Management (JSM), app id <code>33f1227e-0df1-4008-b181-ea9c50b116f5</code>.</li>
+        <li>Read-only: it checks the metadata of a customer portal against WCAG 2.2 AA criteria and reports what it found. It does not change, create or delete anything on your site.</li>
+        <li>Open source under the MIT licence: the source of every line is public, so the behaviour described below can be read directly, not taken on trust:
+          <code>https://github.com/tgg49099-dotcom/codegeist-jsm-accessibility-checker</code></li>
+      </ul>
+
+      <h2>What it reads</h2>
+      <p class="note">Who may run a scan is decided <strong>on the server</strong>, not in the page: before reading anything, the resolver and the two MCP tools ask Jira for the caller's own global permissions (<code>GET /rest/api/3/mypermissions?permissions=ADMINISTER,SYSTEM_ADMIN</code>), with the caller's identity and <strong>no extra scope</strong>. If the platform refuses that question, or answers without those permissions, the scan does not run: you get a refusal, never a report. This is the same check for every caller, whoever calls the function.</p>
+      <p class="note">Every call is a relative <code>/rest/...</code> path on the site where the app is installed, made with <strong>your own</strong> Atlassian identity &mdash; the identity of the signed-in
+        administrator who started the scan (<code>asUser</code>), never a wider one: the app makes
+        <strong>no <code>asApp()</code> call at all</strong>. The manifest declares only the read scopes <code>read:jira-work</code> and <code>read:servicedesk-request</code>: no write scope, no admin scope.</p>
+      <p class="note">If the platform refuses that identity (HTTP 401 or 403, when your account has
+        not authorised the app to read the site on your behalf), the app <strong>refuses</strong> and tells you
+        what to do. It never returns an empty report: &laquo;&nbsp;nothing was read&nbsp;&raquo; and &laquo;&nbsp;nothing was
+        found&nbsp;&raquo; are two different answers, and the app never confuses them.</p>
+      <ul class="puces">
+        <li>Field definitions (<code>GET /rest/api/3/field</code>) — the labels and descriptions of the fields shown to customers.</li>
+        <li>The list of projects and service projects (<code>GET /rest/api/3/project</code>) — the portals available on the site.</li>
+        <li>The fields of each customer request type (<code>GET /rest/api/3/issue/createmeta/…</code> and <code>GET /rest/servicedeskapi/servicedesk/…/requesttype/…/field</code>).</li>
+        <li>Issue search (<code>POST /rest/api/3/search/jql</code>, 20 results, fields <code>summary</code> and <code>description</code>) — the title and the description of the request types that were scanned.</li>
+      </ul>
+      <p>If the Jira Service Management API of your site reports that the product is not licensed for use, the app falls back to reading the equivalent Jira tickets that carry the same portal strings. It does not read anything else.</p>
+
+      <h2>What it stores</h2>
+      <p><strong>Nothing.</strong> The manifest declares no Forge storage and the code makes no storage call. A scan is computed on the fly and the findings are returned in the response of the scan itself — shown in the administration page to the administrator who started the scan, and downloadable as CSV. The <code>generatedAt</code> timestamp of a scan is part of that response; it is not kept anywhere.</p>
+
+      <h2>Personal data</h2>
+      <p>The app does not create an account, does not ask for a name or an e-mail address, and has no user profile. Two honest remarks about the content it reads:</p>
+      <ul class="puces">
+        <li>The title and the description of an issue can contain personal data typed by the people who wrote it — for example a name or an e-mail address in a ticket title. When the app reads the 20 most recent issues of the scanned projects, it therefore reads that content, and an excerpt of it can appear in the scan result.</li>
+        <li>There is no public URL. The scan is started from a button in the Jira administration page (<code>Administration &rarr; Apps &rarr; Portal Accessibility Checker for JSM</code>), which Jira renders in the administration area, and the app itself decides who may run a scan: the server asks Jira which global permissions the signed-in account holds, and refuses the scan to anyone who does not hold <strong>&laquo;&nbsp;Administer Jira&nbsp;&raquo;</strong> (or &laquo;&nbsp;Jira System Administrators&nbsp;&raquo;). The app also refuses any scan request that carries no signed-in account. Until version 2.4.0 the app answered a public web trigger declared with <code>authentication: none</code>; that module has been removed. The manifest deployed today declares four kinds of module &mdash; the interface, three function handlers, two action modules and one Rovo MCP module &mdash; and <strong>no public module at all</strong>.</li>
+        <li>The page offers two <em>optional</em> fields — a name and an e-mail address — so that a reader can see the privacy behaviour: a value typed there comes back <strong>masked</strong> (<code>C***</code>, <code>c***@***</code>), never in clear text, and it is masked everywhere in the answer where it can be.</li>
+      </ul>
+      <p>What the app never does: it never sends that content to the app developer, to a third party or to any service outside your own Atlassian tenant.</p>
+
+      <h2>The two Rovo MCP tools</h2>
+      <p>Since production version <strong>2.6.0</strong> (deployed on 9 November 2026), the app declares one more
+        kind of module: a <code>rovo:mcp</code> module, which exposes two read-only tools through
+        Atlassian's MCP server.</p>
+      <ul class="puces">
+        <li><code>scan_accessibility(url)</code> runs the same WCAG 2.2 AA scan as the button in the
+          administration page and returns the findings. The URL is never fetched: it is compared with the host
+          of the site where the app is installed, and a URL pointing at another site is refused.</li>
+        <li><code>list_last_findings()</code> returns the findings that are current at the time of the call, as a
+          compact list. The app stores nothing, so it keeps no history.</li>
+      </ul>
+      <p><strong>Whose permissions they use.</strong> The caller's own: the site is read as the person who
+        called the tool, never with a wider identity; if the platform refuses that identity, the tool returns a
+        refusal and reads nothing. <strong>What they read:</strong> the same relative <code>/rest/...</code>
+        paths as above, through the same two read scopes &mdash; no scope was added and none was removed.
+        <strong>What they write:</strong> nothing. <strong>Who can call them:</strong> a signed-in Atlassian
+        user who has granted the app access, through Atlassian's MCP server &mdash; and, since production version
+        <strong>2.8.0</strong>, only an account that holds the global Jira permission
+        &laquo;&nbsp;Administer Jira&nbsp;&raquo; (<code>ADMINISTER</code>) or
+        &laquo;&nbsp;Jira System Administrators&nbsp;&raquo; (<code>SYSTEM_ADMIN</code>).</p>
+      <p><strong>The administrator check is the same one as the button's, and it is made on the server.</strong>
+        Before reading anything, the tool asks Jira for the caller's own global permissions
+        (<code>GET /rest/api/3/mypermissions?permissions=ADMINISTER,SYSTEM_ADMIN</code>), with the caller's
+        identity and <strong>no extra scope</strong>. If the platform refuses that question, or answers without
+        those permissions, the tool reads nothing and returns a refusal &mdash; never a report. The check is
+        written once and used by every entry point of the app (the administration page and the two tools);
+        the published source code shows it, and the test suite that guards it is public too.</p>
+      <p><strong>What they need your site to have.</strong> Atlassian's MCP server is part of Rovo, which
+        Atlassian reserves to paid Cloud plans &mdash; Standard, Premium or Enterprise
+        (<a href="https://www.atlassian.com/licensing/rovo">Atlassian's licensing page</a>). A site on the
+        Free plan has no Rovo, hence no MCP server, hence neither of these two tools. The administration page
+        and its scan button work on every plan, including Free. The app itself is free; the Rovo subscription is
+        yours.</p>
+
+      <h2>Where the data goes</h2>
+      <p>Nowhere else. Everything runs on Atlassian infrastructure — the Forge runtime and the site's own REST API — inside your tenant. The app has <strong>no external service, no third-party SDK, no analytics, no telemetry and no cookies</strong>. These points were checked against the published source code, not merely intended: the code contains no outbound call to any host, no storage call, and no analytics or telemetry code.</p>
+
+      <h2>How long data is kept</h2>
+      <p>Not at all. Nothing is written, so nothing has to be deleted. Removing the app from your site (<code>Administration &rarr; Manage apps</code>) removes its installation entirely.</p>
+
+      <h2>Your choices</h2>
+      <ul class="puces">
+        <li>You decide which portal and which request types are scanned. Nothing is scanned unless you ask for it.</li>
+        <li>There is no data to export and no data to delete: the app keeps none.</li>
+        <li>You can remove the app at any time from <code>Administration &rarr; Manage apps</code>.</li>
+      </ul>
+
+      <h2>Contact</h2>
+      <p>Questions, corrections or a request to stop processing can be raised as an issue in the public repository:
+        <code>https://github.com/tgg49099-dotcom/codegeist-jsm-accessibility-checker/issues</code></p>
+      <p class="src">Published 4 November 2026, last updated 10 November 2026 (production version 2.8.0, deployed 10 November 2026 at 01:15:28 UTC), by Tgg Labs &mdash; personal projects by Tgg, in Switzerland.</p>
+    </article>
+</main>
+<footer class="site-foot">
+  <p>Tgg Labs &mdash; Personal projects by Tgg, in Switzerland.</p>
+  <p>Every product on this page links to the listing where it is actually published.
+     Facts and prices on this page were checked on 10 November 2026.</p>
+</footer>
+</body>
+</html>
