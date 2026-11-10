@@ -11,7 +11,10 @@ const CORS = {
   "Access-Control-Allow-Headers": "Content-Type, Accept, Authorization, Mcp-Session-Id, MCP-Protocol-Version, Last-Event-ID",
   "Access-Control-Expose-Headers": "Mcp-Session-Id, MCP-Protocol-Version",
   "Access-Control-Max-Age": "86400",
+  "X-Content-Type-Options": "nosniff",
 };
+const TAILLE_MAX = 65536; // octets par requête
+const court = (v) => String(v).slice(0, 80); // ce qu'on renvoie d'une saisie reste court
 const CONSIGNES =
   "Standby Atlas lists upcoming European data-centre projects read from public filings: environmental opinions, emission permits " +
   "for backup generators, planning decisions and grid concessions. Each record gives the stage, filing date, MW, number of backup " +
@@ -123,7 +126,7 @@ function marque(p, voulue) {
 function mots(p, texte, champ) {
   if (!texte) return true;
   const cible = champ ? norm(p[champ]) : p._t;
-  return norm(texte).split(/[\s,]+/).filter(Boolean).every((m) => cible.includes(m));
+  return norm(texte).split(/[\s,]+/).filter(Boolean).slice(0, 12).every((m) => cible.includes(m));
 }
 function jour(s, nom) {
   if (s === undefined || s === null || s === "") return "";
@@ -210,7 +213,7 @@ async function appel(nom, a, env, request) {
   if (nom === "fetch") {
     const id = String(a.id || "").trim().toUpperCase();
     const p = d.projects.find((x) => x.id.toUpperCase() === id);
-    if (!p) throw new Erreur("No project with id " + id + ". Use search or search_projects to find ids.");
+    if (!p) throw new Erreur("No project with id " + court(id) + ". Use search or search_projects to find ids.");
     const s = sortie(p);
     const texte = [
       s.title + ".", "Stage: " + s.stage + (s.filing_date ? ", filing dated " + s.filing_date : "") + ".",
@@ -249,7 +252,7 @@ async function traiter(m, env, request) {
     case "prompts/list": return ok({ prompts: [] });
     case "logging/setLevel": return ok({});
     case "tools/call": {
-      if (!OUTILS.some((o) => o.name === p.name)) return ko(-32602, "Unknown tool: " + p.name);
+      if (!OUTILS.some((o) => o.name === p.name)) return ko(-32602, "Unknown tool: " + court(p.name));
       try {
         return ok(await appel(p.name, p.arguments, env, request));
       } catch (x) {
@@ -257,7 +260,7 @@ async function traiter(m, env, request) {
         return ok({ content: [{ type: "text", text: "The index could not be read just now. Try again in a minute." }], isError: true });
       }
     }
-    default: return ko(-32601, "Method not found: " + m.method);
+    default: return ko(-32601, "Method not found: " + court(m.method));
   }
 }
 
@@ -274,10 +277,13 @@ async function mcp(request, env) {
     return Response.redirect(new URL("/api/#mcp", request.url).toString(), 302);
   }
   if (request.method !== "POST") return new Response(null, { status: 405, headers: { Allow: "POST, OPTIONS", ...CORS } });
-  if (Number(request.headers.get("Content-Length") || 0) > 65536) return json({ jsonrpc: "2.0", id: null, error: { code: -32600, message: "Request too large" } }, 413);
+  if (Number(request.headers.get("Content-Length") || 0) > TAILLE_MAX) return json({ jsonrpc: "2.0", id: null, error: { code: -32600, message: "Request too large" } }, 413);
+  if (tropDeRequetes(request)) return json({ jsonrpc: "2.0", id: null, error: { code: -32000, message: "Too many requests: about one per second, please" } }, 429, { "Retry-After": "30" });
   let corps;
   try {
-    corps = JSON.parse(await request.text());
+    const texte = await lireBorne(request);
+    if (texte === null) return json({ jsonrpc: "2.0", id: null, error: { code: -32600, message: "Request too large" } }, 413);
+    corps = JSON.parse(texte);
   } catch (_) {
     return json({ jsonrpc: "2.0", id: null, error: { code: -32700, message: "Parse error" } }, 400);
   }
@@ -291,6 +297,36 @@ async function mcp(request, env) {
   const reponses = (await Promise.all(lot.map((m) => traiter(m, env, request)))).filter(Boolean);
   if (!reponses.length) return new Response(null, { status: 202, headers: CORS });
   return json(Array.isArray(corps) ? reponses : reponses[0]);
+}
+
+// corps de requête lu par morceaux et coupé au-delà de TAILLE_MAX (même sans en-tête Content-Length)
+async function lireBorne(request) {
+  if (!request.body) return "";
+  const lecteur = request.body.getReader(), morceaux = [];
+  let total = 0;
+  for (;;) {
+    const { done, value } = await lecteur.read();
+    if (done) break;
+    total += value.byteLength;
+    if (total > TAILLE_MAX) { try { await lecteur.cancel(); } catch (_) { /* rien */ } return null; }
+    morceaux.push(value);
+  }
+  const tout = new Uint8Array(total);
+  let pos = 0;
+  for (const m of morceaux) { tout.set(m, pos); pos += m.byteLength; }
+  return new TextDecoder().decode(tout);
+}
+
+// limite simple par adresse, en mémoire de l'instance : 90 requêtes par minute (les conditions d'utilisation en annoncent une par seconde)
+const COMPTES = new Map();
+function tropDeRequetes(request) {
+  const ip = request.headers.get("CF-Connecting-IP") || "?";
+  const maintenant = Date.now();
+  let c = COMPTES.get(ip);
+  if (!c || maintenant - c.debut > 60e3) { c = { debut: maintenant, n: 0 }; COMPTES.set(ip, c); }
+  c.n++;
+  if (COMPTES.size > 5000) { for (const [k, v] of COMPTES) if (maintenant - v.debut > 60e3) COMPTES.delete(k); }
+  return c.n > 90;
 }
 
 export default {
