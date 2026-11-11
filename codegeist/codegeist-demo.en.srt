@@ -1,0 +1,72 @@
+1
+00:00:00,000 --> 00:00:07,320
+Portal Accessibility Checker for JSM. A Forge app that helps a service
+desk team check what its customer portal exposes, against WCAG 2.2 AA.
+
+2
+00:00:07,320 --> 00:00:13,000
+This video is a real screen capture, recorded on
+10 November 2026 against the production build, version 2.8.0.
+
+3
+00:00:13,000 --> 00:00:20,360
+Here is the app inside the Jira administration area of the site.
+Settings, then Apps, then Portal Accessibility Checker for JSM.
+
+4
+00:00:20,360 --> 00:00:29,000
+Jira renders this page only for a signed-in administrator: there is no public
+URL, and the server checks the administrator permission before any read.
+
+5
+00:00:29,000 --> 00:00:34,880
+This is the page. Two optional fields, left empty here:
+the greyed text is the app's placeholder, not real data.
+
+6
+00:00:34,880 --> 00:00:43,120
+The app's own note says the answer shows the value masked, never in clear text.
+Two buttons. “Run the scan” reads your own site through the site's REST API.
+
+7
+00:00:43,120 --> 00:00:47,000
+“Run the demo scan” runs the same engine on the app's bundled sample data.
+
+8
+00:00:47,000 --> 00:00:56,080
+Here the demo scan has just run. 23 findings,
+9 of them to be checked by a human. Mode: demo.
+
+9
+00:00:56,080 --> 00:01:05,000
+The scan replays the app's own fixtures: it
+reads no data from the site and writes nothing.
+
+10
+00:01:05,000 --> 00:01:16,080
+Every line is a WCAG 2.2 criterion, the level,
+where it was found and what the app proposes.
+
+11
+00:01:16,080 --> 00:01:29,000
+The last column says whether a human has to check it:
+an automatic check is never a verdict of conformance.
+
+12
+00:01:29,000 --> 00:01:47,000
+“Export the findings” produces the same list as a CSV, with the criterion, the
+level, the source, the location, the message and whether a human has to check it.
+
+13
+00:01:47,000 --> 00:01:58,800
+And the app states its own limits. Contrast, reading order and visible labels
+are not checkable through the REST API, so the app does not rule on them.
+
+14
+00:01:58,800 --> 00:02:05,000
+A finding is an alert to be checked by a human, never a verdict of conformance.
+
+15
+00:02:05,000 --> 00:02:20,000
+Portal Accessibility Checker for JSM. Production version 2.8.0, read-only, Atlassian
+Cloud, no external service. The code is public, under the MIT licence, on GitHub.

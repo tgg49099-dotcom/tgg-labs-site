@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Portal Accessibility Checker for JSM — demonstration files — Tgg Labs</title>
+<meta name="description" content="Public project page of Portal Accessibility Checker for JSM, a read-only Atlassian Forge app: a silent demonstration video with English subtitles, the install link for judges and the public source code.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%231f6feb'/%3E%3Ctext x='16' y='22' font-family='system-ui,sans-serif' font-size='16' font-weight='700' fill='white' text-anchor='middle'%3ET%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<header class="site">
+  <a class="brand" href="../index.html">Tgg Labs</a>
+  <nav class="nav">
+    <a href="../index.html#jetbrains">JetBrains plugins</a>
+    <a href="../index.html#gumroad">Digital products</a>
+  </nav>
+</header>
+<main>
+  <article class="produit">
+    <p class="fil"><a href="../index.html">Tgg Labs</a> / <a href="codegeist-demo.mp4">Demonstration files</a></p>
+    <h1>Portal Accessibility Checker for JSM — demonstration files</h1>
+    <p class="lead">Public project page of a read-only Atlassian Forge app that checks what your Jira
+      Service Management customer portal exposes, against WCAG 2.2 AA. This folder hosts the
+      demonstration video and its subtitles. Every statement on this page was measured on
+      11 November 2026.</p>
+
+    <h2>What the app does</h2>
+    <p>It reads the customer-facing content of your JSM portal through your site's own official REST
+      APIs — request types, their fields, help texts and articles — and reports accessibility findings
+      against WCAG 2.2 AA.</p>
+    <ul class="puces">
+      <li><strong>Read-only.</strong> It writes nothing on your site, stores nothing and calls no
+        external service.</li>
+      <li><strong>Administrators only.</strong> The scan is started from a button in the Jira
+        administration page (Settings &rarr; Apps &rarr; Portal Accessibility Checker for JSM) and
+        only for a signed-in Jira administrator: the server checks that the account holds the global
+        &laquo;&nbsp;Administer Jira&nbsp;&raquo; permission and refuses otherwise. There is no public
+        URL.</li>
+      <li><strong>A finding is an alert, never a verdict.</strong> Contrast, reading order and
+        visible labels cannot be checked through the REST API, so the app does not rule on them: it
+        reports them as needing a human review.</li>
+      <li><strong>Two read-only scopes</strong> are declared and nothing else:
+        <code>read:jira-work</code> and <code>read:servicedesk-request</code>.</li>
+    </ul>
+
+    <h2>Demonstration video</h2>
+    <p>A real screen capture of the running app, recorded on 10 November 2026 against the production
+      build, version 2.8.0.</p>
+    <video controls preload="none" poster="codegeist-vignette.jpg" width="1920" height="1080" style="max-width:100%;height:auto;">
+      <source src="codegeist-demo.mp4" type="video/mp4">
+      <p>Your browser cannot play this MP4. The file can be downloaded directly:
+        <a href="codegeist-demo.mp4">codegeist-demo.mp4</a>.</p>
+    </video>
+    <ul class="puces">
+      <li><strong>140 s (2 min 20 s)</strong>, 1920&times;1080, 25 fps, H.264 — 2 628 714 bytes,
+        md5 <code>778455448579edb9f24732c52a8e105b</code>.</li>
+      <li><strong>Without sound.</strong> The audio track is silent — measured at &minus;91.0 dB over
+        all 13 441 024 samples — so the English narration is carried by subtitles, not by a
+        voice-over and not by music.</li>
+      <li><strong>Subtitles.</strong> The file carries an English subtitle track; because some
+        players do not display embedded subtitle tracks, the same subtitles are published next to the
+        video: <a href="codegeist-demo.en.srt">codegeist-demo.en.srt</a> — 15 cues, 2 337 bytes,
+        md5 <code>e8240afe033bc47e6b24e79d288aecc7</code>.</li>
+      <li><strong>No account data anywhere.</strong> The two optional fields stay empty in every frame
+        of the recording: the greyed text is the app's own placeholder, and the address shown belongs
+        to the reserved <code>example.com</code> domain. The findings on screen come from the app's
+        bundled demo data (sample record <code>DEMO-101</code>, mode <code>demo</code>), which reads
+        no site at all.</li>
+      <li>The Jira administration chrome of the recording site is in French; the app's own interface
+        and the narration are in English.</li>
+    </ul>
+    <p class="note">The frame below is taken from the same video. It shows the app panel with its two
+      empty fields and the results of the demo scan on the bundled sample data — no real site, no
+      real account, no personal data.</p>
+    <p><img src="codegeist-vignette.jpg" width="1920" height="1080" style="max-width:100%;height:auto;"
+      alt="Frame of the demonstration: the Portal Accessibility Checker for JSM panel with its two empty optional fields, and below it the results of the demo scan on the bundled sample data."></p>
+
+    <h2>Install it</h2>
+    <p>The app is shared publicly through Atlassian's installation link. Open the link, choose the
+      site to test and the product Jira, and confirm. You must be an administrator of that site.</p>
+    <p class="cta"><a class="btn" href="https://developer.atlassian.com/console/install/33f1227e-0df1-4008-b181-ea9c50b116f5?signature=AYABePSnUuiB0GClt7xU28lOa%2B8AAAADAAdhd3Mta21zAEthcm46YXdzOmttczp1cy13ZXN0LTI6NzA5NTg3ODM1MjQzOmtleS83MDVlZDY3MC1mNTdjLTQxYjUtOWY5Yi1lM2YyZGNjMTQ2ZTcAuAECAQB4CxqLTo9l4lqXuFjNim1xJM%2Bp%2F3TVP9xHS2BrU5DRRucB8IR%2Fr4eCcFtjv84f46z3lQAAAH4wfAYJKoZIhvcNAQcGoG8wbQIBADBoBgkqhkiG9w0BBwEwHgYJYIZIAWUDBAEuMBEEDJEnRfbvYEyuAXePKgIBEIA7Uu8ui9sA7kWIbdibQfVEw1pF86ly7J%2FycGOB3oKIR17iEuP5ccWFAGy24Lj8VDM6%2BkLAXFrQurRQNIcAB2F3cy1rbXMAS2Fybjphd3M6a21zOmV1LXdlc3QtMTo3MDk1ODc4MzUyNDM6a2V5LzQ2MzBjZTZiLTAwYzMtNGRlMi04NzdiLTYyN2UyMDYwZTVjYwC4AQICAHi9bVMAkme4qVQX1fQHo6ePw3H40A7cGfz7yrmSfBWMXgHhlTS1%2FI6vlaZv%2B2dnwSiEAAAAfjB8BgkqhkiG9w0BBwagbzBtAgEAMGgGCSqGSIb3DQEHATAeBglghkgBZQMEAS4wEQQMlsespPbwioQ7YLwZAgEQgDtatkNIwTfq8ZNd2JvxfgVqFDntP%2BhpKWkRZDXzCwpnJ0xKttfZJ6x8S4jN4gsRt2FTr8ax7qKyKhE6pQAHYXdzLWttcwBLYXJuOmF3czprbXM6dXMtZWFzdC0xOjcwOTU4NzgzNTI0MzprZXkvNmMxMjBiYTAtNGNkNS00OTg1LWI4MmUtNDBhMDQ5NTJjYzU3ALgBAgIAeDYASx0XCjkny4iLV6vz%2BKtEGSGT6kdt0QRpkn6D%2FlVEAR5cs%2FECKKfdmkL5tsJ9AiIAAAB%2BMHwGCSqGSIb3DQEHBqBvMG0CAQAwaAYJKoZIhvcNAQcBMB4GCWCGSAFlAwQBLjARBAzR9WbeVQ1UBVEwZEgCARCAOwjqc2AB9av88qBTd9S%2BMR66%2FjUADlelxf82eP7E2vHGrWz4oAvnmEHi7cq%2B4GAKDB0LK84m08%2F28WjZAgAAAAAMAAAQAAAAAAAAAAAAAAAAALKt07YGUVpM75veLKQN%2FAD%2F%2F%2F%2F%2FAAAAAQAAAAAAAAAAAAAAAQAAADJUiw3Xm7UoJ9Fd2t55vuCmampoKO0nr4doxlX9mtFWqQZBFzPZKcOmgkN7C5WATcUk0vHWdnXcPX6OZigOUwYloNY%3D">Install Portal Accessibility Checker for JSM (Jira)</a></p>
+    <p>Once installed, in Jira: Settings (gear icon) &rarr; Apps &rarr; <strong>Portal Accessibility
+      Checker for JSM</strong>. To try it without any setup, click
+      &laquo;&nbsp;Run the demo scan (no site needed)&nbsp;&raquo;: the same rule engine then runs on
+      the app's bundled sample data and reads nothing from your site.</p>
+
+    <h2>Source code</h2>
+    <p>The whole source is public, under the MIT licence:
+      <a href="https://github.com/tgg49099-dotcom/codegeist-jsm-accessibility-checker">github.com/tgg49099-dotcom/codegeist-jsm-accessibility-checker</a>.</p>
+    <p class="note">The code of this app was written with AI assistance. It is reviewed by an
+      automated offline test suite — 13 test scripts, 344 checks, all green when measured on
+      10 November 2026, including counter-proofs that turn red when a rule is sabotaged.</p>
+
+    <h2>Links</h2>
+    <ul class="puces">
+      <li>Demonstration video (MP4):
+        <a href="codegeist-demo.mp4">labs.chiffreo.ch/codegeist/codegeist-demo.mp4</a></li>
+      <li>English subtitles (SRT):
+        <a href="codegeist-demo.en.srt">labs.chiffreo.ch/codegeist/codegeist-demo.en.srt</a></li>
+      <li>Support, and what the app can and cannot check:
+        <a href="../support-pac-jsm.html">labs.chiffreo.ch/support-pac-jsm.html</a></li>
+      <li>Privacy notice: <a href="../privacy.html">labs.chiffreo.ch/privacy.html</a></li>
+      <li>Source code and documentation (MIT):
+        <a href="https://github.com/tgg49099-dotcom/codegeist-jsm-accessibility-checker">github.com/tgg49099-dotcom/codegeist-jsm-accessibility-checker</a></li>
+    </ul>
+    <p class="src">Written 11 November 2026 for version 2.8.0 — Tgg Labs, personal projects, in
+      Switzerland.</p>
+  </article>
+</main>
+<footer class="site-foot">
+  <p>Tgg Labs — personal projects, in Switzerland.</p>
+  <p>Every product on this page links to the listing where it is actually published.
+     Facts on this page were checked on 11 November 2026.</p>
+</footer>
+</body>
+</html>
