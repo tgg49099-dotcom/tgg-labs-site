@@ -3,128 +3,190 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Tgg Labs — Personal projects by Tgg, in Switzerland.</title>
-<meta name="description" content="Tgg Labs — personal projects by Tgg, in Switzerland: a free index of Europe's data-centre pipeline, two free JetBrains plugins and a set of digital products sold on Gumroad.">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%231f6feb'/%3E%3Ctext x='16' y='22' font-family='system-ui,sans-serif' font-size='16' font-weight='700' fill='white' text-anchor='middle'%3ET%3C/text%3E%3C/svg%3E">
+<title>Tgg Labs — Data you can check, tools you can read</title>
+<meta name="description" content="Tgg Labs is an independent studio in Switzerland. It builds Standby Atlas, a dataset of Europe's upcoming data centres read from public permits, and open-source tools for JetBrains IDEs and Jira Service Management.">
+<link rel="canonical" href="https://labs.chiffreo.ch/">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+<link rel="preload" href="fonts/archivo-latin-wdth-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="style.css">
-
+<meta name="theme-color" content="#FFFFFF" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#071321" media="(prefers-color-scheme: dark)">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Tgg Labs">
+<meta property="og:title" content="Tgg Labs — Data you can check, tools you can read">
+<meta property="og:description" content="An independent studio in Switzerland: Standby Atlas, a dataset of Europe's upcoming data centres read from public permits, and open-source developer tools.">
+<meta property="og:url" content="https://labs.chiffreo.ch/">
+<meta property="og:image" content="https://labs.chiffreo.ch/img/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Tgg Labs","url":"https://labs.chiffreo.ch/","logo":"https://labs.chiffreo.ch/img/apple-touch-icon.png","description":"Independent studio in Switzerland: Standby Atlas and open-source developer tools.","address":{"@type":"PostalAddress","addressCountry":"CH"},"sameAs":["https://standbyatlas.com/","https://plugins.jetbrains.com/vendor/tgg-labs","https://github.com/tgg49099-dotcom","https://tggster.gumroad.com/"]}</script>
 </head>
 <body>
 <header class="site">
-  <a class="brand" href="index.html">Tgg Labs</a>
-  <nav class="nav">
-    <a href="index.html#data">Data</a>
-    <a href="index.html#jetbrains">JetBrains plugins</a>
-    <a href="index.html#gumroad">Digital products</a>
+  <a class="brand" href="./">Tgg Labs</a>
+  <nav class="nav" aria-label="Main">
+    <a href="#data">Standby Atlas</a>
+    <a href="#jetbrains"><span class="long">Developer tools</span><span class="court">Tools</span></a>
+    <a href="#gumroad">Templates</a>
+    <a href="#about">About</a>
   </nav>
 </header>
+
 <main>
-    <section class="hero">
-      <h1>Tgg Labs</h1>
-      <p class="slogan">Personal projects by Tgg, in Switzerland.</p>
-      <p class="intro">Tgg Labs is the personal project label of Tgg, a developer based in Switzerland. Everything published here is free or sold at a fixed price, with the source code public for the plugins and a written description for every product.</p>
-    </section>
-    <section id="data">
-      <h2>Data</h2>
-      <p class="intro">Europe's upcoming data centres, read from public permits and environmental filings.</p>
-      <ul class="cards">
-      <li class="card">
-        <h3>European Data Centre Pipeline Index</h3>
-        <p class="what">A free monthly index of data-centre projects found in public filings across Europe: projects by country, backup generators and their thermal power, engine makers named in permits, with the method and sources.</p>
-        <p class="meta"><span class="pill">Free index</span> <span class="pill">Report and data licence on request</span></p>
-        <p class="cta"><a class="btn" href="data-centre-pipeline/">Open the index</a></p>
+  <section class="ouverture cadre" aria-labelledby="titre">
+    <div>
+      <h1 id="titre"><span>Data you can check.</span> <span>Tools you can read.</span></h1>
+      <p class="ouv-lead"><strong>Tgg Labs is an independent studio in Switzerland.</strong> It turns public permits into Standby Atlas, a dataset of Europe's upcoming data centres, and builds small open-source tools for developers.</p>
+      <p class="actions">
+        <a class="btn" href="#data">Discover Standby Atlas</a>
+        <a class="btn trait" href="#jetbrains">See the developer tools</a>
+      </p>
+    </div>
+    <figure class="figure-produit">
+      <img src="img/atlas-carte.jpg" srcset="img/atlas-carte-720.jpg 720w, img/atlas-carte.jpg 1200w" sizes="(min-width: 1240px) 560px, (min-width: 881px) 46vw, (min-width: 680px) 640px, calc(100vw - 32px)" width="1200" height="1184" alt="Map of Europe from Standby Atlas: a glowing column rises at each data-centre project, taller where more backup generators are declared, with clusters around Dublin, London, Amsterdam, Frankfurt, Paris, Milan and Oslo.">
+      <figcaption>Standby Atlas: 172 data-centre projects in 14 countries, each tied to the public filing it comes from.</figcaption>
+    </figure>
+  </section>
+
+  <section class="bande-papier" id="data" aria-labelledby="titre-atlas">
+    <div class="cadre section phare">
+      <div class="phare-texte">
+        <h2 id="titre-atlas">Standby Atlas</h2>
+        <p class="phare-devise">Europe's data-centre pipeline, down to the engine.</p>
+        <p class="corps">Every new data centre leaves public filings long before construction: emission permits for its backup generators, environmental opinions, planning decisions. Standby Atlas reads them in their original languages and turns them into records with the source attached: who applied, where, at what stage, how many generator sets and which engine make.</p>
+      </div>
+      <figure class="figure-produit phare-figure">
+        <img src="img/atlas-blocs.jpg" srcset="img/atlas-blocs-720.jpg 720w, img/atlas-blocs.jpg 1200w" sizes="(min-width: 1240px) 560px, (min-width: 881px) 46vw, calc(100vw - 32px)" width="1200" height="708" alt="An isometric slab of small amber blocks on a dark background, one block for every ten backup generator sets declared in the filings." loading="lazy">
+        <figcaption>The 5,931 backup generator sets declared in the filings, one block for ten.</figcaption>
+      </figure>
+      <div class="phare-chiffres">
+        <dl class="chiffres">
+          <div><dt>Data-centre projects tracked</dt><dd>172<small>in 14 countries</small></dd></div>
+          <div><dt>Official documents behind them</dt><dd>178<small>131 read page by page</small></dd></div>
+          <div><dt>Backup generator sets declared</dt><dd>5,931</dd></div>
+          <div><dt>Permits that name the exact engine model</dt><dd>15</dd></div>
+        </dl>
+        <p class="date">Figures as of 10 November 2026, as published on standbyatlas.com.</p>
+      </div>
+      <div class="phare-suite">
+        <p class="phare-pour">Made for genset makers and distributors, fuel, power and cooling suppliers, grid operators and analysts, investors and lenders.</p>
+        <p class="actions">
+          <a class="btn" href="https://standbyatlas.com/">Visit standbyatlas.com</a>
+          <a class="btn trait" href="https://standbyatlas.com/sample-dossier/">Read a sample dossier</a>
+        </p>
+        <p class="phare-index">A free monthly summary is also published here: <a href="data-centre-pipeline/">European Data Centre Pipeline Index</a>.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="cadre section" id="jetbrains" aria-labelledby="titre-outils">
+    <div class="section-tete">
+      <h2 id="titre-outils">Developer tools</h2>
+      <p>Small tools that do one job. Each one reads your data where it already lives, and its source code is public.</p>
+    </div>
+    <ul class="outils">
+      <li class="outil">
+        <div class="outil-image"><img src="img/cockpit.jpg" width="1200" height="760" alt="ML Experiment Cockpit in an IDE: the MLflow experiment tree on the left, a run's parameters and its accuracy curve on the right." loading="lazy"></div>
+        <h3><a href="ml-experiment-cockpit.html">ML Experiment Cockpit</a></h3>
+        <p>MLflow runs and metrics, W&amp;B sweeps, Optuna studies and the MLflow Model Registry, read inside PyCharm or IntelliJ, without a browser.</p>
+        <dl class="fiche">
+          <dt>Runs in</dt><dd>JetBrains IDEs</dd>
+          <dt>Price</dt><dd>Free core features</dd>
+          <dt>Licence</dt><dd>Apache-2.0</dd>
+        </dl>
+        <p class="liens"><a href="https://plugins.jetbrains.com/plugin/35416-ml-experiment-cockpit">JetBrains Marketplace</a> <a href="support-ml-experiment-cockpit.html">Support its upkeep</a></p>
       </li>
-      </ul>
-    </section>
-    <section id="jetbrains">
-      <h2>JetBrains plugins</h2>
-      <p class="intro">Two free plugins for IntelliJ IDEA, PyCharm, WebStorm, GoLand and CLion, installed from the JetBrains Marketplace.</p>
-      <ul class="cards">
-      <li class="card">
-        <h3>ML Experiment Cockpit</h3>
-        <p class="what">Reads your MLflow runs and metrics, plus W&amp;B sweeps, Optuna studies and the MLflow Model Registry, inside PyCharm or IntelliJ &mdash; no browser, no notebook.</p>
-        <p class="meta"><span class="pill">Free</span> <span class="pill">JetBrains Marketplace</span></p>
-        <p class="cta"><a class="btn" href="https://plugins.jetbrains.com/plugin/35416-ml-experiment-cockpit">View on the JetBrains Marketplace</a></p>
-        <p class="more"><a href="ml-experiment-cockpit.html">What it is, who it is for, and its limits</a></p>
+      <li class="outil">
+        <div class="outil-image"><img src="img/badge.png" width="800" height="311" alt="The Project view of an IDE: the Git branch name, nouvelle-branche, appears right after the project name gitdemo." loading="lazy"></div>
+        <h3><a href="git-branch-badge.html">Git Branch Badge</a></h3>
+        <p>Shows the Git branch you are on next to the project name, and updates it the moment you switch, even from a terminal.</p>
+        <dl class="fiche">
+          <dt>Runs in</dt><dd>JetBrains IDEs</dd>
+          <dt>Price</dt><dd>Free</dd>
+          <dt>Licence</dt><dd>MIT</dd>
+        </dl>
+        <p class="liens"><a href="https://plugins.jetbrains.com/plugin/35551-git-branch-badge">JetBrains Marketplace</a></p>
       </li>
-      <li class="card">
-        <h3>Git Branch Badge</h3>
-        <p class="what">Shows the Git branch you are on, right next to your project name. The badge appears on the project root in the Project view, as <code>path [branch]</code>: the project path is kept, the branch is added next to it.</p>
-        <p class="meta"><span class="pill">Free</span> <span class="pill">JetBrains Marketplace</span></p>
-        <p class="cta"><a class="btn" href="https://plugins.jetbrains.com/plugin/35551-git-branch-badge">View on the JetBrains Marketplace</a></p>
-        <p class="more"><a href="git-branch-badge.html">What it is, who it is for, and its limits</a></p>
+      <li class="outil">
+        <div class="outil-image clair"><img src="img/jsm.jpg" width="1200" height="675" alt="Portal Accessibility Checker for JSM: a scan summary followed by a table of findings, each with its WCAG criterion, its level and where it was found." loading="lazy"></div>
+        <h3><a href="codegeist/">Portal Accessibility Checker for JSM</a></h3>
+        <p>Checks what a Jira Service Management customer portal shows its users against WCAG 2.2 AA, and flags what needs a human review.</p>
+        <dl class="fiche">
+          <dt>Runs in</dt><dd>Jira Service Management (Atlassian Forge)</dd>
+          <dt>Access</dt><dd>Read-only, administrators</dd>
+          <dt>Licence</dt><dd>MIT</dd>
+        </dl>
+        <p class="liens"><a href="support-pac-jsm.html">Support</a> <a href="privacy.html">Privacy notice</a></p>
       </li>
-      </ul>
-    </section>
-    <section id="gumroad">
-      <h2>Digital products</h2>
-      <p class="intro">Templates, scripts and a guide, sold on Gumroad. Each page below links straight to the product's own page, where you can read the description and pay.</p>
-      <ul class="cards">
-      <li class="card">
-        <h3>Support ML Experiment Cockpit</h3>
-        <p class="what">A voluntary support page for ML Experiment Cockpit, the free JetBrains plugin. No file is delivered &mdash; the page exists so that people who use the plugin every day can keep its maintenance going.</p>
-        <p class="meta"><span class="pill">You choose the amount</span> <span class="pill">Gumroad</span></p>
-        <p class="cta"><a class="btn" href="https://tggster.gumroad.com/l/piazge">View on Gumroad</a></p>
-        <p class="more"><a href="support-ml-experiment-cockpit.html">What it is, who it is for, and its limits</a></p>
-      </li>
-      <li class="card">
-        <h3>Marketing Copy Templates</h3>
-        <p class="what">12 framework-driven Markdown templates covering the surfaces you ship weekly: landing hero (AIDA), cold email, and more.</p>
-        <p class="meta"><span class="pill">CHF 11.00</span> <span class="pill">Gumroad</span></p>
-        <p class="cta"><a class="btn" href="https://tggster.gumroad.com/l/slot2-produit-6-marketing-copy-templates">View on Gumroad</a></p>
-        <p class="more"><a href="marketing-copy-templates.html">What it is, who it is for, and its limits</a></p>
-      </li>
-      <li class="card">
-        <h3>CI/CD &amp; Automation Templates</h3>
-        <p class="what">14 production-ready templates: GitHub Actions (PR check, release, Dependabot, CodeQL, staging deploy), GitLab CI, and n8n workflows.</p>
-        <p class="meta"><span class="pill">CHF 12.00</span> <span class="pill">Gumroad</span></p>
-        <p class="cta"><a class="btn" href="https://tggster.gumroad.com/l/slot2-produit-2-cicd-automation-templates">View on Gumroad</a></p>
-        <p class="more"><a href="cicd-automation-templates.html">What it is, who it is for, and its limits</a></p>
-      </li>
-      <li class="card">
-        <h3>Patterns Phaser pour jeux HTML5</h3>
-        <p class="what">The field guide for shipping a Phaser 3.90 game on HTML5 portals in 2026: 34 pages, 18 chapters, from zero to published on CrazyGames, Poki and itch.io.</p>
-        <p class="meta"><span class="pill">CHF 14.00</span> <span class="pill">Gumroad</span></p>
-        <p class="cta"><a class="btn" href="https://tggster.gumroad.com/l/slot2-produit-3-patterns-phaser-ebook">View on Gumroad</a></p>
-        <p class="more"><a href="patterns-phaser-ebook.html">What it is, who it is for, and its limits</a></p>
-      </li>
-      <li class="card">
-        <h3>Dev Workflows Notion Pack</h3>
-        <p class="what">6 ready-to-import templates for developers and tech leads: Sprint Board (capacity + standup + retro), 1:1 meeting notes, and more.</p>
-        <p class="meta"><span class="pill">CHF 10.00</span> <span class="pill">Gumroad</span></p>
-        <p class="cta"><a class="btn" href="https://tggster.gumroad.com/l/slot2-produit-5-dev-workflows-notion-pack">View on Gumroad</a></p>
-        <p class="more"><a href="dev-workflows-notion-pack.html">What it is, who it is for, and its limits</a></p>
-      </li>
-      <li class="card">
-        <h3>Python CLI Micro-Tools</h3>
-        <p class="what">10 single-file Python scripts, standard library only (no pip), MIT: a CSV anonymizer, a log scanner, a JSON Schema validator and more.</p>
-        <p class="meta"><span class="pill">CHF 8.00</span> <span class="pill">Gumroad</span></p>
-        <p class="cta"><a class="btn" href="https://tggster.gumroad.com/l/slot2-produit-4-python-cli-microtools">View on Gumroad</a></p>
-        <p class="more"><a href="python-cli-microtools.html">What it is, who it is for, and its limits</a></p>
-      </li>
-      <li class="card">
-        <h3>Claude Code Prompt Pack</h3>
-        <p class="what">18 hand-tested Claude Code prompts for the work you do weekly: refactor, code review, debug flaky tests, tests, and more.</p>
-        <p class="meta"><span class="pill">USD 9.00</span> <span class="pill">Gumroad</span></p>
-        <p class="cta"><a class="btn" href="https://tggster.gumroad.com/l/slot2-produit-1-claude-code-prompt-pack">View on Gumroad</a></p>
-        <p class="more"><a href="claude-code-prompt-pack.html">What it is, who it is for, and its limits</a></p>
-      </li>
-      </ul>
-    </section>
-    <section class="note">
-      <h2>How these are made</h2>
-      <p>These products are designed, written and documented with AI assistance, then checked
-         by hand before they are published. The two plugins are free and their source code is
-         public. The other products are sold at the fixed price shown on their page.</p>
-      <p>Nothing on this site is a subscription and there is no newsletter: the link on each
-         card goes to the page where the product is actually sold or downloaded.</p>
-    </section>
+    </ul>
+  </section>
+
+  <section class="bande-papier" id="gumroad" aria-labelledby="titre-modeles">
+    <div class="cadre section">
+      <div class="section-tete">
+        <h2 id="titre-modeles">Templates and guides</h2>
+        <p>Practical files for developers and small teams, sold at a fixed price on Gumroad. Each name opens a page that says what is inside and what is not.</p>
+      </div>
+      <table class="catalogue">
+        <thead><tr><th scope="col">Product</th><th scope="col">What you get</th><th scope="col">Price</th><th scope="col"><span class="vh">Where to buy</span></th></tr></thead>
+        <tbody>
+          <tr><th scope="row"><a href="claude-code-prompt-pack.html">Claude Code Prompt Pack</a></th><td>18 tested prompts for weekly work: refactoring, code review, flaky tests and more.</td><td class="prix-cell">USD 9.00</td><td class="achat"><a href="https://tggster.gumroad.com/l/slot2-produit-1-claude-code-prompt-pack">Buy on Gumroad</a></td></tr>
+          <tr><th scope="row"><a href="cicd-automation-templates.html">CI/CD &amp; Automation Templates</a></th><td>14 templates for GitHub Actions, GitLab CI and n8n: pull-request checks, releases, CodeQL, staging deploys.</td><td class="prix-cell">CHF 12.00</td><td class="achat"><a href="https://tggster.gumroad.com/l/slot2-produit-2-cicd-automation-templates">Buy on Gumroad</a></td></tr>
+          <tr><th scope="row"><a href="python-cli-microtools.html">Python CLI Micro-Tools</a></th><td>10 single-file scripts, standard library only, MIT: a CSV anonymiser, a log scanner, a JSON Schema validator and more.</td><td class="prix-cell">CHF 8.00</td><td class="achat"><a href="https://tggster.gumroad.com/l/slot2-produit-4-python-cli-microtools">Buy on Gumroad</a></td></tr>
+          <tr><th scope="row"><a href="dev-workflows-notion-pack.html">Dev Workflows Notion Pack</a></th><td>6 Notion templates for developers and tech leads: a sprint board, 1:1 notes and more.</td><td class="prix-cell">CHF 10.00</td><td class="achat"><a href="https://tggster.gumroad.com/l/slot2-produit-5-dev-workflows-notion-pack">Buy on Gumroad</a></td></tr>
+          <tr><th scope="row"><a href="marketing-copy-templates.html">Marketing Copy Templates</a></th><td>12 Markdown templates for a landing-page hero, a cold email and the other texts you ship every week.</td><td class="prix-cell">CHF 11.00</td><td class="achat"><a href="https://tggster.gumroad.com/l/slot2-produit-6-marketing-copy-templates">Buy on Gumroad</a></td></tr>
+          <tr><th scope="row"><a href="patterns-phaser-ebook.html">Patterns Phaser pour jeux HTML5</a><span class="langue">Written in French</span></th><td>A 34-page guide to shipping a Phaser 3.90 game on HTML5 portals, from first scene to publication.</td><td class="prix-cell">CHF 14.00</td><td class="achat"><a href="https://tggster.gumroad.com/l/slot2-produit-3-patterns-phaser-ebook">Buy on Gumroad</a></td></tr>
+        </tbody>
+      </table>
+      <p class="date">Prices as listed on Gumroad on 11 November 2026.</p>
+    </div>
+  </section>
+
+  <section class="cadre section" id="about" aria-labelledby="titre-principes">
+    <div class="section-tete">
+      <h2 id="titre-principes">How the studio works</h2>
+      <p>Tgg Labs is the label under which Tgg, a developer based in Switzerland, publishes his work. Four rules apply to everything on this site.</p>
+    </div>
+    <ul class="principes">
+      <li><h3>Sources first</h3><p>Every figure carries its date and its source. A number that was not measured is not published.</p></li>
+      <li><h3>Read-only by default</h3><p>The tools read data where it already lives. They change nothing in your systems and send nothing to anyone else.</p></li>
+      <li><h3>Open source</h3><p>The two plugins and the Atlassian app are published with their full source code, under Apache-2.0 or MIT.</p></li>
+      <li><h3>Built with AI, checked by review</h3><p>The work is done with AI agents. It is reviewed, and its claims checked, before it is published.</p></li>
+    </ul>
+  </section>
 </main>
+
 <footer class="site-foot">
-  <p>Tgg Labs &mdash; Personal projects by Tgg, in Switzerland.</p>
-  <p>Every product on this page links to the listing where it is actually published.
-     Facts and prices on this page were checked on 4 November 2026.</p>
-  <p><a href="privacy.html">Privacy notice for Portal Accessibility Checker for JSM (Atlassian Forge app)</a></p>
+  <div class="pied-grille">
+    <div class="marque">
+      <a class="brand" href="./">Tgg Labs</a>
+      <p>Independent studio in Switzerland. Data products and developer tools.</p>
+    </div>
+    <div>
+      <h2>Contact</h2>
+      <p>Standby Atlas: <a href="mailto:contact@standbyatlas.com">contact@standbyatlas.com</a></p>
+      <p>Developer tools: the issue tracker of each project on GitHub.</p>
+    </div>
+    <div>
+      <h2>Elsewhere</h2>
+      <ul>
+        <li><a href="https://plugins.jetbrains.com/vendor/tgg-labs">JetBrains Marketplace</a></li>
+        <li><a href="https://github.com/tgg49099-dotcom">GitHub</a></li>
+        <li><a href="https://tggster.gumroad.com/">Gumroad</a></li>
+      </ul>
+    </div>
+    <div>
+      <h2>This site</h2>
+      <p>No cookies, no analytics, no third-party scripts.</p>
+      <p>Set in Archivo, under the SIL Open Font License.</p>
+    </div>
+  </div>
+  <div class="pied-bas">
+    <p>© 2026 Tgg Labs, Switzerland.</p>
+    <p>Page updated on 11 November 2026.</p>
+  </div>
 </footer>
 </body>
 </html>
