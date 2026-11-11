@@ -149,9 +149,12 @@
   function ecran(k, x, y, z) { var q = pr(k, x, y, z); return [q[0] * S + OX, q[1] * S + OY, q[2]]; }
 
   // ------------------------------------------------------------------ taille
+  // taille de mise en page (sans le zoom de transition entre scènes), pour que l'image garde ses proportions
   function taille() {
-    var r = canvas.getBoundingClientRect();
-    W = Math.max(280, r.width); H = Math.max(220, r.height);
+    var w = canvas.clientWidth, h = canvas.clientHeight;
+    if (!w || !h) { var r = canvas.getBoundingClientRect(); w = r.width; h = r.height; }
+    vueMesuree = [Math.round(w), Math.round(h)];
+    W = Math.max(280, w); H = Math.max(220, h);
     DPR = Math.min(2, window.devicePixelRatio || 1);
     racine.classList.toggle('c3-large', W >= 1000);
     canvas.width = Math.round(W * DPR); canvas.height = Math.round(H * DPR);
@@ -455,6 +458,17 @@
     new IntersectionObserver(function (es) { es.forEach(function (x) { enVue = x.isIntersecting; if (enVue) demander(); }); }, { threshold: 0.05 }).observe(racine);
   }
   window.addEventListener('resize', function () { clearTimeout(taille.t); taille.t = setTimeout(taille, 120); });
+  // la boîte de la carte peut changer sans que la fenêtre change : passage du récit en plein écran juste après le chargement
+  // (polices déjà en cache), téléphone plié ou déplié. Sans nouvelle mesure, l'image serait étirée et passerait sous le texte.
+  var vueMesuree = [0, 0];
+  if ('ResizeObserver' in window) {
+    new ResizeObserver(function () {
+      if (canvas.clientWidth === vueMesuree[0] && canvas.clientHeight === vueMesuree[1]) return;
+      clearTimeout(taille.t); taille.t = setTimeout(taille, 40);
+    }).observe(canvas);
+  }
+  // les blocs de texte changent de hauteur quand les polices arrivent : la zone libre de la carte est recalculée
+  if (document.fonts && document.fonts.addEventListener) document.fonts.addEventListener('loadingdone', function () { if (W > 0) { cadrer(); demander(); } });
   function demarrer() { if (demarre) return; demarre = true; debut = performance.now(); interaction = debut; demander(); }
   racine.c3.demarrer = demarrer;
   racine.c3.etape = function (u) {
