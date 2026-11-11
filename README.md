@@ -3,10 +3,11 @@
 Site statique de Tgg Labs : HTML + CSS, **sans dépendance, sans script et sans build**.
 On peut ouvrir `index.html` directement dans un navigateur, ou le servir tel quel.
 
-- `index.html` — l'accueil (refait le 11/11/2026, version de nuit) : la constellation des 172 projets de
-  Standby Atlas, qui s'allument dans l'ordre de leur dépôt (SVG en ligne, animation CSS, aucun script),
-  puis Standby Atlas, les instruments, un principe, le contact. Ne pas y remettre de catalogue.
-  Ancres utilisées par les autres pages : `#data`, `#jetbrains`, `#gumroad`, `#about`, `#contact`.
+- `index.html` — la page de la holding (refaite le 12/11/2026) : Tgg Labs, studio qui construit et exploite ses activités.
+  En tête, des orbites (une lumière par activité : pleine = en activité, creuse = en recherche ; SMIL, sans script),
+  puis Ventures (Standby Atlas, Instruments, Templates and Guides, Maintained, trois en recherche), Approach, Contact.
+  Une nouvelle activité = une ligne dans la liste `.ventures` et une lumière de plus dans les orbites.
+  Ancres utilisées par les autres pages : `#ventures`, `#data`, `#jetbrains`, `#gumroad`, `#approach`, `#contact`.
 - `work.html` — tout ce que Tgg Labs publie : intelligence, instruments, modèles Gumroad (avec prix datés), mentions légales (`#legal`).
 - `<produit>.html` — une page par produit : ce qu'il fait, pour qui, son prix, ses limites.
   Garder les classes existantes (`site`, `nav`, `produit`, `fil`, `lead`, `prix`, `shot`, `puces`,

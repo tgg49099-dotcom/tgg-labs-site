@@ -212,6 +212,40 @@ strong, b { font-weight: 600; }
   .nuit { justify-content: flex-start; }
 }
 
+
+/* holding : orbites (une lumière par activité ; pleines = en activité, creuses = en recherche) */
+.holding .orbites { position: absolute; z-index: -2; top: 3%; right: -8%; width: 66%; height: 58%; overflow: visible; }
+.orbites .anneau { fill: none; stroke: rgba(143, 163, 184, 0.16); stroke-width: 1; vector-effect: non-scaling-stroke; }
+.orbites .coeur { fill: #FFE9B8; }
+.orbites .creux { fill: none; stroke: rgba(255, 182, 37, 0.75); stroke-width: 1.4; vector-effect: non-scaling-stroke; }
+.orbites .fixe { display: none; }
+.orbites .centre { opacity: 0.9; }
+@media (prefers-reduced-motion: reduce) { .orbites .anim { display: none; } .orbites .fixe { display: inline; } }
+@media (max-width: 860px) { .holding .orbites { top: 70px; right: auto; left: -30%; width: 160%; height: 42%; } }
+
+.ventures { list-style: none; margin: 36px 0 0; padding: 0; border-top: 1px solid var(--filet); }
+.ventures li { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 0.8fr) minmax(0, 1.6fr) auto; gap: 6px 28px; align-items: baseline; padding: 22px 0; border-bottom: 1px solid var(--filet); }
+.ventures .v-nom { font-size: clamp(1.15rem, 1rem + 0.5vw, 1.4rem); font-weight: 380; font-stretch: 116%; letter-spacing: -0.01em; }
+.ventures .v-nom a { text-decoration: none; }
+.ventures .v-nom a:hover { color: var(--lampe-texte); }
+.ventures .v-champ { color: var(--acier); font-size: 0.92rem; }
+.ventures .v-quoi { color: var(--acier); }
+.ventures .v-etat { font-size: 0.85rem; color: var(--brume); white-space: nowrap; }
+.ventures .v-etat.vif { color: var(--lampe-texte); }
+.ventures .v-etat.vif::before { content: ""; display: inline-block; width: 6px; height: 6px; margin-right: 8px; border-radius: 50%; background: var(--lampe); box-shadow: 0 0 8px rgba(255, 182, 37, 0.8); vertical-align: middle; }
+@media (max-width: 860px) {
+  .ventures li { grid-template-columns: minmax(0, 1fr) auto; }
+  .ventures .v-champ { grid-column: 1; grid-row: 2; }
+  .ventures .v-etat { grid-column: 2; grid-row: 1; }
+  .ventures .v-quoi { grid-column: 1 / -1; }
+}
+
+.principes-nuit { list-style: none; margin: 40px 0 0; padding: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 32px 48px; max-width: 56em; }
+.principes-nuit li { border-top: 1px solid var(--filet); padding-top: 18px; }
+.principes-nuit h3 { font-size: 1.12rem; font-weight: 420; font-stretch: 114%; letter-spacing: -0.01em; }
+.principes-nuit p { margin-top: 8px; color: var(--acier); }
+@media (max-width: 640px) { .principes-nuit { grid-template-columns: minmax(0, 1fr); } }
+
 /* sections de l'accueil */
 .bloc { padding-top: clamp(80px, 12vw, 160px); padding-bottom: clamp(20px, 3vw, 40px); }
 .bloc-grille { display: grid; grid-template-columns: minmax(0, 0.8fr) minmax(0, 2fr); gap: 20px 56px; padding-top: 28px; border-top: 1px solid var(--filet); }
