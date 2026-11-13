@@ -24,7 +24,7 @@
       <p class="fil"><a href="index.html">Tgg Labs</a></p>
       <h1>ML Experiment Cockpit</h1>
       <p class="lead">Reads your MLflow runs and metrics, plus W&amp;B sweeps, Optuna studies and the MLflow Model Registry, inside PyCharm or IntelliJ &mdash; no browser, no notebook.</p>
-      <p class="prix"><strong>Price:</strong> Free &mdash; Free on the JetBrains Marketplace</p>
+      <p class="prix"><strong>Price:</strong> Free on the JetBrains Marketplace &mdash; with an optional Pro tier at $29/year (the Pro tier is not purchasable yet, see below)</p>
       <figure class="shot">
         <img src="media/ml-experiment-cockpit.png" alt="ML Experiment Cockpit screenshot" loading="lazy">
         <figcaption>The ML Experiment Cockpit tool window: the experiment tree on the left, the run detail and the metric curve on the right. Screenshot from the plugin's own JetBrains Marketplace listing.</figcaption>
@@ -37,6 +37,22 @@
           <li>Three more tabs for the rest of an ML workflow: Optuna (studies and trials), Models (the MLflow Model Registry) and Sweeps (W&amp;B, read-only, with a W&amp;B API key).</li>
           <li>Works in PyCharm, IntelliJ IDEA, WebStorm, GoLand and CLion. Every request goes to the servers you configure &mdash; the plugin sends nothing anywhere else.</li>
       </ul>
+      <h2>Pro tier</h2>
+      <p>The Pro tier adds exactly one tab, <strong>Compare</strong>: right-click a run in the Experiments tree, choose &ldquo;Compare with&hellip;&rdquo;, and the two runs are shown side by side.</p>
+      <ul class="puces">
+          <li>The parameters of the two runs, side by side.</li>
+          <li>The last value of every metric, with the absolute gap and the relative gap between the two runs.</li>
+          <li>Both metric curves drawn on the same axis (run A in blue, run B in orange).</li>
+          <li>One click copies the two tables as Markdown into the clipboard.</li>
+          <li>In Pro, the Compare view reads up to 100 000 metric points per metric per run; the free chart stays at 5 000.</li>
+      </ul>
+      <dl class="faits">
+        <div class="fact"><dt>Pro price</dt><dd>$29 per year</dd></div>
+        <div class="fact"><dt>Free trial</dt><dd>30 days</dd></div>
+        <div class="fact"><dt>Where to buy</dt><dd>On the plugin&rsquo;s JetBrains Marketplace listing &mdash; the buy button is on the page for plugin 35416</dd></div>
+      </dl>
+      <p><strong>The paid tier is not purchasable yet &mdash; the Marketplace is reviewing the update.</strong> The listing carries no buy button today, and the four free tabs (Experiments, Optuna, Models, Sweeps) stay complete and free while the review runs. The price, the trial length and the status written here were read on the Marketplace on 13 November 2026.</p>
+      <p>One correction to be aware of: the trial period set on the listing is 30 days, while the description text on the listing still says &ldquo;14-day trial&rdquo;. That sentence is out of date and we are correcting it in the next update.</p>
       <h2>Who it is for</h2>
       <p>ML engineers, data scientists and researchers who already run an MLflow tracking server (or an Optuna dashboard, or W&amp;B) and want to read their runs without leaving the IDE.</p>
       <h2>Limits</h2>
@@ -47,11 +63,12 @@
       </ul>
       <h2>Details</h2>
       <dl class="faits">
-        <div class="fact"><dt>Price</dt><dd>Free</dd></div>
-        <div class="fact"><dt>Latest version</dt><dd>0.0.20 (approved and listed)</dd></div>
-        <div class="fact"><dt>Compatible with</dt><dd>IDE builds 243 and later</dd></div>
+        <div class="fact"><dt>Price</dt><dd>Free &mdash; optional Pro tier at $29/year</dd></div>
+        <div class="fact"><dt>Latest version</dt><dd>0.0.21 (approved and listed)</dd></div>
+        <div class="fact"><dt>Next versions</dt><dd>2026.1.0 is under review at the Marketplace; 2026.1.2 is ready to upload on 15 November 2026 and is not published yet</dd></div>
+        <div class="fact"><dt>Compatible with</dt><dd>IDE builds 243 to 263</dd></div>
         <div class="fact"><dt>License</dt><dd>Apache-2.0</dd></div>
-        <div class="fact"><dt>Downloads</dt><dd>95 (measured on 4 November 2026)</dd></div>
+        <div class="fact"><dt>Downloads</dt><dd>130 (measured on 13 November 2026)</dd></div>
         <div class="fact"><dt>Source code</dt><dd>Public on GitHub</dd></div>
       </dl>
       <p class="src">The full source code of this plugin is published on GitHub:
@@ -62,7 +79,7 @@
 <footer class="site-foot">
   <p>Tgg Labs &mdash; independent studio in Switzerland.</p>
   <p>Every product on this page links to the listing where it is actually published.
-     Facts and prices on this page were checked on 4 November 2026.</p>
+     Facts and prices on this page were checked on 13 November 2026.</p>
 </footer>
 </body>
 </html>
