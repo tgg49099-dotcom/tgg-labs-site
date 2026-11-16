@@ -1,0 +1,52 @@
+1
+00:00:00,000 --> 00:00:22,000
+Who is it for? Any team running a customer-facing Jira Service Management portal: a public body subject to the European Accessibility Act, a university, a bank's service desk.
+Why does it matter? A field labelled cf_hw_tag, or a field with no instructions at all, blocks a screen-reader user. The portal is the only door to the service — and almost nobody checks what that door exposes.
+
+2
+00:00:22,000 --> 00:00:32,000
+Portal Accessibility Checker for JSM.
+A read-only Atlassian Forge app that checks what your customer portal exposes, against WCAG 2.2 AA. Production version 2.9.0.
+
+3
+00:00:32,000 --> 00:00:48,000
+This is the real app, inside the Jira administration area of a live site — recorded on 15 November 2026 against production version 2.9.0.
+Jira renders this page only for a signed-in administrator: there is no public URL.
+
+4
+00:00:48,000 --> 00:01:06,000
+First button: “Run the scan” reads your own site. The server checks the caller's Jira permissions before any read.
+In this recording the page was opened with an API token, not an interactive Jira session, so the platform's caller identity holds no administrator permission: the app refuses, and says why. Nothing was read.
+
+5
+00:01:06,000 --> 00:01:28,000
+The same engine, from the command line, with the site owner's administrator token: 15 calls, 0 refused, then the findings — 5 of them, on real content of this live site.
+Two ambiguous custom fields, one label written as an internal name, and two issue titles. The KAN-4 title is the single letter “T”: a real defect, on a real ticket.
+
+6
+00:01:28,000 --> 00:01:52,000
+The same engine is also two tools on Atlassian's MCP server — the rovo:mcp module of the manifest.
+Here a real MCP client, built on the official SDK, lists them: scan_accessibility and list_last_findings — and calls the first one on this site.
+
+7
+00:01:52,000 --> 00:02:14,000
+The second tool returns the same findings, and states that the app keeps no history.
+And the gate: an agent whose caller holds no administrator permission gets the refusal, and no report.
+
+8
+00:02:14,000 --> 00:02:28,000
+The SKILL.md is public on GitHub: it tells a third-party agent how to use the two read-only tools — and never to claim conformance.
+
+9
+00:02:28,000 --> 00:02:44,000
+The other path: “Run the demo scan (no site needed)” runs the same engine on the app's bundled fixtures: 23 findings, 9 to be checked by a human.
+Two sources, one engine — not a hardcoded demo path.
+
+10
+00:02:44,000 --> 00:02:56,000
+“Export the findings” produces the same list as a CSV: criterion, level, source, location, message, and whether a human has to check it.
+
+11
+00:02:56,000 --> 00:03:12,000
+Portal Accessibility Checker for JSM. Production 2.9.0, read-only, Atlassian Cloud, no external service.
+The code and the SKILL.md are public, under the MIT licence.
