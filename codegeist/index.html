@@ -24,8 +24,9 @@
     <h1>Portal Accessibility Checker for JSM — demonstration files</h1>
     <p class="lead">Public project page of a read-only Atlassian Forge app that checks what your Jira
       Service Management customer portal exposes, against WCAG 2.2 AA. This folder hosts the
-      demonstration video and its subtitles. Every statement on this page was measured on
-      11 November 2026.</p>
+      demonstration video and its subtitles, and the images of a scan measured on a real JSM
+      portal. Every statement on this page was measured on 11 November 2026, except the scan
+      images below, measured on 17 November 2026.</p>
 
     <h2>What the app does</h2>
     <p>It reads the customer-facing content of your JSM portal through your site's own official REST
@@ -89,6 +90,43 @@
     <p><img src="codegeist-vignette.jpg" width="1920" height="1080" style="max-width:100%;height:auto;"
       alt="Frame of the demonstration: the Portal Accessibility Checker for JSM panel with its two empty optional fields, and below it the results of the demo scan on the bundled sample data."></p>
 
+    <h2>The scan of a real JSM portal, in images</h2>
+    <p>On 17 November 2026 the app's own engine was run against the JSM customer portal of a real
+      site: 9 HTTP GET calls, no POST, nothing refused, 7 findings (6 on criterion 3.3.2, 1 on
+      1.3.5), 23 fields read across 5 request types. The four images below show that run.</p>
+    <p class="note"><strong>They are not screenshots of the Jira administration page.</strong>
+      Atlassian renders that page in an iframe, behind a signed-in administrator session, so it
+      cannot be captured here. What the images show is the real output of the engine: the same
+      strings it returns, the same values, the same endpoints. Every line they contain comes from
+      a file of the public repository, and the file each line comes from is listed in
+      <a href="https://github.com/tgg49099-dotcom/codegeist-jsm-accessibility-checker/blob/main/media/SCAN-JSM-SCREENSHOTS-2026-11-17.json">media/SCAN-JSM-SCREENSHOTS-2026-11-17.json</a>.
+      The images are computed by
+      <a href="https://github.com/tgg49099-dotcom/codegeist-jsm-accessibility-checker/blob/main/tools/generer-images-scan-184.py">tools/generer-images-scan-184.py</a>
+      and checked by
+      <a href="https://github.com/tgg49099-dotcom/codegeist-jsm-accessibility-checker/blob/main/tools/verifier-images-scan-184.py">tools/verifier-images-scan-184.py</a>,
+      which replays the computation and gets the same md5 for the four files (107 checks, 0
+      failure).</p>
+    <p><img src="scan-jsm-vignette-1500x1000.png" width="1500" height="1000" style="max-width:100%;height:auto;"
+      alt="The run on a real JSM portal: the site, the mode, the HTTP calls (9 GET, 0 POST), the 7 findings and their repartition by WCAG criterion, one finding in full, and the 9 endpoints the engine read."></p>
+    <p class="note">The whole run in one image &mdash; 1500&times;1000, 127 122 bytes, md5
+      <code>6310a0c4b048de8101798fd14648a8bf</code>:
+      <a href="scan-jsm-vignette-1500x1000.png">scan-jsm-vignette-1500x1000.png</a></p>
+    <p><img src="scan-jsm-constat-1500x1000.png" width="1500" height="1000" style="max-width:100%;height:auto;"
+      alt="One finding in plain words: the criterion and its level, the endpoint it was read from, the resource, the request type, the fields read, the location, the value read, the message of the engine, the review it asks for, and the limits the app states itself."></p>
+    <p class="note">One finding, in plain words &mdash; 1500&times;1000, 114 442 bytes, md5
+      <code>271a89b451206d467ab81a9565f32c4d</code>:
+      <a href="scan-jsm-constat-1500x1000.png">scan-jsm-constat-1500x1000.png</a></p>
+    <p><img src="scan-jsm-regles-1500x1000.png" width="1500" height="1000" style="max-width:100%;height:auto;"
+      alt="The rules the engine applied: for each criterion raised by the scan, its level, its confidence, the endpoints read, the request types, the message of the engine and a real example, then what this scan cannot check."></p>
+    <p class="note">The rules, in detail &mdash; 1500&times;1000, 143 420 bytes, md5
+      <code>e5e1fd13d8481db8e8260ee7e49b1e6f</code>:
+      <a href="scan-jsm-regles-1500x1000.png">scan-jsm-regles-1500x1000.png</a></p>
+    <p><img src="scan-jsm-violations-1500x1000.png" width="1500" height="1000" style="max-width:100%;height:auto;"
+      alt="The list of the 7 findings, in the table the administration page shows: criterion, level, where, location, message, review."></p>
+    <p class="note">The list of the 7 findings &mdash; 1500&times;1000, 121 226 bytes, md5
+      <code>c1adf4d5140210365b5e4d6db21b1500</code>:
+      <a href="scan-jsm-violations-1500x1000.png">scan-jsm-violations-1500x1000.png</a></p>
+
     <h2>Install it</h2>
     <p>The app is shared publicly through Atlassian's installation link. Open the link, choose the
       site to test and the product Jira, and confirm. You must be an administrator of that site.</p>
@@ -123,14 +161,15 @@
     </ul>
     <p class="src">Written 11 November 2026 for version 2.8.0, updated 16 November 2026 (newer capture of
       production 2.9.0 above; production has served 2.10.0 since 15 November 2026 &mdash; a fix: a
-      request type hidden from the portal is now judged and counted) — Tgg Labs, personal projects, in
+      request type hidden from the portal is now judged and counted), updated 17 November 2026 (the
+      images of the scan measured on a real JSM portal) — Tgg Labs, personal projects, in
       Switzerland.</p>
   </article>
 </main>
 <footer class="site-foot">
   <p>Tgg Labs — personal projects, in Switzerland.</p>
   <p>Every product on this page links to the listing where it is actually published.
-     Facts on this page were checked on 16 November 2026.</p>
+     Facts on this page were checked on 17 November 2026.</p>
 </footer>
 </body>
 </html>
